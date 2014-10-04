@@ -14,6 +14,7 @@
 		FD39FADF19DFE74000CC2CFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD39FADE19DFE74000CC2CFE /* Images.xcassets */; };
 		FD39FAE219DFE74000CC2CFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAE019DFE74000CC2CFE /* LaunchScreen.xib */; };
 		FD39FAEE19DFE74000CC2CFE /* ProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAED19DFE74000CC2CFE /* ProductTests.m */; };
+		FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		FD39FAE719DFE74000CC2CFE /* ProductTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39FAEC19DFE74000CC2CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD39FAED19DFE74000CC2CFE /* ProductTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTests.m; sourceTree = "<group>"; };
+		FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartChallengeViewController.h; sourceTree = "<group>"; };
+		FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartChallengeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				FD39FAD819DFE74000CC2CFE /* ViewController.h */,
 				FD39FAD919DFE74000CC2CFE /* ViewController.m */,
 				FD39FADB19DFE74000CC2CFE /* Main.storyboard */,
+				FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */,
+				FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */,
 				FD39FADE19DFE74000CC2CFE /* Images.xcassets */,
 				FD39FAE019DFE74000CC2CFE /* LaunchScreen.xib */,
 				FD39FAD119DFE74000CC2CFE /* Supporting Files */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */,
+				FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */,
 				FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */,
 				FD39FAD419DFE74000CC2CFE /* main.m in Sources */,
 			);
