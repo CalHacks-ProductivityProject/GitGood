@@ -14,26 +14,31 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *challengesTable;
 @property (nonatomic) NSMutableArray *testChallenges;
+@property (nonatomic, copy) NSString *githubUsername;
 
 @end
 
 @implementation ViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
+        [self displayLoginScreen];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
-        [self displayLoginScreen];
-    }
-    
+
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
+    [self.navigationController setTitle:self.githubUsername];
     
     self.testChallenges = [[NSMutableArray alloc] init];
     
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
-    
 
 }
 
@@ -83,21 +88,16 @@
     LogInViewController *logIn = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     logIn.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:logIn animated:YES completion:Nil];
+    
+    logIn.somethingHappenedInModalVC = ^(NSString *response) {
+        self.githubUsername = response;
+        
+        [self addRow:nil];
+        [self addRow:nil];
+    };
+    
+    [self.challengesTable reloadData];
+    
 }
-
-
-
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
-     
-     if ([segue.identifier isEqualToString:@"CompetitionDrillDown"]) {
-         NSLog(@"Here");
-     }
- }
-
 
 @end
