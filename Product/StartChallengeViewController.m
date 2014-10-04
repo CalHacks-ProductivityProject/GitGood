@@ -15,6 +15,7 @@
 @implementation StartChallengeViewController
 
 - (void)viewDidLoad {
+    NSLog(@"Observer added\n");
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -80,6 +81,11 @@ const int movedistance = 130;
     [UIView commitAnimations];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        NSLog(@"Observer removed\n");
+}
+
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *replaced = [textField.text stringByReplacingCharactersInRange:range withString:string];
@@ -112,6 +118,16 @@ const int movedistance = 130;
     // Replace the value and then cancel this change.
     textField.text = [_formatter stringFromNumber:amount];
     return NO;
+}
+
+- (IBAction)sendChallenge:(id)sender {
+    //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
+    NSNumberFormatter *moneyFormat = [[NSNumberFormatter alloc] init];
+    [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
+    NSNumber *holder = [moneyFormat numberFromString:self.enterMoney.text];
+    //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
+    double holder1 = [holder doubleValue];
+    NSLog(@"Amount entered = %f\n", holder1);
 }
 
 /*
