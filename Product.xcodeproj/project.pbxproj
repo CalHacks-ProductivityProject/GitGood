@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C02C32B719E02F84005E1CF7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C32B619E02F84005E1CF7 /* UserProfile.swift */; };
 		FD39FAD419DFE74000CC2CFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD319DFE74000CC2CFE /* main.m */; };
 		FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD619DFE74000CC2CFE /* AppDelegate.m */; };
 		FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD919DFE74000CC2CFE /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Product-Bridging-Header.h"; sourceTree = "<group>"; };
+		C02C32B619E02F84005E1CF7 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = ../CalHacksProject/UserProfile.swift; sourceTree = "<group>"; };
 		FD39FACE19DFE74000CC2CFE /* Product.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Product.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39FAD219DFE74000CC2CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD39FAD319DFE74000CC2CFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -66,9 +69,11 @@
 		FD39FAC519DFE74000CC2CFE = {
 			isa = PBXGroup;
 			children = (
+				C02C32B619E02F84005E1CF7 /* UserProfile.swift */,
 				FD39FAD019DFE74000CC2CFE /* Product */,
 				FD39FAEA19DFE74000CC2CFE /* ProductTests */,
 				FD39FACF19DFE74000CC2CFE /* Products */,
+				C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +231,7 @@
 			files = (
 				FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */,
 				FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */,
+				C02C32B719E02F84005E1CF7 /* UserProfile.swift in Sources */,
 				FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */,
 				FD39FAD419DFE74000CC2CFE /* main.m in Sources */,
 			);
@@ -351,9 +357,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Product/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -361,9 +370,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Product/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -420,6 +431,7 @@
 				FD39FAF319DFE74000CC2CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD39FAF419DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "ProductTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +440,7 @@
 				FD39FAF619DFE74000CC2CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
