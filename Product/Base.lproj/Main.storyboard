@@ -129,7 +129,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q1B-Yj-5We" kind="presentation" id="KBa-xN-VbV"/>
+                                    <segue destination="Q1B-Yj-5We" kind="presentation" identifier="CreateMatchSegue" id="KBa-xN-VbV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,7 +236,7 @@
             </objects>
             <point key="canvasLocation" x="593.5" y="1191.5"/>
         </scene>
-        <!--New Match-->
+        <!--Create Match-->
         <scene sceneID="KCU-0R-VQj">
             <objects>
                 <viewController id="MF5-CE-p2h" customClass="StartChallengeViewController" sceneMemberID="viewController">
@@ -248,28 +248,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLm-T8-CQg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="MF5-CE-p2h" id="xxx-iS-pf9"/>
-                                </connections>
-                            </searchBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS7-by-2P5">
-                                <rect key="frame" x="0.0" y="108" width="375" height="465"/>
-                                <subviews>
-                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cAR-w9-TbN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="393"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-nG-Qrc">
-                                        <rect key="frame" x="117" y="401" width="141" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKu-oV-qQ8">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.19215686274509802" green="0.53333333333333333" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,30 +260,64 @@
                                     <action selector="sendChallenge:" destination="MF5-CE-p2h" eventType="touchUpInside" id="Ad3-pY-KOm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-nG-Qrc">
+                                <rect key="frame" x="215" y="533" width="160" height="49"/>
+                                <color key="backgroundColor" red="0.86138791454081631" green="0.86138791454081631" blue="0.86138791454081631" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount Per Person:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-F9-zVs">
+                                <rect key="frame" x="0.0" y="533" width="215" height="49"/>
+                                <color key="backgroundColor" red="0.85803970025510201" green="0.85803970025510201" blue="0.85803970025510201" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-m9-HFg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="434"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Match" id="R0m-CW-Q0j">
+                    <navigationItem key="navigationItem" title="Create Match" id="R0m-CW-Q0j">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="yoS-re-7Uo">
                             <connections>
                                 <action selector="cancelNewChallenege:" destination="MF5-CE-p2h" id="rc5-Y2-XIi"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="LcL-Y4-mzd"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="enterMoney" destination="aDc-nG-Qrc" id="m0c-qy-fAJ"/>
-                        <outlet property="searchDisplayController" destination="jtE-l5-1ND" id="cfE-y4-ZY1"/>
+                        <outlet property="searchDisplayController" destination="bxk-EF-1Pu" id="GLo-De-DwK"/>
+                        <outlet property="tableView" destination="hl7-m9-HFg" id="VpN-nB-O6y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPq-7W-Btw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="jtE-l5-1ND">
                     <connections>
                         <outlet property="delegate" destination="MF5-CE-p2h" id="7Ze-cK-kw6"/>
-                        <outlet property="searchBar" destination="HLm-T8-CQg" id="i5t-p2-zNS"/>
                         <outlet property="searchContentsController" destination="MF5-CE-p2h" id="IcT-tx-r3S"/>
                         <outlet property="searchResultsDataSource" destination="MF5-CE-p2h" id="ogT-rZ-FbF"/>
                         <outlet property="searchResultsDelegate" destination="MF5-CE-p2h" id="wLy-tI-R0g"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="1hs-Xc-aeS">
+                    <connections>
+                        <outlet property="delegate" destination="MF5-CE-p2h" id="672-0e-T1R"/>
+                        <outlet property="searchContentsController" destination="MF5-CE-p2h" id="Mxk-jB-dZB"/>
+                        <outlet property="searchResultsDataSource" destination="MF5-CE-p2h" id="eHr-CB-HRv"/>
+                        <outlet property="searchResultsDelegate" destination="MF5-CE-p2h" id="jbI-UD-g9X"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="bxk-EF-1Pu">
+                    <connections>
+                        <outlet property="delegate" destination="MF5-CE-p2h" id="ubb-Xn-9LK"/>
+                        <outlet property="searchContentsController" destination="MF5-CE-p2h" id="zJ4-Ug-bQo"/>
+                        <outlet property="searchResultsDataSource" destination="MF5-CE-p2h" id="QVc-6R-vT7"/>
+                        <outlet property="searchResultsDelegate" destination="MF5-CE-p2h" id="cJ2-LU-OFT"/>
                     </connections>
                 </searchDisplayController>
             </objects>
