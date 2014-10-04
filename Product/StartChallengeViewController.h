@@ -13,7 +13,4 @@
 @property (strong, nonatomic) IBOutlet UITextField *enterMoney;
 @property (strong, nonatomic) NSNumberFormatter *formatter;
 
-// !!!  REMOVE LATER  !!!
-@property (nonatomic, copy) NSArray *testMembers;
-
 @end
