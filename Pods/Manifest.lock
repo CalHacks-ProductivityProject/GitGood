@@ -1,0 +1,10 @@
+PODS:
+  - UAGithubEngine (2.3)
+
+DEPENDENCIES:
+  - UAGithubEngine
+
+SPEC CHECKSUMS:
+  UAGithubEngine: 0a7b38bed28323b07f59ca90324ed42f44a65c23
+
+COCOAPODS: 0.34.1

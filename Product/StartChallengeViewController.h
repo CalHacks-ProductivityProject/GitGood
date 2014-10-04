@@ -10,4 +10,7 @@
 
 @interface StartChallengeViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *enterMoney;
+@property (strong, nonatomic) NSNumberFormatter *formatter;
+
 @end

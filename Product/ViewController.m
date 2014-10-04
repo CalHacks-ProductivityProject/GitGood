@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "Product-Swift.h"
+#import "LogInViewController.h"
+#import <Product-Swift.h>
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,9 +34,7 @@
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
     
-    
-    
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +70,10 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
 
 #pragma mark - Login Screen
 
@@ -81,5 +84,20 @@
     logIn.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:logIn animated:YES completion:Nil];
 }
+
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     
+     if ([segue.identifier isEqualToString:@"CompetitionDrillDown"]) {
+         NSLog(@"Here");
+     }
+ }
+
 
 @end
