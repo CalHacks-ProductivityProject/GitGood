@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Product-Swift.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -25,6 +26,10 @@
     
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
