@@ -12,13 +12,14 @@ import Foundation
     //A profile needs a username and a picture, we need to find the url for the picture based on the given username
     var userName: String = "Default User"
     var userPictureURLString: String = "https://lh5.googleusercontent.com/-tw5LsU4Fg28/Umo6BBcoCnI/AAAAAAAAmjE/1iqULsem06E/s1140-no/heisencat.png"
+    var repositoriesAndCounts = Dictionary<String, Int>()
     
+    //Create a new instance of the function
     @objc class func newInstance() -> UserProfile {
         return UserProfile()
     }
     
-    //Param - userName - this is the user's name, obviously. This method takes a userName and returns the url that is associated with that user name, this method makes a network call.
-
+    //Retrieve the url string for the user's github, this grabs their picture for us.
     @objc func retrieveURLString(userName: String) -> Void {
         //Set up the network request, asynchronously
         let urlPath: String = "https://api.github.com/users/" + userName
@@ -43,9 +44,10 @@ import Foundation
         })
     }
     
-    @objc func makeAPICall(stringURL: String, key: String){
-       
-        var url: NSURL = NSURL(string: stringURL)
+    //Retrieves the url for the user's repos. This is done throught the Git API
+    @objc func findRepoUrl(){
+        
+        var url: NSURL = NSURL(string: "https://api.github.com/users/" + self.userName)
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue:NSOperationQueue = NSOperationQueue()
         
@@ -57,13 +59,47 @@ import Foundation
             //Store the JSON data from the Github api
             var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
             
-            //We can search for the avatar url in the json dictionary and update the user photo
-            if let pictureURLString = jsonResult.valueForKey(key) as? String{
-                self.userPictureURLString = pictureURLString
+            //We can search for the repos url in the json dictionary and subsequently find the repos
+            if let urlString = jsonResult.valueForKey("repos_url") as? String{
+                self.findRepos(urlString)
             }
             
-            println("AsSynchronous\(jsonResult)")
+        })
+    }
+
+    //Fill the dictionary by passing a repo name and the associated count amounts
+    @objc func fillRepoDict(repoName: String, count: Int){
+        self.repositoriesAndCounts[repoName] = count
+    }
+    
+    //Find all the counts associated with the apis
+    @objc func findCounts(repoName: String){
+        
+    }
+    
+    //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made. 
+    @objc func findRepos(urlAsString: String){
+        var url: NSURL = NSURL(string: urlAsString)
+        var request: NSURLRequest = NSURLRequest(URL: url)
+        let queue:NSOperationQueue = NSOperationQueue()
+        
+        //Make the asynchronous request
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            
+            var err: NSError
+            
+            //Store the JSON data from the Github api
+            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            
+            
+              NSLog("%@", jsonResult)
+//            //We can search for the avatar url in the json dictionary and update the user photo
+//            if let urlString = jsonResult.valueForKey("avatar_url") as? String{
+//                self.userPictureURLString = urlString
+//            }
+            
         })
 
     }
+
 }
