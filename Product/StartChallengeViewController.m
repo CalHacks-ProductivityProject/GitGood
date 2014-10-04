@@ -15,6 +15,14 @@
 @implementation StartChallengeViewController
 
 - (void)viewDidLoad {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -27,6 +35,32 @@
 - (IBAction)cancelNewChallenege:(id)sender
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    // the keyboard is hiding reset the table's height
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y += 160;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    // the keyboard is showing so resize the table's height
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y -= 160;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
 }
 
 /*
