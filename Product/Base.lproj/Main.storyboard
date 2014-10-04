@@ -129,7 +129,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Q1B-Yj-5We" kind="presentation" identifier="CreateMatchSegue" id="KBa-xN-VbV"/>
+                                    <segue destination="Q1B-Yj-5We" kind="presentation" identifier="" id="KBa-xN-VbV"/>
                                 </connections>
                             </button>
                         </subviews>

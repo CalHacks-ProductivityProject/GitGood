@@ -23,6 +23,7 @@
 		FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0519E0664100CC2CFE /* CoreImage.framework */; };
 		FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0619E0664100CC2CFE /* CoreMedia.framework */; };
 		FD39FB0D19E0693500CC2CFE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39FB0C19E0693500CC2CFE /* UserProfile.swift */; };
+		FD672D7819E0AC9800A5AA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD39FADB19DFE74000CC2CFE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,20 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34DDC7F319E07D9500EDA7B0 /* Accounts.framework in Frameworks */,
-				34DDC7F119E07D9100EDA7B0 /* Social.framework in Frameworks */,
-				34DDC7EF19E07D8E00EDA7B0 /* SystemConfiguration.framework in Frameworks */,
-				34DDC7ED19E07D8900EDA7B0 /* StoreKit.framework in Frameworks */,
-				34DDC7EB19E07D8400EDA7B0 /* Security.framework in Frameworks */,
-				34DDC7E919E07D7F00EDA7B0 /* QuartzCore.framework in Frameworks */,
-				34DDC7E719E07D7800EDA7B0 /* MobileCoreServices.framework in Frameworks */,
-				34DDC7E519E07D7200EDA7B0 /* libz.dylib in Frameworks */,
-				34DDC7E319E07D6B00EDA7B0 /* CoreLocation.framework in Frameworks */,
 				FD39FB0119E065DD00CC2CFE /* CoreGraphics.framework in Frameworks */,
-				34DDC7E119E07D5A00EDA7B0 /* CFNetwork.framework in Frameworks */,
-				34DDC7DF19E07D5500EDA7B0 /* AudioToolbox.framework in Frameworks */,
-				34DDC7DD19E07CF600EDA7B0 /* Bolts.framework in Frameworks */,
-				34DDC7DB19E07CED00EDA7B0 /* Parse.framework in Frameworks */,
 				FD39FB0719E0664100CC2CFE /* Accelerate.framework in Frameworks */,
 				FD39FB0819E0664100CC2CFE /* AVFoundation.framework in Frameworks */,
 				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
@@ -276,6 +264,7 @@
 				TargetAttributes = {
 					FD39FACD19DFE74000CC2CFE = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 8G4H6268W7;
 					};
 					FD39FAE619DFE74000CC2CFE = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -308,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD39FADF19DFE74000CC2CFE /* Images.xcassets in Resources */,
+				FD672D7819E0AC9800A5AA45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +490,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -517,6 +508,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

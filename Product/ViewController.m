@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LogInViewController.h"
+#import "StartChallengeViewController.h"
 #import "User.h"
 #import <Product-Swift.h>
 
@@ -38,12 +39,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    for (int i = 0; i < 10; i++) {
-        User *user = [[User alloc] init];
-        user.githubUsername = [NSString stringWithFormat:@"%d%@", i, @"user"];
-        [self.testMembers addObject:user];
-    }
     
 
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
@@ -116,16 +111,6 @@
     
     [self.challengesTable reloadData];
     
-}
-
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"TESTING");
-    if ([segue.identifier isEqualToString:@"CreateMatchSegue"]) {
-        NSLog(@"here");
-    }
 }
 
 @end

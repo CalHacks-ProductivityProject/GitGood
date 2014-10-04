@@ -13,13 +13,32 @@
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
+@property (nonatomic, strong) NSMutableArray *challangeAdditions; // Filtered search results
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
+// !!!  REMOVE LATER  !!!
+@property (nonatomic) NSMutableArray *testMembers;
 
 @end
 
 @implementation StartChallengeViewController
 
 - (void)viewDidLoad {
+    
+    
+    self.searchResults = [[NSMutableArray alloc] init];
+    self.testMembers = [[NSMutableArray alloc] init];
+    self.challangeAdditions = [[NSMutableArray alloc] init];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    for (int i = 0; i < 10; i++) {
+        User *user = [[User alloc] init];
+        user.githubUsername = [NSString stringWithFormat:@"%d %@", i, @"user"];
+        [self.testMembers addObject:user];
+    }
+    
+    
     NSLog(@"Observer added\n");
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
@@ -54,6 +73,7 @@
     self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
     
     self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.tableView.allowsSelection = YES;
     
     self.definesPresentationContext = YES;
     
@@ -164,16 +184,19 @@ const int movedistance = 130;
     if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         return [self.searchResults count];
     } else {
-        return [self.testMembers count];
+        return [self.challangeAdditions count];
     }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"ProductCell";
+    static NSString *CellIdentifier = @"UserCell";
     
     // Dequeue a cell from self's table view.
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+    }
     
     /*  If the requesting table view is the search controller's table view, configure the cell using the search results array, otherwise use the product array.
      */
@@ -182,11 +205,56 @@ const int movedistance = 130;
     if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         user = [self.searchResults objectAtIndex:indexPath.row];
     } else {
-        user = [self.testMembers objectAtIndex:indexPath.row];
+        user = [self.challangeAdditions objectAtIndex:indexPath.row];
     }
     
     cell.textLabel.text = user.githubUsername;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.challangeAdditions addObject:[self.searchResults objectAtIndex:indexPath.row]];
+    [self.tableView reloadData];
+    [self.searchController setActive:NO];
+}
+
+#pragma mark - UISearchResultsUpdating
+
+-(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    NSString *searchString = [self.searchController.searchBar text];
+    [self updateFilteredContentForProductName:searchString];
+    
+    [((UITableViewController *)self.searchController.searchResultsController).tableView reloadData];
+}
+
+
+#pragma mark - Content Filtering
+
+- (void)updateFilteredContentForProductName:(NSString *)userName{
+    
+    // Update the filtered array based on the search text and scope.
+    if ((userName == nil) || [userName length] == 0) {
+        // If there is no search string and the scope is "All".
+        [self.searchResults addObjectsFromArray:self.testMembers];
+        return;
+    }
+    
+    if ([self.searchResults count]) {
+        [self.searchResults removeAllObjects]; // First clear the filtered array.
+    }
+    
+    /*  Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
+     */
+    for (User *user in self.testMembers) {
+        NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
+        NSRange userNameRange = NSMakeRange(0, user.githubUsername.length);
+        NSRange foundRange = [user.githubUsername rangeOfString:userName options:searchOptions range:userNameRange];
+        if (foundRange.length > 0) {
+            [self.searchResults addObject:user];
+        }
+    }
 }
 
 
