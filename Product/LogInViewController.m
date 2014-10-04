@@ -52,6 +52,7 @@
     
     [engine repositoriesWithSuccess:^(id response) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLogIn"];
+        self.somethingHappenedInModalVC(self.githubUsername.text);
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {
         [self shakeAnimation:self.githubPassword];
@@ -89,6 +90,7 @@
                              return;
                          }
                      }];
+
 }
 
 @end
