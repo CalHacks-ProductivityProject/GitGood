@@ -13,6 +13,7 @@
 		C02C329B19DFFEA2005E1CF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02C329A19DFFEA2005E1CF7 /* Images.xcassets */; };
 		C02C329E19DFFEA2005E1CF7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C02C329C19DFFEA2005E1CF7 /* LaunchScreen.xib */; };
 		C02C32AA19DFFEA2005E1CF7 /* CalHacksProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C32A919DFFEA2005E1CF7 /* CalHacksProjectTests.swift */; };
+		C02C32B419E018CE005E1CF7 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C32B319E018CE005E1CF7 /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C02C32A319DFFEA2005E1CF7 /* CalHacksProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalHacksProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02C32A819DFFEA2005E1CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C02C32A919DFFEA2005E1CF7 /* CalHacksProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalHacksProjectTests.swift; sourceTree = "<group>"; };
+		C02C32B319E018CE005E1CF7 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		C02C328519DFFEA2005E1CF7 = {
 			isa = PBXGroup;
 			children = (
+				C02C32B319E018CE005E1CF7 /* UserProfile.swift */,
 				C02C329019DFFEA2005E1CF7 /* CalHacksProject */,
 				C02C32A619DFFEA2005E1CF7 /* CalHacksProjectTests */,
 				C02C328F19DFFEA2005E1CF7 /* Products */,
@@ -214,6 +217,7 @@
 			files = (
 				C02C329619DFFEA2005E1CF7 /* ViewController.swift in Sources */,
 				C02C329419DFFEA2005E1CF7 /* AppDelegate.swift in Sources */,
+				C02C32B419E018CE005E1CF7 /* UserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +409,7 @@
 				C02C32AF19DFFEA2005E1CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C02C32B019DFFEA2005E1CF7 /* Build configuration list for PBXNativeTarget "CalHacksProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				C02C32B219DFFEA2005E1CF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
