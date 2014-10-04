@@ -25,6 +25,10 @@
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
         [self displayLoginScreen];
     }
+    
+    
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -39,6 +43,10 @@
     
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
+    
+    UserProfile *profile = [UserProfile newInstance];
+    
+    [profile retrieveURLString:@"PeterKaminski09"];
 
 }
 

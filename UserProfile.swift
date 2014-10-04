@@ -19,6 +19,10 @@ import Foundation
         return UserProfile()
     }
     
+    @objc func callOthers(string: String) -> Void{
+        println()
+    }
+    
     //Retrieve the url string for the user's github, this grabs their picture for us.
     @objc func retrieveURLString(userName: String) -> Void {
         //Set up the network request, asynchronously
@@ -38,6 +42,7 @@ import Foundation
             //We can search for the avatar url in the json dictionary and update the user photo
             if let pictureURLString = jsonResult.valueForKey("avatar_url") as? String{
                 self.userPictureURLString = pictureURLString
+                self.findRepoUrl()
             }
             
             println("AsSynchronous\(jsonResult)")            
@@ -45,9 +50,9 @@ import Foundation
     }
     
     //Retrieves the url for the user's repos. This is done throught the Git API
-    @objc func findRepoUrl(){
-        
-        var url: NSURL = NSURL(string: "https://api.github.com/users/" + self.userName)
+    @objc func findRepoUrl() -> Void{
+        let urlPath: String = "https://api.github.com/users/" + userName
+        var url: NSURL = NSURL(string: urlPath)
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue:NSOperationQueue = NSOperationQueue()
         
@@ -68,17 +73,17 @@ import Foundation
     }
 
     //Fill the dictionary by passing a repo name and the associated count amounts
-    @objc func fillRepoDict(repoName: String, count: Int){
+    @objc func fillRepoDict(repoName: String, count: Int) -> Void{
         self.repositoriesAndCounts[repoName] = count
     }
     
     //Find all the counts associated with the apis
-    @objc func findCounts(repoName: String){
+    @objc func findCounts(repoName: String) -> Void{
         
     }
     
-    //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made. 
-    @objc func findRepos(urlAsString: String){
+    //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made.
+    @objc func findRepos(urlAsString: String) -> Void{
         var url: NSURL = NSURL(string: urlAsString)
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue:NSOperationQueue = NSOperationQueue()
