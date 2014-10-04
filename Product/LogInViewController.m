@@ -8,6 +8,7 @@
 
 #import "LogInViewController.h"
 #import "UAGithubEngine/UAGithubEngine.h"
+#import <Parse/Parse.h>
 
 @interface LogInViewController () <UITextFieldDelegate>
 
@@ -53,10 +54,24 @@
     [engine repositoriesWithSuccess:^(id response) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLogIn"];
         self.somethingHappenedInModalVC(self.githubUsername.text);
+        [self createAccount:self.githubUsername.text];
         [self dismissViewControllerAnimated:YES completion:nil];
     } failure:^(NSError *error) {
         [self shakeAnimation:self.githubPassword];
         NSLog(@"Oops: %@", error);
+    }];
+}
+
+- (void)createAccount:(NSString*)username
+{
+    PFUser *user = [PFUser user];
+    user.username = username;
+    user.password = @"test";
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+        {
+            [PFUser logInWithUsername:username password:@"test"];
+        }
     }];
 }
 
