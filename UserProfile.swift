@@ -42,4 +42,28 @@ import Foundation
             println("AsSynchronous\(jsonResult)")            
         })
     }
+    
+    @objc func makeAPICall(stringURL: String, key: String){
+       
+        var url: NSURL = NSURL(string: stringURL)
+        var request: NSURLRequest = NSURLRequest(URL: url)
+        let queue:NSOperationQueue = NSOperationQueue()
+        
+        //Make the asynchronous request
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            
+            var err: NSError
+            
+            //Store the JSON data from the Github api
+            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+            
+            //We can search for the avatar url in the json dictionary and update the user photo
+            if let pictureURLString = jsonResult.valueForKey(key) as? String{
+                self.userPictureURLString = pictureURLString
+            }
+            
+            println("AsSynchronous\(jsonResult)")
+        })
+
+    }
 }
