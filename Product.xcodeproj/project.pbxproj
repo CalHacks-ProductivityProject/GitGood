@@ -7,19 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34DDC7DB19E07CED00EDA7B0 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7DA19E07CED00EDA7B0 /* Parse.framework */; };
-		34DDC7DD19E07CF600EDA7B0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7DC19E07CF600EDA7B0 /* Bolts.framework */; };
-		34DDC7DF19E07D5500EDA7B0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */; };
-		34DDC7E119E07D5A00EDA7B0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */; };
-		34DDC7E319E07D6B00EDA7B0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */; };
-		34DDC7E519E07D7200EDA7B0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E419E07D7200EDA7B0 /* libz.dylib */; };
-		34DDC7E719E07D7800EDA7B0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E619E07D7800EDA7B0 /* MobileCoreServices.framework */; };
-		34DDC7E919E07D7F00EDA7B0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E819E07D7F00EDA7B0 /* QuartzCore.framework */; };
-		34DDC7EB19E07D8400EDA7B0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EA19E07D8400EDA7B0 /* Security.framework */; };
-		34DDC7ED19E07D8900EDA7B0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EC19E07D8900EDA7B0 /* StoreKit.framework */; };
-		34DDC7EF19E07D8E00EDA7B0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */; };
-		34DDC7F119E07D9100EDA7B0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F019E07D9100EDA7B0 /* Social.framework */; };
-		34DDC7F319E07D9500EDA7B0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F219E07D9500EDA7B0 /* Accounts.framework */; };
+		FD212EEB19E091D900C1F5FC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FD212EEA19E091D900C1F5FC /* User.m */; };
 		FD39FAD419DFE74000CC2CFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD319DFE74000CC2CFE /* main.m */; };
 		FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD619DFE74000CC2CFE /* AppDelegate.m */; };
 		FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAD919DFE74000CC2CFE /* ViewController.m */; };
@@ -64,6 +52,8 @@
 		70AACC3A7DCF240AAC5FE5FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Product-Bridging-Header.h"; sourceTree = "<group>"; };
 		E43F8A772FB52DC68360813C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FD212EE919E091D900C1F5FC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FD212EEA19E091D900C1F5FC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FD39FACE19DFE74000CC2CFE /* Product.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Product.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39FAD219DFE74000CC2CFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD39FAD319DFE74000CC2CFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -200,6 +190,8 @@
 				FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */,
 				FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */,
 				FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */,
+				FD212EE919E091D900C1F5FC /* User.h */,
+				FD212EEA19E091D900C1F5FC /* User.m */,
 				FD39FADE19DFE74000CC2CFE /* Images.xcassets */,
 				FD39FAE019DFE74000CC2CFE /* LaunchScreen.xib */,
 				FD39FAD119DFE74000CC2CFE /* Supporting Files */,
@@ -366,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD212EEB19E091D900C1F5FC /* User.m in Sources */,
 				FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */,
 				FD39FAFC19E02C5200CC2CFE /* LeaderboardViewController.m in Sources */,
 				FD39FB0D19E0693500CC2CFE /* UserProfile.swift in Sources */,

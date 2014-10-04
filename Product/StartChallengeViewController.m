@@ -7,8 +7,13 @@
 //
 
 #import "StartChallengeViewController.h"
+#import "User.h"
 
-@interface StartChallengeViewController () <UITextFieldDelegate>
+@interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
+@property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -34,6 +39,24 @@
     [_formatter setGeneratesDecimalNumbers:YES];
     
     [self.view addGestureRecognizer:tap];
+    
+    // Create a mutable array to contain products for the search results table.
+    self.searchResults = [NSMutableArray arrayWithCapacity:[self.testMembers count]];
+    
+    UITableViewController *searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    searchResultsController.tableView.dataSource = self;
+    searchResultsController.tableView.delegate = self;
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
+    
+    self.searchController.searchResultsUpdater = self;
+    
+    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    self.definesPresentationContext = YES;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -130,14 +153,42 @@ const int movedistance = 130;
     NSLog(@"Amount entered = %f\n", holder1);
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    /*  If the requesting table view is the search controller's table view, return the count of
+     the filtered list, otherwise return the count of the main list.
+     */
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        return [self.searchResults count];
+    } else {
+        return [self.testMembers count];
+    }
 }
-*/
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"ProductCell";
+    
+    // Dequeue a cell from self's table view.
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    /*  If the requesting table view is the search controller's table view, configure the cell using the search results array, otherwise use the product array.
+     */
+    User *user;
+    
+    if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
+        user = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        user = [self.testMembers objectAtIndex:indexPath.row];
+    }
+    
+    cell.textLabel.text = user.githubUsername;
+    return cell;
+}
+
+
 
 @end
