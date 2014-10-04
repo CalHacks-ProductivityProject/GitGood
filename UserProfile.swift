@@ -8,22 +8,18 @@
 
 import Foundation
 
-class UserProfile{
+@objc class UserProfile{
     //A profile needs a username and a picture, we need to find the url for the picture based on the given username
     var userName: String = "Default User"
     var userPictureURLString: String = "https://lh5.googleusercontent.com/-tw5LsU4Fg28/Umo6BBcoCnI/AAAAAAAAmjE/1iqULsem06E/s1140-no/heisencat.png"
     
-    //Init each instance of a userprofile with a string
-    init(userName:String){
-        self.userName = userName
-        //Call retrieveURLString to find the userPictureURLString
-       retrieveURLString(userName)
-        
+    @objc class func newInstance() -> UserProfile {
+        return UserProfile()
     }
     
     //Param - userName - this is the user's name, obviously. This method takes a userName and returns the url that is associated with that user name, this method makes a network call.
 
-    func retrieveURLString(userName: String) -> Void {
+    @objc func retrieveURLString(userName: String) -> Void {
         //Set up the network request, asynchronously
         let urlPath: String = "https://api.github.com/users/" + userName
         var url: NSURL = NSURL(string: urlPath)
@@ -43,7 +39,7 @@ class UserProfile{
                 self.userPictureURLString = pictureURLString
             }
             
-            //println("AsSynchronous\(jsonResult)")            
+            println("AsSynchronous\(jsonResult)")            
         })
     }
 }
