@@ -15,6 +15,7 @@
 		FD39FAE219DFE74000CC2CFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAE019DFE74000CC2CFE /* LaunchScreen.xib */; };
 		FD39FAEE19DFE74000CC2CFE /* ProductTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAED19DFE74000CC2CFE /* ProductTests.m */; };
 		FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */; };
+		FD39FAFC19E02C5200CC2CFE /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		FD39FAED19DFE74000CC2CFE /* ProductTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductTests.m; sourceTree = "<group>"; };
 		FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartChallengeViewController.h; sourceTree = "<group>"; };
 		FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartChallengeViewController.m; sourceTree = "<group>"; };
+		FD39FAFA19E02C5200CC2CFE /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
+		FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				FD39FAD819DFE74000CC2CFE /* ViewController.h */,
 				FD39FAD919DFE74000CC2CFE /* ViewController.m */,
 				FD39FADB19DFE74000CC2CFE /* Main.storyboard */,
+				FD39FAFA19E02C5200CC2CFE /* LeaderboardViewController.h */,
+				FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */,
 				FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */,
 				FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */,
 				FD39FADE19DFE74000CC2CFE /* Images.xcassets */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD39FADA19DFE74000CC2CFE /* ViewController.m in Sources */,
+				FD39FAFC19E02C5200CC2CFE /* LeaderboardViewController.m in Sources */,
 				FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */,
 				FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */,
 				FD39FAD419DFE74000CC2CFE /* main.m in Sources */,
@@ -420,6 +426,7 @@
 				FD39FAF319DFE74000CC2CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD39FAF419DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "ProductTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +435,7 @@
 				FD39FAF619DFE74000CC2CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
