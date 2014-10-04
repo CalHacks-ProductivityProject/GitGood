@@ -22,6 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
+        [self displayLoginScreen];
+    }
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
+    
     self.testChallenges = [[NSMutableArray alloc] init];
     
     self.challengesTable.delegate = self;
@@ -63,6 +69,17 @@
     
     cell.textLabel.text = [self.testChallenges objectAtIndex:indexPath.row];
     return cell;
+}
+
+
+#pragma mark - Login Screen
+
+- (void) displayLoginScreen
+{
+    NSLog(@"Here");
+    LogInViewController *logIn = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    logIn.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:logIn animated:YES completion:Nil];
 }
 
 @end
