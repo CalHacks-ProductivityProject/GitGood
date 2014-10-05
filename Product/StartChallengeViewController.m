@@ -167,6 +167,8 @@ const int movedistance = 130;
 }
 
 - (IBAction)sendChallenge:(id)sender {
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    
     //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
     NSNumberFormatter *moneyFormat = [[NSNumberFormatter alloc] init];
     [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -174,35 +176,23 @@ const int movedistance = 130;
     //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
     double moneyPerPerson = [holder doubleValue];
     
-    PFUser *currentUser = [PFUser currentUser];
-    
     PFObject *game = [PFObject objectWithClassName:@"Game"];
-    NSMutableArray *pendingPlayers = [[NSMutableArray alloc] init];
-    [pendingPlayers addObject:@"trineroks"];
-    NSMutableArray *acceptedPlayers = [[NSMutableArray alloc] init];
-    [acceptedPlayers addObject:currentUser.username];
+    [game addObject:@"trineroks" forKey:@"PendingPlayers"];
+    [game addObject:username forKey:@"AcceptedPlayers"];
+    game[@"moneyPerPlayer"] = holder;
     
-    [game addObject:pendingPlayers forKey:@"PendingPlayers"];
-    [game addObject:acceptedPlayers forKey:@"AcceptedPlayers"];
+    [game saveInBackground];
     
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"username" equalTo:currentUser.username];
-    
-    
-    /*
-    PFQuery *query = [PFUser query];
+    PFQuery *query = [PFQuery queryWithClassName:@"userInfo"];
+    [query whereKeyExists:@"username"];
     [query whereKey:@"username" equalTo:@"trineroks"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error)
-        {
-            if (objects.count)
-            {
-               // PFObject *array = [[objects lastObject] getObjectWithId:@"PendingGames"];
-                
-            }
-        }
-    }];
-     */
+    
+    NSArray *results = [query findObjects];
+    
+    if ([results count] != 0)
+    {
+        NSLog(@"Username found!");
+    }
     
     NSLog(@"Amount entered = %f\n", moneyPerPerson);
 }

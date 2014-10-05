@@ -70,7 +70,7 @@
     
     PFQuery *queryForMatch = [PFQuery queryWithClassName:@"userInfo"];
     [queryForMatch whereKeyExists:@"username"];
-    [queryForMatch whereKey:@"username" containsString:username];
+    [queryForMatch whereKey:@"username" equalTo:username];
     
     NSArray *results = [queryForMatch findObjects];
     
@@ -78,6 +78,8 @@
     {
         PFObject *userInfo = [PFObject objectWithClassName:@"userInfo"];
         userInfo[@"username"] = username;
+        //[userInfo addObject:NULL forKey:@"PendingGames"];
+        //[userInfo addObject:NULL forKey:@"CurrentGames"];
         [userInfo saveInBackground];
     }
     else

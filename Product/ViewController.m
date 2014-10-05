@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LogInViewController.h"
 #import "StartChallengeViewController.h"
+#import <Parse/Parse.h>
 #import "User.h"
 #import <Product-Swift.h>
 
@@ -27,9 +28,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
         [self displayLoginScreen];
     }
+    
+    //PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    //[query whereKeyExists:@"PendingPlayers"];
+    
 }
 
 - (void)viewDidLoad {
@@ -47,8 +53,10 @@
     
     UserProfile *profile = [UserProfile newInstance];
     
+    //NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    //[profile retrieveURLString:user];
+    
     [profile retrieveURLString:@"smeriwether"];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,12 +64,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
 - (IBAction)addRow:(id)sender
 {
     [self.testChallenges addObject:@"Hello"];
     [self.challengesTable reloadData];
     [self.challengesTable setHidden:NO];
 }
+ */
 
 #pragma mark - TableView Delegate Methods
 
@@ -101,8 +111,8 @@
     logIn.somethingHappenedInModalVC = ^(NSString *response) {
         self.githubUsername = response;
         
-        [self addRow:nil];
-        [self addRow:nil];
+        //[self addRow:nil];
+        //[self addRow:nil];
     };
     
     [self.challengesTable reloadData];
