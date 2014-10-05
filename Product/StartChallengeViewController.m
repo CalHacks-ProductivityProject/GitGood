@@ -8,6 +8,7 @@
 
 #import "StartChallengeViewController.h"
 #import "User.h"
+#import <Parse/Parse.h>
 
 @interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 
@@ -51,6 +52,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     self.enterMoney.delegate = self;
+    
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"%@\n", user.username);
     
     _formatter = [NSNumberFormatter new];
     [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
