@@ -42,12 +42,12 @@ import Foundation
                 println("MADE IT HERE")
             }
             
+            //We can also find the user's repositories
             if let reposURLString = jsonResult.valueForKey("repos_url") as? String{
-                println("Made it to reposeURLString")
-                println(reposURLString)
-                self.findRepos(reposURLString)
+                self.findUserRepositories(reposURLString)
             }
         })
+        
     }
     
 
@@ -59,6 +59,29 @@ import Foundation
     //Find all the counts associated with the apis
     @objc func findCounts(repoName: String) -" Void{
         
+        // Retrieve Data
+        var JSONData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions(), error: &error)
+        // Create another error optional
+        var jsonerror:NSError?
+        // We don't know the type of object we'll receive back so use AnyObject
+        let swiftObject:AnyObject = NSJSONSerialization.JSONObjectWithData(JSONData, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror)!
+        // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+        if let nsDictionaryObject = swiftObject as? NSDictionary {
+            if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                println(swiftDictionary)
+            }
+        }
+        //create an array and store all the repositories that the user has
+        else if let nsArrayObject = swiftObject as? NSArray {
+            //For each element in the array, find the name path, and store it
+            for element in nsArrayObject{
+                var name: AnyObject! = element.valueForKeyPath("name")
+                //If the name is not nil, then we can find the repo and store that information into the reposAndCounts dictionary
+                if let validRepo: AnyObject = name{
+                    findRepo(validRepo)
+                }
+            }
+        }
     }
     
     //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made.
@@ -66,7 +89,7 @@ import Foundation
         //Set up the network request, asynchronously
         var url: NSURL = NSURL(string: urlAsString)
         var request: NSURLRequest = NSURLRequest(URL: url)
-        let queue:NSOperationQueue = NSOperationQueue()
+        let queue: NSOperationQueue = NSOperationQueue()
         
         //Make the asynchronous request
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -" Void in
@@ -76,13 +99,17 @@ import Foundation
             //Store the JSON data from the Github api
             var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
             
-            //We can search for the avatar url in the json dictionary and update the user photo
-            if let pictureURLString = jsonResult.valueForKey("name") as? String{
-                println(pictureURLString)
-                println("MADE IT HERE")
+           if let lastElement = nsArrayObject[nsArrayObject.count - 1] as? NSNumber {
+            println("Last element")
+            println("no")
+            println(lastElement)
+
             }
             
-         })
-    }
+        }
+        
+        
 
+    }
+    
 }

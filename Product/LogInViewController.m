@@ -68,6 +68,30 @@
      }];
 }
 
+- (void)createAccount:(NSString*)username
+{
+    //Check for duplicates
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    PFQuery *queryForMatch = [PFQuery queryWithClassName:@"userInfo"];
+    [queryForMatch whereKeyExists:@"username"];
+    [queryForMatch whereKey:@"username" equalTo:username];
+    
+    NSArray *results = [queryForMatch findObjects];
+    
+    if ([results count] == 0)
+    {
+        PFObject *userInfo = [PFObject objectWithClassName:@"userInfo"];
+        userInfo[@"username"] = username;
+        //[userInfo addObject:NULL forKey:@"PendingGames"];
+        //[userInfo addObject:NULL forKey:@"CurrentGames"];
+        [userInfo saveInBackground];
+    }
+    else
+        NSLog(@"%@ already exists!\n", username);
+}
+
 -(void)shakeAnimation:(UIView*) view {
     const int reset = 5;
     const int maxShakes = 6;

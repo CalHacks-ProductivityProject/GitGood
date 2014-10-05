@@ -18,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"lvCTN8egZBByoyxk7hTsACEbAg1AfjQwkmOBfgau"
+                  clientKey:@"ING0FQdJNLh9vn6bpoacLxEsIgK6Qwvk7vqIqUGW"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     return YES;
 }
 

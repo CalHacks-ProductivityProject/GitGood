@@ -8,6 +8,7 @@
 
 #import "StartChallengeViewController.h"
 #import "User.h"
+#import <Parse/Parse.h>
 
 @interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
 
@@ -51,6 +52,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     self.enterMoney.delegate = self;
+    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSLog(@"%@\n", user);
     
     _formatter = [NSNumberFormatter new];
     [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
@@ -164,13 +167,34 @@ const int movedistance = 130;
 }
 
 - (IBAction)sendChallenge:(id)sender {
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    
     //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
     NSNumberFormatter *moneyFormat = [[NSNumberFormatter alloc] init];
     [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSNumber *holder = [moneyFormat numberFromString:self.enterMoney.text];
     //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
-    double holder1 = [holder doubleValue];
-    NSLog(@"Amount entered = %f\n", holder1);
+    double moneyPerPerson = [holder doubleValue];
+    
+    PFObject *game = [PFObject objectWithClassName:@"Game"];
+    [game addObject:@"trineroks" forKey:@"PendingPlayers"];
+    [game addObject:username forKey:@"AcceptedPlayers"];
+    game[@"moneyPerPlayer"] = holder;
+    
+    [game saveInBackground];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"userInfo"];
+    [query whereKeyExists:@"username"];
+    [query whereKey:@"username" equalTo:@"trineroks"];
+    
+    NSArray *results = [query findObjects];
+    
+    if ([results count] != 0)
+    {
+        NSLog(@"Username found!");
+    }
+    
+    NSLog(@"Amount entered = %f\n", moneyPerPerson);
 }
 
 
