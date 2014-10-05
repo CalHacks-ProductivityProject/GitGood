@@ -96,6 +96,8 @@
 		FD4C2F1419E0E10200A332A1 /* OCTTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED519E0E10200A332A1 /* OCTTreeEntry.m */; };
 		FD4C2F1519E0E10200A332A1 /* OCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED719E0E10200A332A1 /* OCTUser.m */; };
 		FD4C2F1619E0E10200A332A1 /* RACSignal+OCTClientAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED919E0E10200A332A1 /* RACSignal+OCTClientAdditions.m */; };
+		FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAD219DFE74000CC2CFE /* Info.plist */; };
+		FDA5E4B219E10FC1005F33DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD39FADB19DFE74000CC2CFE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -661,6 +663,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */,
+				FDA5E4B219E10FC1005F33DC /* Main.storyboard in Resources */,
 				FD39FADF19DFE74000CC2CFE /* Images.xcassets in Resources */,
 				FD4C2EDB19E0E10200A332A1 /* InfoPlist.strings in Resources */,
 				FD4C2F0119E0E10200A332A1 /* OctoKit-Info.plist in Resources */,
