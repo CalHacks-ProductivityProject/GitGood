@@ -8,6 +8,7 @@
 
 #import "LogInViewController.h"
 #import "OctoKit.h"
+#import <Parse/Parse.h>
 
 
 @interface LogInViewController () <UITextFieldDelegate>

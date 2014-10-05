@@ -18,6 +18,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
 // !!!  REMOVE LATER  !!!
 @property (nonatomic) NSMutableArray *testMembers;
+@property (unsafe_unretained, nonatomic) IBOutlet UITextField *numberOfWeeks;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *startMatchButton;
 
 @end
 
@@ -33,22 +35,24 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    [self.startMatchButton setEnabled:NO];
+    
     for (int i = 0; i < 10; i++) {
         User *user = [[User alloc] init];
         user.githubUsername = [NSString stringWithFormat:@"%d %@", i, @"user"];
         [self.testMembers addObject:user];
     }
     
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor blackColor],
+                                               NSForegroundColorAttributeName,
+                                               nil];
     
-    NSLog(@"Observer added\n");
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
+    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     self.enterMoney.delegate = self;
@@ -80,6 +84,8 @@
     
     self.definesPresentationContext = YES;
     
+    self.numberOfWeeks.delegate = self;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -97,6 +103,9 @@
 - (void) dismissKeyboard
 {
     [_enterMoney.self resignFirstResponder];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"Observer removed\n");
+    
 }
 
 const int movedistance = 130;
@@ -166,6 +175,21 @@ const int movedistance = 130;
     return NO;
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    NSLog(@"Observer added\n");
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    return YES;
+}
+
 - (IBAction)sendChallenge:(id)sender {
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     
@@ -195,6 +219,8 @@ const int movedistance = 130;
     }
     
     NSLog(@"Amount entered = %f\n", moneyPerPerson);
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -241,6 +267,7 @@ const int movedistance = 130;
     [self.challangeAdditions addObject:[self.searchResults objectAtIndex:indexPath.row]];
     [self.tableView reloadData];
     [self.searchController setActive:NO];
+    [self.startMatchButton setEnabled:YES];
 }
 
 #pragma mark - UISearchResultsUpdating
