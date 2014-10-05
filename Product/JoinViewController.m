@@ -47,6 +47,15 @@
         
         NSString *adminPlayer = [object objectForKey:@"AdminPlayer"];
         NSLog(@"%@", adminPlayer);
+        
+        NSString *duration = [object objectForKey:@"Duration"];
+        NSLog(@"%@", duration);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.amountLabel setText:[NSString stringWithFormat:@"%d", amountLabel]];
+            [self.durationLabel setText:duration];
+            [self]
+        });
     }];
     
 }

@@ -239,9 +239,9 @@ const int movedistance = 160;
     
     // add the current user to the game
     [game addObject:username forKey:@"ApprovedPlayers"];
-    [game addObject:username forKey:@"AdminPlayer"];
-    [game addObject:@"4" forKey:@"Duration"];
     
+    game[@"Duration"] = @"4";
+    game[@"AdminPlayer"] = username;
     game[@"moneyPerPlayer"] = holder;
     [game saveInBackground];
     
