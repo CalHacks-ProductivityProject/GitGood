@@ -38,6 +38,9 @@
                                                          UIRemoteNotificationTypeSound)];
     }
     
+    [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentSandbox : @"AQFxjRDdN37Spp_GmHQhuRPcOnVQd9qGgUvEfP34jCZ0ecara08iZFuiyF2L"}];
+    // ...
+    
     
     return YES;
 }

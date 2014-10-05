@@ -7,6 +7,7 @@
 //
 
 #import "JoinViewController.h"
+#import "PaymentViewController.h"
 #import <Parse/Parse.h>
 
 @interface JoinViewController ()
@@ -14,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentMembersLabel;
+
+@property (nonatomic) int amount;
 
 @end
 
@@ -34,30 +37,40 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.tabBarController.navigationItem.title = @"Join Match";
+    self.navigationItem.title = @"Join Match";
     
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query getObjectInBackgroundWithId:self.gameID block:^(PFObject *object, NSError *error) {
-        int amountLabel = [[object objectForKey:@"moneyPerPlayer"] intValue];
-        NSLog(@"%d", amountLabel);
+        self.amount = [[object objectForKey:@"moneyPerPlayer"] intValue];
+        NSLog(@"%d", self.amount);
         
         NSArray *currentPlayers = [object objectForKey:@"ApprovedPlayers"];
         int count = [currentPlayers count];
         NSLog(@"%d", count);
         
-        NSString *adminPlayer = [object objectForKey:@"AdminPlayer"];
+        NSString *adminPlayer = [object objectForKey:@"Admin"];
         NSLog(@"%@", adminPlayer);
         
-        NSString *duration = [object objectForKey:@"Duration"];
+        NSString *duration = [object objectForKey:@"Time"];
         NSLog(@"%@", duration);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.amountLabel setText:[NSString stringWithFormat:@"%d", amountLabel]];
+            [self.amountLabel setText:[NSString stringWithFormat:@"%d", self.amount]];
             [self.durationLabel setText:duration];
-            //[self]
+            [self.inviteLabel setText:adminPlayer];
+            [self.currentMembersLabel setText:[NSString stringWithFormat:@"%d", count]];
         });
     }];
     
+}
+- (IBAction)joinMatch:(id)sender
+{
+    PaymentViewController *pay = [[PaymentViewController alloc] init];
+    [self.navigationController presentViewController:pay animated:YES completion:nil];
+    pay.gameID = self.gameID;
+    pay.amount = self.amount;
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
