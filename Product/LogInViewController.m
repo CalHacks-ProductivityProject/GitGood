@@ -64,26 +64,24 @@
 
 - (void)createAccount:(NSString*)username
 {
+    //Check for duplicates
     [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    PFObject *user = [PFObject objectWithClassName:@"user"];
-    [user addObject:username forKey:@"username"];
-    [user saveInBackground];
-    /*
-    PFUser *user = [PFUser user];
-    user.username = username;
-    user.password = @"test";
-    NSMutableArray *activeGames = [[NSMutableArray alloc] init];
-    NSMutableArray *pendingGames = [[NSMutableArray alloc] init];
-    [user addObject:activeGames forKey:@"ActiveGames"];
-    [user addObject:pendingGames forKey:@"PendingGames"];
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error)
-        {
-            [PFUser logInWithUsername:username password:@"test"];
-        }
-    }];
-     */
+    
+    PFQuery *queryForMatch = [PFQuery queryWithClassName:@"userInfo"];
+    [queryForMatch whereKeyExists:@"username"];
+    [queryForMatch whereKey:@"username" containsString:username];
+    
+    NSArray *results = [queryForMatch findObjects];
+    
+    if ([results count] == 0)
+    {
+        PFObject *userInfo = [PFObject objectWithClassName:@"userInfo"];
+        userInfo[@"username"] = username;
+        [userInfo saveInBackground];
+    }
+    else
+        NSLog(@"%@ already exists!\n", username);
 }
 
 -(void)shakeAnimation:(UIView*) view {

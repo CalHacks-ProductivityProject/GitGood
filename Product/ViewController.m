@@ -30,10 +30,6 @@
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
         [self displayLoginScreen];
     }
-    
-    
-    
-    
 }
 
 - (void)viewDidLoad {
