@@ -251,7 +251,7 @@ const int movedistance = 160;
     
     PFPush *push = [[PFPush alloc] init];
     [push setChannel:@"smeriwether"];
-    [push setMessage:@"Test Push"];
+    [push setMessage:@"You were invited to join a GitGood Challange!"];
     [push sendPushInBackground];
     
     // add the current user to the game
