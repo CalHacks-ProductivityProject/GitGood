@@ -233,12 +233,14 @@
         {
             UITabBarController *tab = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
             [self.navigationController pushViewController:tab animated:YES];
+            break;
         }
         case 1:
         {
             JoinViewController *join = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinViewController"];
             join.gameID = [self.userChallenges objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:join animated:YES];
+            break;
         }
     }
 }
