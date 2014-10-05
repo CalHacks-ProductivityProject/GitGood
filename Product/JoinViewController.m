@@ -51,12 +51,12 @@
         NSString *adminPlayer = [object objectForKey:@"Admin"];
         NSLog(@"%@", adminPlayer);
         
-        NSString *duration = [object objectForKey:@"Time"];
+        NSNumber *duration = [object objectForKey:@"Time"];
         NSLog(@"%@", duration);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.amountLabel setText:[NSString stringWithFormat:@"%d", self.amount]];
-            [self.durationLabel setText:duration];
+            [self.durationLabel setText:[NSString stringWithFormat:@"%@", duration]];
             [self.inviteLabel setText:adminPlayer];
             [self.currentMembersLabel setText:[NSString stringWithFormat:@"%d", count]];
         });
@@ -66,9 +66,9 @@
 - (IBAction)joinMatch:(id)sender
 {
     PaymentViewController *pay = [[PaymentViewController alloc] init];
-    [self.navigationController presentViewController:pay animated:YES completion:nil];
     pay.gameID = self.gameID;
     pay.amount = self.amount;
+    [self.navigationController presentViewController:pay animated:YES completion:nil];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
 }

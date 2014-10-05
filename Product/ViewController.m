@@ -171,6 +171,10 @@
         {
             self.userChallenges = nil;
             self.userChallenges = [[NSMutableArray alloc] init];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.challengesTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                [self showTable];
+            });
             
             PFQuery *query = [PFQuery queryWithClassName:@"Game"];
             [query setLimit:1000];
@@ -198,6 +202,10 @@
             NSLog(@"Here");
             self.userChallenges = nil;
             self.userChallenges = [[NSMutableArray alloc] init];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.challengesTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                [self showTable];
+            });
             
             PFQuery *query = [PFQuery queryWithClassName:@"Game"];
             [query setLimit:1000];
