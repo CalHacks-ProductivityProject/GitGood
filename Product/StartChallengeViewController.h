@@ -12,5 +12,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *enterMoney;
 @property (strong, nonatomic) NSNumberFormatter *formatter;
+@property (nonatomic, assign) float movedPosition;
+@property (nonatomic, assign) float defaultPosition;
 
 @end

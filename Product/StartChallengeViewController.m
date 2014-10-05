@@ -31,6 +31,8 @@
 
 @implementation StartChallengeViewController
 
+const int movedistance = 160;
+
 - (void)viewDidLoad {
     [self userNameDump];
     
@@ -53,12 +55,17 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
+    self.numberOfWeeks.delegate = self;
     self.enterMoney.delegate = self;
     
     _formatter = [NSNumberFormatter new];
     [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
     [_formatter setLenient:YES];
     [_formatter setGeneratesDecimalNumbers:YES];
+    
+    CGRect frame = self.view.frame;
+    _movedPosition = frame.origin.y - movedistance;
+    _defaultPosition = frame.origin.y;
     
     [self.view addGestureRecognizer:tap];
     
@@ -80,8 +87,6 @@
     
     self.definesPresentationContext = YES;
     
-    self.numberOfWeeks.delegate = self;
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -90,6 +95,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)timeEditing:(id)sender {
+    self.numberOfWeeks.delegate = nil;
+}
+
+- (IBAction)timeEditingEnd:(id)sender {
+    self.numberOfWeeks.delegate = self;
+}
+
 
 - (IBAction)cancelNewChallenege:(id)sender
 {
@@ -117,15 +131,13 @@
     
 }
 
-const int movedistance = 160;
-
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
     // the keyboard is hiding reset the table's height
     NSTimeInterval animationDuration =
     [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    frame.origin.y += movedistance;
+    frame.origin.y = _defaultPosition;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     self.view.frame = frame;
@@ -138,7 +150,7 @@ const int movedistance = 160;
     NSTimeInterval animationDuration =
     [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect frame = self.view.frame;
-    frame.origin.y -= movedistance;
+    frame.origin.y = _movedPosition;
     [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
     [UIView setAnimationDuration:animationDuration];
     self.view.frame = frame;
@@ -215,10 +227,15 @@ const int movedistance = 160;
     
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     
+    NSLog(@"%@", username);
+    
     //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
     NSNumberFormatter *moneyFormat = [[NSNumberFormatter alloc] init];
+    NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc] init];
+    [numberFormat setNumberStyle:NSNumberFormatterNoStyle];
     [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSNumber *holder = [moneyFormat numberFromString:self.enterMoney.text];
+    NSNumber *duration = [numberFormat numberFromString:self.numberOfWeeks.text];
     //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
     //double moneyPerPerson = [holder doubleValue];
     
@@ -240,8 +257,8 @@ const int movedistance = 160;
     // add the current user to the game
     [game addObject:username forKey:@"ApprovedPlayers"];
     
-    game[@"Duration"] = @"4";
-    game[@"AdminPlayer"] = username;
+    game[@"Time"] = duration;
+    game[@"Admin"] = username;
     game[@"moneyPerPlayer"] = holder;
     [game saveInBackground];
     

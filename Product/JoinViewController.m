@@ -54,7 +54,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.amountLabel setText:[NSString stringWithFormat:@"%d", amountLabel]];
             [self.durationLabel setText:duration];
-            [self]
+            //[self]
         });
     }];
     
