@@ -52,9 +52,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     self.enterMoney.delegate = self;
-    
-    PFUser *user = [PFUser currentUser];
-    NSLog(@"%@\n", user.username);
+    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSLog(@"%@\n", user);
     
     _formatter = [NSNumberFormatter new];
     [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
@@ -173,8 +172,39 @@ const int movedistance = 130;
     [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSNumber *holder = [moneyFormat numberFromString:self.enterMoney.text];
     //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
-    double holder1 = [holder doubleValue];
-    NSLog(@"Amount entered = %f\n", holder1);
+    double moneyPerPerson = [holder doubleValue];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    PFObject *game = [PFObject objectWithClassName:@"Game"];
+    NSMutableArray *pendingPlayers = [[NSMutableArray alloc] init];
+    [pendingPlayers addObject:@"trineroks"];
+    NSMutableArray *acceptedPlayers = [[NSMutableArray alloc] init];
+    [acceptedPlayers addObject:currentUser.username];
+    
+    [game addObject:pendingPlayers forKey:@"PendingPlayers"];
+    [game addObject:acceptedPlayers forKey:@"AcceptedPlayers"];
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:currentUser.username];
+    
+    
+    /*
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:@"trineroks"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            if (objects.count)
+            {
+               // PFObject *array = [[objects lastObject] getObjectWithId:@"PendingGames"];
+                
+            }
+        }
+    }];
+     */
+    
+    NSLog(@"Amount entered = %f\n", moneyPerPerson);
 }
 
 

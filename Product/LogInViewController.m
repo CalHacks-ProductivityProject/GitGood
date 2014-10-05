@@ -64,15 +64,26 @@
 
 - (void)createAccount:(NSString*)username
 {
+    [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    PFObject *user = [PFObject objectWithClassName:@"user"];
+    [user addObject:username forKey:@"username"];
+    [user saveInBackground];
+    /*
     PFUser *user = [PFUser user];
     user.username = username;
     user.password = @"test";
+    NSMutableArray *activeGames = [[NSMutableArray alloc] init];
+    NSMutableArray *pendingGames = [[NSMutableArray alloc] init];
+    [user addObject:activeGames forKey:@"ActiveGames"];
+    [user addObject:pendingGames forKey:@"PendingGames"];
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error)
         {
             [PFUser logInWithUsername:username password:@"test"];
         }
     }];
+     */
 }
 
 -(void)shakeAnimation:(UIView*) view {
