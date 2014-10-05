@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3472A4F819E1C237003E1F5C /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3472A4F719E1C237003E1F5C /* TabBarController.m */; };
 		34DDCAC319E1B09A00EDA7B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDCA4519E1B09A00EDA7B0 /* InfoPlist.strings */; };
 		34DDCAC419E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4819E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m */; };
 		34DDCAC519E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4A19E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m */; };
@@ -120,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		12C1C6D9137FEB9AE55A5FC9 /* libPods-Product.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Product.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3472A4F619E1C237003E1F5C /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		3472A4F719E1C237003E1F5C /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -565,6 +568,8 @@
 				FD39FAFD19E0320B00CC2CFE /* LogInViewController.h */,
 				FD39FAFE19E0320B00CC2CFE /* LogInViewController.m */,
 				FD39FADB19DFE74000CC2CFE /* Main.storyboard */,
+				3472A4F619E1C237003E1F5C /* TabBarController.h */,
+				3472A4F719E1C237003E1F5C /* TabBarController.m */,
 				FD39FAFA19E02C5200CC2CFE /* LeaderboardViewController.h */,
 				FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */,
 				FD85BF6619E1B8F500048FBA /* PaymentViewController.h */,
@@ -769,6 +774,7 @@
 				34DDCAD319E1B09A00EDA7B0 /* OCTClient+User.m in Sources */,
 				34DDCAE719E1B09A00EDA7B0 /* OCTNotification.m in Sources */,
 				34DDCAF519E1B09A00EDA7B0 /* OCTResponse.m in Sources */,
+				3472A4F819E1C237003E1F5C /* TabBarController.m in Sources */,
 				34DDCADF19E1B09A00EDA7B0 /* OCTGist.m in Sources */,
 				34DDCAE019E1B09A00EDA7B0 /* OCTGistFile.m in Sources */,
 				34DDCAF219E1B09A00EDA7B0 /* OCTRef.m in Sources */,

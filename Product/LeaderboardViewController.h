@@ -10,4 +10,7 @@
 
 @interface LeaderboardViewController : UIViewController
 
+@property (nonatomic, assign) NSString *gameID;
+@property (nonatomic, strong) NSMutableArray *players;
+
 @end

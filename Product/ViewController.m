@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LogInViewController.h"
+#import "TabBarController.h"
 #import "StartChallengeViewController.h"
 #import <Parse/Parse.h>
 #import "User.h"
@@ -231,8 +232,12 @@
     {
         case 0:
         {
-            UITabBarController *tab = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-            [self.navigationController pushViewController:tab animated:YES];
+            //TabBarController *tab = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            LeaderboardViewController *leaderboard = [self.storyboard instantiateViewControllerWithIdentifier:@"LeaderboardController"];
+            leaderboard.gameID = [self.userChallenges objectAtIndex:indexPath.row];
+            //tab.gameID = [self.userChallenges objectAtIndex:indexPath.row];
+            NSLog(@"GameID in ViewController:%@", [self.userChallenges objectAtIndex:indexPath.row]);
+            [self.navigationController pushViewController:leaderboard animated:YES];
             break;
         }
         case 1:
