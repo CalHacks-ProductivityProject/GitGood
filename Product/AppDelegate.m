@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"lvCTN8egZBByoyxk7hTsACEbAg1AfjQwkmOBfgau"
-                  clientKey:@"ING0FQdJNLh9vn6bpoacLxEsIgK6Qwvk7vqIqUGW"];
+    [Parse setApplicationId:@"DsQn6tLItkokgv6AnpLyHNp1o5bcwqIAwrK7p31T"
+                  clientKey:@"Gvwzk2vb1RlbbmwW1sQOPnGv8CRnnVYnOLSSb5DL"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Register for Push Notitications, if running iOS 8
@@ -68,7 +68,6 @@
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
-    currentInstallation.channels = @[ @"global" ];
     [currentInstallation saveInBackground];
 }
 

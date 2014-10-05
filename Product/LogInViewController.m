@@ -85,6 +85,10 @@
     [queryForMatch whereKeyExists:@"username"];
     [queryForMatch whereKey:@"username" equalTo:username];
     
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:username forKey:@"channels"];
+    [currentInstallation saveInBackground];
+    
     NSArray *results = [queryForMatch findObjects];
     
     if ([results count] == 0)

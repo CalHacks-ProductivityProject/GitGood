@@ -10,7 +10,7 @@
 #import "User.h"
 #import <Parse/Parse.h>
 
-@interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate>
+@interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
@@ -18,6 +18,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *userAccounts;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *numberOfWeeks;
+@property (nonatomic) UIAlertView *alert;
 
 
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *startMatchButton;
@@ -39,8 +40,6 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    [self.startMatchButton setEnabled:NO];
     
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor blackColor],
@@ -208,6 +207,12 @@ const int movedistance = 160;
 }
 
 - (IBAction)sendChallenge:(id)sender {
+    
+    if ([self.challangeAdditions count] == 0 && [self.numberOfWeeks.text isEqualToString:@""] && [self.enterMoney.text isEqualToString:@""]) {
+        [self showRequirementsAlert];
+        return;
+    }
+    
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     
     //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
@@ -215,7 +220,7 @@ const int movedistance = 160;
     [moneyFormat setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSNumber *holder = [moneyFormat numberFromString:self.enterMoney.text];
     //NSString* avgamount = [self.enterMoney.text substringWithRange:[matches[1] range]];
-    double moneyPerPerson = [holder doubleValue];
+    //double moneyPerPerson = [holder doubleValue];
     
     PFObject *game = [PFObject objectWithClassName:@"Game"];
     
@@ -227,13 +232,18 @@ const int movedistance = 160;
         }
     }
     
+    PFPush *push = [[PFPush alloc] init];
+    [push setChannel:@"smeriwether"];
+    [push setMessage:@"Test Push"];
+    [push sendPushInBackground];
+    
     // add the current user to the game
     [game addObject:username forKey:@"ApprovedPlayers"];
+    [game addObject:username forKey:@"AdminPlayer"];
+    [game addObject:@"4" forKey:@"Duration"];
     
     game[@"moneyPerPlayer"] = holder;
     [game saveInBackground];
-    
-    NSLog(@"Amount entered = %f\n", moneyPerPerson);
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
@@ -356,6 +366,16 @@ const int movedistance = 160;
             [self.searchResults addObject:user];
         }
     }
+}
+
+- (void)showRequirementsAlert
+{
+    self.alert =[[UIAlertView alloc ] initWithTitle:@"Requirements Not Fulfilled"
+                                                     message:@"Requirements: 1 Other User, Amount per Week, Length of Time"
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                           otherButtonTitles:@"Okay", nil];
+    [self.alert show];
 }
 
 

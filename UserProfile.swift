@@ -22,6 +22,7 @@ import Foundation
     
     //Retrieve the url string for the user's github, this grabs their picture for us.
     @objc func retrieveURLString(userName: String) -> Void {
+        self.userName = userName
         //Set up the network request, asynchronously
         let urlPath: String = "https://api.github.com/users/" + userName
         var url: NSURL = NSURL(string: urlPath)
@@ -39,7 +40,6 @@ import Foundation
             //We can search for the avatar url in the json dictionary and update the user photo
             if let pictureURLString = jsonResult.valueForKey("avatar_url") as? String{
                 self.userPictureURLString = pictureURLString
-                println("MADE IT HERE")
             }
             
             //We can also find the user's repositories
@@ -50,14 +50,19 @@ import Foundation
         
     }
     
-
-    //Fill the dictionary by passing a repo name and the associated count amounts
-    @objc func fillRepoDict(repoName: String, count: Int) -> Void{
-        self.repositoriesAndCounts[repoName] = count
-    }
-    
-    //Find all the counts associated with the apis
-    @objc func findCounts(repoName: String) -> Void{
+    //findUserRepositories takes a URL and returns estabishes the repositories and counts Dictionary
+    @objc func findUserRepositories(urlString: String){
+        
+        //Standard Networking on Swift
+        var url: NSURL = NSURL(string: urlString)
+        var request: NSURLRequest = NSURLRequest(URL: url)
+        let queue: NSOperationQueue = NSOperationQueue()
+        
+        
+        //Store the JSON data from the Github api
+        var jsonResult: NSData  = NSData(contentsOfURL: url)
+        
+        var error:NSError?
         
         // Retrieve Data
         var JSONData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions(), error: &error)
@@ -71,7 +76,7 @@ import Foundation
                 println(swiftDictionary)
             }
         }
-        //create an array and store all the repositories that the user has
+            //create an array and store all the repositories that the user has
         else if let nsArrayObject = swiftObject as? NSArray {
             //For each element in the array, find the name path, and store it
             for element in nsArrayObject{
@@ -84,32 +89,51 @@ import Foundation
         }
     }
     
-    //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made.
-    @objc func findRepos(urlAsString: String) -> Void{
-        //Set up the network request, asynchronously
-        var url: NSURL = NSURL(string: urlAsString)
+    
+    @objc func findRepo(repoName: AnyObject) -> Void{
+        println(repoName)
+        //Standard Networking on Swift
+        var url: NSURL = NSURL(string: "https://api.github.com/repos/" + self.userName +  "/" + String(repoName as NSString) + "/stats/code_frequency")
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue: NSOperationQueue = NSOperationQueue()
         
-        //Make the asynchronous request
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+        
+        //Store the JSON data from the Github api
+        var jsonResult: NSData  = NSData(contentsOfURL: url)
+        
+        var error:NSError?
+        
+        // Retrieve Data
+        var JSONData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions(), error: &error)
+        // Create another error optional
+        var jsonerror:NSError?
+        // We don't know the type of object we'll receive back so use AnyObject
+        let swiftObject:AnyObject = NSJSONSerialization.JSONObjectWithData(JSONData, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror)!
+        
+        // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+        if let nsDictionaryObject = swiftObject as? NSDictionary {
+            if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                println(swiftDictionary)
+                println("Dictionary")
+            }
+        }
+            //create an array and store all the repositories that the user has
+        else if let nsArrayObject = swiftObject as? NSArray {
+            //Find out the last element in the list, that is this most current week.
             
-            var err: NSError
+            if let lastElement = nsArrayObject[nsArrayObject.count - 1] as? NSNumber {
+                println("Array")
+                
+            }
             
-            //Store the JSON data from the Github api
-            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-            
-           if let lastElement = nsArrayObject[nsArrayObject.count - 1] as? NSNumber {
-            println("Last element")
-            println("no")
-            println(lastElement)
-
+            for element in nsArrayObject {
+                println(element)
             }
             
         }
         
         
-
+        
     }
     
 }

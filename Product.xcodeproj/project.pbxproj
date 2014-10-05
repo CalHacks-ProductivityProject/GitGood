@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1618B1A58C9A6A467D4D0C5F /* libPods-Product.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0829B9766F450004EC9BBDB /* libPods-Product.a */; };
+		CD6D558F6441BE78B3A0FAAD /* libPods-Product.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C1C6D9137FEB9AE55A5FC9 /* libPods-Product.a */; };
 		FD03506019E107F8009279EC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03505E19E107F8009279EC /* Bolts.framework */; };
 		FD03506119E107F8009279EC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03505F19E107F8009279EC /* Parse.framework */; };
 		FD03506219E108CD009279EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F219E07D9500EDA7B0 /* Accounts.framework */; };
@@ -96,6 +96,7 @@
 		FD4C2F1419E0E10200A332A1 /* OCTTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED519E0E10200A332A1 /* OCTTreeEntry.m */; };
 		FD4C2F1519E0E10200A332A1 /* OCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED719E0E10200A332A1 /* OCTUser.m */; };
 		FD4C2F1619E0E10200A332A1 /* RACSignal+OCTClientAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED919E0E10200A332A1 /* RACSignal+OCTClientAdditions.m */; };
+		FD85BF5619E1A02300048FBA /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85BF5519E1A02300048FBA /* JoinViewController.m */; };
 		FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAD219DFE74000CC2CFE /* Info.plist */; };
 		FDA5E4B819E15E32005F33DC /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA5E4B719E15E32005F33DC /* ChatViewController.m */; };
 		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
@@ -115,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12C1C6D9137FEB9AE55A5FC9 /* libPods-Product.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Product.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -130,7 +132,6 @@
 		70AACC3A7DCF240AAC5FE5FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Product-Bridging-Header.h"; sourceTree = "<group>"; };
 		E43F8A772FB52DC68360813C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		F0829B9766F450004EC9BBDB /* libPods-Product.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Product.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43CA9980177AE1EE503F9BA /* Pods-Product.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Product.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Product/Pods-Product.debug.xcconfig"; sourceTree = "<group>"; };
 		FD03505E19E107F8009279EC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		FD03505F19E107F8009279EC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
@@ -286,6 +287,8 @@
 		FD4C2ED719E0E10200A332A1 /* OCTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTUser.m; sourceTree = "<group>"; };
 		FD4C2ED819E0E10200A332A1 /* RACSignal+OCTClientAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+OCTClientAdditions.h"; sourceTree = "<group>"; };
 		FD4C2ED919E0E10200A332A1 /* RACSignal+OCTClientAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+OCTClientAdditions.m"; sourceTree = "<group>"; };
+		FD85BF5419E1A02300048FBA /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		FD85BF5519E1A02300048FBA /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
 		FDA5E4B619E15E32005F33DC /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		FDA5E4B719E15E32005F33DC /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		FDA5E4B919E167FF005F33DC /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
@@ -321,7 +324,7 @@
 				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
 				FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */,
 				FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */,
-				1618B1A58C9A6A467D4D0C5F /* libPods-Product.a in Frameworks */,
+				CD6D558F6441BE78B3A0FAAD /* libPods-Product.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +373,7 @@
 				FD39FB0519E0664100CC2CFE /* CoreImage.framework */,
 				FD39FB0619E0664100CC2CFE /* CoreMedia.framework */,
 				FD39FB0019E065DD00CC2CFE /* CoreGraphics.framework */,
-				F0829B9766F450004EC9BBDB /* libPods-Product.a */,
+				12C1C6D9137FEB9AE55A5FC9 /* libPods-Product.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -405,6 +408,8 @@
 				FD39FAD619DFE74000CC2CFE /* AppDelegate.m */,
 				FD39FAD819DFE74000CC2CFE /* ViewController.h */,
 				FD39FAD919DFE74000CC2CFE /* ViewController.m */,
+				FD85BF5419E1A02300048FBA /* JoinViewController.h */,
+				FD85BF5519E1A02300048FBA /* JoinViewController.m */,
 				FDA5E4B619E15E32005F33DC /* ChatViewController.h */,
 				FDA5E4B719E15E32005F33DC /* ChatViewController.m */,
 				FD39FAFD19E0320B00CC2CFE /* LogInViewController.h */,
@@ -756,6 +761,7 @@
 				FD4C2F0019E0E10200A332A1 /* OCTObject.m in Sources */,
 				FD4C2EFD19E0E10200A332A1 /* OCTIssueCommentEvent.m in Sources */,
 				FD4C2EE519E0E10200A332A1 /* OCTClient+Gists.m in Sources */,
+				FD85BF5619E1A02300048FBA /* JoinViewController.m in Sources */,
 				FDA5E4B819E15E32005F33DC /* ChatViewController.m in Sources */,
 				FD4C2F0B19E0E10200A332A1 /* OCTRefEvent.m in Sources */,
 				FD4C2F0419E0E10200A332A1 /* OCTPublicKey.m in Sources */,

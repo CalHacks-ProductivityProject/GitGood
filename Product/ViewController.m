@@ -11,7 +11,9 @@
 #import "StartChallengeViewController.h"
 #import <Parse/Parse.h>
 #import "User.h"
-//#import <Product-Swift.h>
+#import <Product-Swift.h>
+#import "JoinViewController.h"
+#import "LeaderboardViewController.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -19,9 +21,11 @@
 @property (nonatomic, copy) NSString *githubUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *fillerImage;
 @property (weak, nonatomic) IBOutlet UILabel *fillerLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedButton;
 @property (nonatomic) NSMutableArray *userChallenges;
 // !!!  DELETE LATER  !!!
 @property (nonatomic) NSMutableArray *testMembers;
+
 
 @end
 
@@ -35,18 +39,14 @@
     }
     
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    NSLog(@"Username: %@", username);
     
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query setLimit:1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-                NSString *className = [[[object objectForKey:@"ApprovedPlayers"] class] description];
-                NSLog(@"Class Name: %@", className);
                 if ([[object objectForKey:@"ApprovedPlayers"] containsObject:username]) {
                     if (![self.userChallenges containsObject:[object objectId]]) {
-                        NSLog(@"In contains");
                         [self.userChallenges addObject:[object objectId]];
                     }
                 }
@@ -54,8 +54,8 @@
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (self.userChallenges) {
-                    NSLog(@"In main");
-                    [self.challengesTable reloadData];
+                    [self.challengesTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+
                     [self showTable];
                 }
             });
@@ -89,8 +89,7 @@
     [self showTable];
     
     //UserProfile *profile = [UserProfile newInstance];
-    
-    //[profile retrieveURLString:@"PeterKaminski09"];
+    //[profile retrieveURLString:@"smeriwether"];
 
 }
 
@@ -103,7 +102,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"Count = %lu", [self.userChallenges count]);
     return [self.userChallenges count];
 }
 
@@ -120,8 +118,6 @@
     cell.textLabel.text = [self.userChallenges objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = @"Number of Users: 4";
     
-    NSLog(@"Here");
-    
     return cell;
 }
 
@@ -134,7 +130,6 @@
 
 - (void) displayLoginScreen
 {
-    NSLog(@"Here");
     LogInViewController *logIn = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     logIn.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:logIn animated:YES completion:Nil];
@@ -163,6 +158,88 @@
         [self.fillerImage setImage:nil];
         [self.fillerLabel setHidden:YES];
         [self.challengesTable setHidden:NO];
+    }
+}
+
+- (IBAction)indexChage:(UISegmentedControl*)sender
+{
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    
+    switch (sender.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            self.userChallenges = nil;
+            self.userChallenges = [[NSMutableArray alloc] init];
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+            [query setLimit:1000];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    for (PFObject *object in objects) {
+                        if ([[object objectForKey:@"ApprovedPlayers"] containsObject:username]) {
+                            if (![self.userChallenges containsObject:[object objectId]]) {
+                                [self.userChallenges addObject:[object objectId]];
+                            }
+                        }
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.challengesTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                            
+                            [self showTable];
+                    });
+                }
+            }];
+            break;
+        }
+        case 1:
+        {
+            NSLog(@"Here");
+            self.userChallenges = nil;
+            self.userChallenges = [[NSMutableArray alloc] init];
+            
+            PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+            [query setLimit:1000];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                if (!error) {
+                    for (PFObject *object in objects) {
+                        if ([[object objectForKey:@"PendingPlayers"] containsObject:username]) {
+                            if (![self.userChallenges containsObject:[object objectId]]) {
+                                [self.userChallenges addObject:[object objectId]];
+                            }
+                        }
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.challengesTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+                            [self showTable];
+                    });
+                }
+            }];
+            
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (self.segmentedButton.selectedSegmentIndex)
+    {
+        case 0:
+        {
+            UITabBarController *tab = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            [self.navigationController pushViewController:tab animated:YES];
+        }
+        case 1:
+        {
+            JoinViewController *join = [self.storyboard instantiateViewControllerWithIdentifier:@"JoinViewController"];
+            join.gameID = [self.userChallenges objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController:join animated:YES];
+        }
     }
 }
 
