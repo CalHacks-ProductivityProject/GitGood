@@ -10,12 +10,14 @@
 #import "LogInViewController.h"
 #import "StartChallengeViewController.h"
 #import "User.h"
-#import <Product-Swift.h>
+//#import <Product-Swift.h>
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *challengesTable;
 @property (nonatomic, copy) NSString *githubUsername;
+@property (weak, nonatomic) IBOutlet UIImageView *fillerImage;
+@property (weak, nonatomic) IBOutlet UILabel *fillerLabel;
 
 // !!!  DELETE LATER  !!!
 @property (nonatomic) NSMutableArray *testChallenges;
@@ -31,9 +33,6 @@
         [self displayLoginScreen];
     }
     
-    
-    
-    
 }
 
 - (void)viewDidLoad {
@@ -42,14 +41,28 @@
     
 
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
-    [self.navigationController setTitle:self.githubUsername];
+    
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor whiteColor],
+                                               NSForegroundColorAttributeName,
+                                               nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
     
     self.testChallenges = [[NSMutableArray alloc] init];
     
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
     
-    UserProfile *profile = [UserProfile newInstance];
+    if ([self.testChallenges count] > 0) {
+        [self.fillerImage setHidden:YES];
+        [self.fillerImage setImage:nil];
+        [self.fillerLabel setHidden:YES];
+    }
+    
+    //UserProfile *profile = [UserProfile newInstance];
     
     //[profile retrieveURLString:@"PeterKaminski09"];
 
@@ -64,6 +77,9 @@
 {
     [self.testChallenges addObject:@"Hello"];
     [self.challengesTable reloadData];
+    [self.fillerImage setHidden:YES];
+    [self.fillerImage setImage:nil];
+    [self.fillerLabel setHidden:YES];
     [self.challengesTable setHidden:NO];
 }
 
@@ -81,10 +97,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = [self.testChallenges objectAtIndex:indexPath.row];
+    cell.detailTextLabel.text = @"Number of Users: 4";
+    
+    NSLog(@"Here");
+    
     return cell;
 }
 

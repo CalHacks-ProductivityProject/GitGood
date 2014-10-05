@@ -7,7 +7,8 @@
 //
 
 #import "LogInViewController.h"
-#import "UAGithubEngine/UAGithubEngine.h"
+#import "OctoKit.h"
+
 
 @interface LogInViewController () <UITextFieldDelegate>
 
@@ -48,16 +49,23 @@
 
 - (IBAction)authGithubAccount:(id)sender
 {
-    UAGithubEngine *engine = [[UAGithubEngine alloc] initWithUsername:self.githubUsername.text password:self.githubPassword.text withReachability:YES];
-    
-    [engine repositoriesWithSuccess:^(id response) {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLogIn"];
-        self.somethingHappenedInModalVC(self.githubUsername.text);
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } failure:^(NSError *error) {
-        [self shakeAnimation:self.githubPassword];
-        NSLog(@"Oops: %@", error);
-    }];
+    [OCTClient setClientID:@"84a73422fec4389f37e6" clientSecret:@"5c62c44cefb8b4a0b51d84531de3aa49e9cd3c2d"];
+    OCTUser *user = [OCTUser userWithRawLogin:self.githubUsername.text server:OCTServer.dotComServer];
+    [[OCTClient
+      signInAsUser:user password:self.githubPassword.text oneTimePassword:nil scopes:OCTClientAuthorizationScopesUser]
+     subscribeNext:^(OCTClient *authenticatedClient) {
+         // Authentication was successful. Do something with the created client.
+         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLogIn"];
+         self.somethingHappenedInModalVC(self.githubUsername.text);
+         [self dismissViewControllerAnimated:YES completion:nil];
+     } error:^(NSError *error) {
+         // Authentication failed.
+         dispatch_async(dispatch_get_main_queue(), ^{
+            [self shakeAnimation:self.githubPassword];
+         });
+         
+         NSLog(@"Oops: %@", error);
+     }];
 }
 
 -(void)shakeAnimation:(UIView*) view {

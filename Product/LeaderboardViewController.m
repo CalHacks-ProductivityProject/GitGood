@@ -22,7 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.navigationController setTitle:@"Leaderboards"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.tabBarController.navigationItem.title = @"Leaderboards";
+    
     self.leaderboardTable.delegate = self;
     self.leaderboardTable.dataSource = self;
     
