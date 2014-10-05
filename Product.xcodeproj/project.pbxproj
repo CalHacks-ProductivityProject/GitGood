@@ -99,6 +99,7 @@
 		FD85BF5619E1A02300048FBA /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85BF5519E1A02300048FBA /* JoinViewController.m */; };
 		FD85BF6819E1B8F500048FBA /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD85BF6719E1B8F500048FBA /* PaymentViewController.m */; };
 		FD85BF7219E1B90A00048FBA /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD85BF6A19E1B90A00048FBA /* libPayPalMobile.a */; };
+		FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD85BF7319E1BC8400048FBA /* MessageUI.framework */; };
 		FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAD219DFE74000CC2CFE /* Info.plist */; };
 		FDA5E4B819E15E32005F33DC /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA5E4B719E15E32005F33DC /* ChatViewController.m */; };
 		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
@@ -301,6 +302,7 @@
 		FD85BF6F19E1B90A00048FBA /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
 		FD85BF7019E1B90A00048FBA /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
 		FD85BF7119E1B90A00048FBA /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		FD85BF7319E1BC8400048FBA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FDA5E4B619E15E32005F33DC /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		FDA5E4B719E15E32005F33DC /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		FDA5E4B919E167FF005F33DC /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
@@ -315,28 +317,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */,
+				FD03506619E108FB009279EC /* MobileCoreServices.framework in Frameworks */,
+				FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */,
+				FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */,
+				FD03506519E108EF009279EC /* CoreLocation.framework in Frameworks */,
+				FD39FB0819E0664100CC2CFE /* AVFoundation.framework in Frameworks */,
+				FD03506319E108DF009279EC /* AudioToolbox.framework in Frameworks */,
 				FDA5E4C419E16CBA005F33DC /* MoxtraConversationResources.bundle in Frameworks */,
 				FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */,
 				FD03506919E10917009279EC /* Security.framework in Frameworks */,
 				FD03506C19E1094C009279EC /* Social.framework in Frameworks */,
-				FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */,
 				FD03506A19E1091B009279EC /* StoreKit.framework in Frameworks */,
 				FD03506819E1090E009279EC /* libz.dylib in Frameworks */,
 				FD03506719E10900009279EC /* QuartzCore.framework in Frameworks */,
 				FD85BF7219E1B90A00048FBA /* libPayPalMobile.a in Frameworks */,
-				FD03506619E108FB009279EC /* MobileCoreServices.framework in Frameworks */,
 				FD39FB0119E065DD00CC2CFE /* CoreGraphics.framework in Frameworks */,
-				FD03506519E108EF009279EC /* CoreLocation.framework in Frameworks */,
 				FD03506419E108E5009279EC /* CFNetwork.framework in Frameworks */,
-				FD03506319E108DF009279EC /* AudioToolbox.framework in Frameworks */,
 				FD03506219E108CD009279EC /* Accounts.framework in Frameworks */,
 				FD03506019E107F8009279EC /* Bolts.framework in Frameworks */,
 				FD03506119E107F8009279EC /* Parse.framework in Frameworks */,
 				FD39FB0719E0664100CC2CFE /* Accelerate.framework in Frameworks */,
-				FD39FB0819E0664100CC2CFE /* AVFoundation.framework in Frameworks */,
 				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
 				FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */,
-				FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */,
 				CD6D558F6441BE78B3A0FAAD /* libPods-Product.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +500,7 @@
 		EF234D5B625C3F0B2B537CD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD85BF7319E1BC8400048FBA /* MessageUI.framework */,
 				FDA5E4C319E16CBA005F33DC /* MoxtraConversationResources.bundle */,
 				FDA5E4B919E167FF005F33DC /* dylib1.o */,
 				FD03505E19E107F8009279EC /* Bolts.framework */,
@@ -975,6 +979,25 @@
 					"$(PROJECT_DIR)/Product/PayPalMobile",
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Product-AFNetworking\"",
+					"-l\"Pods-Product-ISO8601DateFormatter\"",
+					"-l\"Pods-Product-Mantle\"",
+					"-l\"Pods-Product-ReactiveCocoa\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";
@@ -1003,6 +1026,25 @@
 					"$(PROJECT_DIR)/Product/PayPalMobile",
 				);
 				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"Pods-Product-AFNetworking\"",
+					"-l\"Pods-Product-ISO8601DateFormatter\"",
+					"-l\"Pods-Product-Mantle\"",
+					"-l\"Pods-Product-ReactiveCocoa\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Product-Bridging-Header.h";

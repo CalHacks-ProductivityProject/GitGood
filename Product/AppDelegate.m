@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PayPalMobile.h"
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
