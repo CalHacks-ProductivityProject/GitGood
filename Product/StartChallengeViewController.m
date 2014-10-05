@@ -16,32 +16,31 @@
 @property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
 @property (nonatomic, strong) NSMutableArray *challangeAdditions; // Filtered search results
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
-// !!!  REMOVE LATER  !!!
-@property (nonatomic) NSMutableArray *testMembers;
+@property (nonatomic) NSMutableArray *userAccounts;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *numberOfWeeks;
+
+
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *startMatchButton;
+
+// Session management.
+@property (nonatomic) dispatch_queue_t dumpQueue;
+@property (nonatomic) dispatch_queue_t searchQueue;
 
 @end
 
 @implementation StartChallengeViewController
 
 - (void)viewDidLoad {
-    
+    [self userNameDump];
     
     self.searchResults = [[NSMutableArray alloc] init];
-    self.testMembers = [[NSMutableArray alloc] init];
+    self.userAccounts = [[NSMutableArray alloc] init];
     self.challangeAdditions = [[NSMutableArray alloc] init];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
     [self.startMatchButton setEnabled:NO];
-    
-    for (int i = 0; i < 10; i++) {
-        User *user = [[User alloc] init];
-        user.githubUsername = [NSString stringWithFormat:@"%d %@", i, @"user"];
-        [self.testMembers addObject:user];
-    }
     
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor blackColor],
@@ -56,8 +55,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
     self.enterMoney.delegate = self;
-    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    NSLog(@"%@\n", user);
     
     _formatter = [NSNumberFormatter new];
     [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
@@ -67,7 +64,7 @@
     [self.view addGestureRecognizer:tap];
     
     // Create a mutable array to contain products for the search results table.
-    self.searchResults = [NSMutableArray arrayWithCapacity:[self.testMembers count]];
+    self.searchResults = [NSMutableArray arrayWithCapacity:[self.userAccounts count]];
     
     UITableViewController *searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
     searchResultsController.tableView.dataSource = self;
@@ -100,15 +97,28 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)editTable:(UIBarButtonItem*)sender
+{
+    NSLog(@"%@", sender.title);
+    if ([sender.title isEqualToString:@"Edit"]) {
+        [self.tableView setEditing: YES animated: YES];
+        [sender setTitle:@"Done"];
+    }
+    else {
+        [self.tableView setEditing: NO animated: YES];
+        [sender setTitle:@"Edit"];
+    }
+}
+
 - (void) dismissKeyboard
 {
-    [_enterMoney.self resignFirstResponder];
+    [self.enterMoney resignFirstResponder];
+    [self.numberOfWeeks resignFirstResponder];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"Observer removed\n");
     
 }
 
-const int movedistance = 130;
+const int movedistance = 160;
 
 - (void)keyboardWillHide:(NSNotification *)aNotification
 {
@@ -138,11 +148,11 @@ const int movedistance = 130;
 
 - (void)viewWillDisappear:(BOOL)animated{
         [[NSNotificationCenter defaultCenter] removeObserver:self];
-        NSLog(@"Observer removed\n");
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    
     NSString *replaced = [textField.text stringByReplacingCharactersInRange:range withString:string];
     NSDecimalNumber *amount = (NSDecimalNumber*) [_formatter numberFromString:replaced];
     if (amount == nil) {
@@ -177,7 +187,6 @@ const int movedistance = 130;
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    NSLog(@"Observer added\n");
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillShow:)
                                                  name:UIKeyboardWillShowNotification
@@ -188,6 +197,14 @@ const int movedistance = 130;
                                                object:nil];
     
     return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.challangeAdditions removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //add code here for when you hit delete
+    }
 }
 
 - (IBAction)sendChallenge:(id)sender {
@@ -201,22 +218,20 @@ const int movedistance = 130;
     double moneyPerPerson = [holder doubleValue];
     
     PFObject *game = [PFObject objectWithClassName:@"Game"];
-    [game addObject:@"trineroks" forKey:@"PendingPlayers"];
-    [game addObject:username forKey:@"AcceptedPlayers"];
-    game[@"moneyPerPlayer"] = holder;
     
-    [game saveInBackground];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"userInfo"];
-    [query whereKeyExists:@"username"];
-    [query whereKey:@"username" equalTo:@"trineroks"];
-    
-    NSArray *results = [query findObjects];
-    
-    if ([results count] != 0)
-    {
-        NSLog(@"Username found!");
+    for (int i = 0; i < [self.challangeAdditions count]; i++) {
+        User *user = [self.challangeAdditions objectAtIndex:i];
+        if (user) {
+            [game addObject:user.githubUsername forKey:@"PendingPlayers"];
+        }
     }
+    
+    // add the current user to the game
+    [game addObject:username forKey:@"ApprovedPlayers"];
+    
+    game[@"moneyPerPlayer"] = holder;
+    [game saveInBackground];
     
     NSLog(@"Amount entered = %f\n", moneyPerPerson);
     
@@ -270,14 +285,49 @@ const int movedistance = 130;
     [self.startMatchButton setEnabled:YES];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
 #pragma mark - UISearchResultsUpdating
 
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    
+
     NSString *searchString = [self.searchController.searchBar text];
     [self updateFilteredContentForProductName:searchString];
     
     [((UITableViewController *)self.searchController.searchResultsController).tableView reloadData];
+
+}
+
+- (void)userNameDump
+{
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"userInfo"];
+    [query setLimit:1000];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                User *user = [[User alloc] init];
+                user.githubUsername = [object objectForKey:@"username"];
+                [self.userAccounts addObject:user];
+            }
+        }
+    }];
+    
 }
 
 
@@ -288,7 +338,7 @@ const int movedistance = 130;
     // Update the filtered array based on the search text and scope.
     if ((userName == nil) || [userName length] == 0) {
         // If there is no search string and the scope is "All".
-        [self.searchResults addObjectsFromArray:self.testMembers];
+        [self.searchResults addObjectsFromArray:self.userAccounts];
         return;
     }
     
@@ -298,7 +348,7 @@ const int movedistance = 130;
     
     /*  Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
      */
-    for (User *user in self.testMembers) {
+    for (User *user in self.userAccounts) {
         NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
         NSRange userNameRange = NSMakeRange(0, user.githubUsername.length);
         NSRange foundRange = [user.githubUsername rangeOfString:userName options:searchOptions range:userNameRange];

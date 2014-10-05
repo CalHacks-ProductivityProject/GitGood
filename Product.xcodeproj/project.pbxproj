@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4725715CE0C4E28EF044B1B0 /* libPods-Product.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A371ADE834F3414C3A8C8E /* libPods-Product.a */; };
+		1618B1A58C9A6A467D4D0C5F /* libPods-Product.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0829B9766F450004EC9BBDB /* libPods-Product.a */; };
 		FD03506019E107F8009279EC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03505E19E107F8009279EC /* Bolts.framework */; };
 		FD03506119E107F8009279EC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD03505F19E107F8009279EC /* Parse.framework */; };
 		FD03506219E108CD009279EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F219E07D9500EDA7B0 /* Accounts.framework */; };
@@ -97,7 +97,11 @@
 		FD4C2F1519E0E10200A332A1 /* OCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED719E0E10200A332A1 /* OCTUser.m */; };
 		FD4C2F1619E0E10200A332A1 /* RACSignal+OCTClientAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4C2ED919E0E10200A332A1 /* RACSignal+OCTClientAdditions.m */; };
 		FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD39FAD219DFE74000CC2CFE /* Info.plist */; };
-		FDA5E4B219E10FC1005F33DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD39FADB19DFE74000CC2CFE /* Main.storyboard */; };
+		FDA5E4B819E15E32005F33DC /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA5E4B719E15E32005F33DC /* ChatViewController.m */; };
+		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
+		FDA5E4C019E16B1F005F33DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD39FADB19DFE74000CC2CFE /* Main.storyboard */; };
+		FDA5E4C419E16CBA005F33DC /* MoxtraConversationResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4C319E16CBA005F33DC /* MoxtraConversationResources.bundle */; };
+		FDA5E4C619E17C1A005F33DC /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA5E4C519E17C1A005F33DC /* UserProfile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,8 +115,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		34DDC7DA19E07CED00EDA7B0 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Downloads/parse-library-1/Parse.framework"; sourceTree = "<group>"; };
-		34DDC7DC19E07CF600EDA7B0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Downloads/parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -126,9 +128,9 @@
 		34DDC7F219E07D9500EDA7B0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		4E70468C9BFA4F2CB04AB08A /* Pods-Product.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Product.release.xcconfig"; path = "Pods/Target Support Files/Pods-Product/Pods-Product.release.xcconfig"; sourceTree = "<group>"; };
 		70AACC3A7DCF240AAC5FE5FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		77A371ADE834F3414C3A8C8E /* libPods-Product.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Product.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Product-Bridging-Header.h"; sourceTree = "<group>"; };
 		E43F8A772FB52DC68360813C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F0829B9766F450004EC9BBDB /* libPods-Product.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Product.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43CA9980177AE1EE503F9BA /* Pods-Product.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Product.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Product/Pods-Product.debug.xcconfig"; sourceTree = "<group>"; };
 		FD03505E19E107F8009279EC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		FD03505F19E107F8009279EC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
@@ -159,8 +161,6 @@
 		FD39FB0419E0664100CC2CFE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		FD39FB0519E0664100CC2CFE /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FD39FB0619E0664100CC2CFE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		FD4C2E5819E0DA5400A332A1 /* libPods-UAGithubEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-UAGithubEngine.a"; path = "Pods/build/Debug-iphoneos/libPods-UAGithubEngine.a"; sourceTree = "<group>"; };
-		FD4C2E5A19E0DA5A00A332A1 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		FD4C2E5C19E0E10200A332A1 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		FD4C2E5E19E0E10200A332A1 /* NSDateFormatter+OCTFormattingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+OCTFormattingAdditions.h"; sourceTree = "<group>"; };
 		FD4C2E5F19E0E10200A332A1 /* NSDateFormatter+OCTFormattingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+OCTFormattingAdditions.m"; sourceTree = "<group>"; };
@@ -286,6 +286,13 @@
 		FD4C2ED719E0E10200A332A1 /* OCTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTUser.m; sourceTree = "<group>"; };
 		FD4C2ED819E0E10200A332A1 /* RACSignal+OCTClientAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+OCTClientAdditions.h"; sourceTree = "<group>"; };
 		FD4C2ED919E0E10200A332A1 /* RACSignal+OCTClientAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+OCTClientAdditions.m"; sourceTree = "<group>"; };
+		FDA5E4B619E15E32005F33DC /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		FDA5E4B719E15E32005F33DC /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		FDA5E4B919E167FF005F33DC /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
+		FDA5E4C119E16CAA005F33DC /* Moxtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Moxtra.h; sourceTree = SOURCE_ROOT; };
+		FDA5E4C219E16CAA005F33DC /* MXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXClient.h; sourceTree = SOURCE_ROOT; };
+		FDA5E4C319E16CBA005F33DC /* MoxtraConversationResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MoxtraConversationResources.bundle; sourceTree = "<group>"; };
+		FDA5E4C519E17C1A005F33DC /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,10 +300,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA5E4C419E16CBA005F33DC /* MoxtraConversationResources.bundle in Frameworks */,
+				FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */,
+				FD03506919E10917009279EC /* Security.framework in Frameworks */,
 				FD03506C19E1094C009279EC /* Social.framework in Frameworks */,
 				FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */,
 				FD03506A19E1091B009279EC /* StoreKit.framework in Frameworks */,
-				FD03506919E10917009279EC /* Security.framework in Frameworks */,
 				FD03506819E1090E009279EC /* libz.dylib in Frameworks */,
 				FD03506719E10900009279EC /* QuartzCore.framework in Frameworks */,
 				FD03506619E108FB009279EC /* MobileCoreServices.framework in Frameworks */,
@@ -312,7 +321,7 @@
 				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
 				FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */,
 				FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */,
-				4725715CE0C4E28EF044B1B0 /* libPods-Product.a in Frameworks */,
+				1618B1A58C9A6A467D4D0C5F /* libPods-Product.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +349,10 @@
 		EF234D5B625C3F0B2B537CD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FDA5E4C319E16CBA005F33DC /* MoxtraConversationResources.bundle */,
+				FDA5E4B919E167FF005F33DC /* dylib1.o */,
 				FD03505E19E107F8009279EC /* Bolts.framework */,
 				FD03505F19E107F8009279EC /* Parse.framework */,
-				FD4C2E5A19E0DA5A00A332A1 /* libPods.a */,
-				FD4C2E5819E0DA5400A332A1 /* libPods-UAGithubEngine.a */,
 				34DDC7F219E07D9500EDA7B0 /* Accounts.framework */,
 				34DDC7F019E07D9100EDA7B0 /* Social.framework */,
 				34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */,
@@ -355,15 +364,13 @@
 				34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */,
 				34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */,
 				34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */,
-				34DDC7DC19E07CF600EDA7B0 /* Bolts.framework */,
-				34DDC7DA19E07CED00EDA7B0 /* Parse.framework */,
 				FD39FB0219E0664100CC2CFE /* Accelerate.framework */,
 				FD39FB0319E0664100CC2CFE /* AVFoundation.framework */,
 				FD39FB0419E0664100CC2CFE /* CoreFoundation.framework */,
 				FD39FB0519E0664100CC2CFE /* CoreImage.framework */,
 				FD39FB0619E0664100CC2CFE /* CoreMedia.framework */,
 				FD39FB0019E065DD00CC2CFE /* CoreGraphics.framework */,
-				77A371ADE834F3414C3A8C8E /* libPods-Product.a */,
+				F0829B9766F450004EC9BBDB /* libPods-Product.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -375,6 +382,7 @@
 				FD39FAD019DFE74000CC2CFE /* Product */,
 				FD39FAEA19DFE74000CC2CFE /* ProductTests */,
 				FD39FACF19DFE74000CC2CFE /* Products */,
+				FDA5E4C519E17C1A005F33DC /* UserProfile.swift */,
 				C02C32B519E02F83005E1CF7 /* Product-Bridging-Header.h */,
 				56624183DED6FDFB17CAEC71 /* Pods */,
 				EF234D5B625C3F0B2B537CD0 /* Frameworks */,
@@ -397,6 +405,8 @@
 				FD39FAD619DFE74000CC2CFE /* AppDelegate.m */,
 				FD39FAD819DFE74000CC2CFE /* ViewController.h */,
 				FD39FAD919DFE74000CC2CFE /* ViewController.m */,
+				FDA5E4B619E15E32005F33DC /* ChatViewController.h */,
+				FDA5E4B719E15E32005F33DC /* ChatViewController.m */,
 				FD39FAFD19E0320B00CC2CFE /* LogInViewController.h */,
 				FD39FAFE19E0320B00CC2CFE /* LogInViewController.m */,
 				FD39FADB19DFE74000CC2CFE /* Main.storyboard */,
@@ -404,6 +414,8 @@
 				FD39FAFB19E02C5200CC2CFE /* LeaderboardViewController.m */,
 				FD39FAF719DFF4FC00CC2CFE /* StartChallengeViewController.h */,
 				FD39FAF819DFF4FC00CC2CFE /* StartChallengeViewController.m */,
+				FDA5E4C119E16CAA005F33DC /* Moxtra.h */,
+				FDA5E4C219E16CAA005F33DC /* MXClient.h */,
 				FD212EE919E091D900C1F5FC /* User.h */,
 				FD212EEA19E091D900C1F5FC /* User.m */,
 				FD39FADE19DFE74000CC2CFE /* Images.xcassets */,
@@ -664,7 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA5E4B119E10EA8005F33DC /* Info.plist in Resources */,
-				FDA5E4B219E10FC1005F33DC /* Main.storyboard in Resources */,
+				FDA5E4C019E16B1F005F33DC /* Main.storyboard in Resources */,
 				FD39FADF19DFE74000CC2CFE /* Images.xcassets in Resources */,
 				FD4C2EDB19E0E10200A332A1 /* InfoPlist.strings in Resources */,
 				FD4C2F0119E0E10200A332A1 /* OctoKit-Info.plist in Resources */,
@@ -744,6 +756,7 @@
 				FD4C2F0019E0E10200A332A1 /* OCTObject.m in Sources */,
 				FD4C2EFD19E0E10200A332A1 /* OCTIssueCommentEvent.m in Sources */,
 				FD4C2EE519E0E10200A332A1 /* OCTClient+Gists.m in Sources */,
+				FDA5E4B819E15E32005F33DC /* ChatViewController.m in Sources */,
 				FD4C2F0B19E0E10200A332A1 /* OCTRefEvent.m in Sources */,
 				FD4C2F0419E0E10200A332A1 /* OCTPublicKey.m in Sources */,
 				FD4C2EF519E0E10200A332A1 /* OCTEvent.m in Sources */,
@@ -776,6 +789,7 @@
 				FD39FAF919DFF4FC00CC2CFE /* StartChallengeViewController.m in Sources */,
 				FD4C2EFC19E0E10200A332A1 /* OCTIssueComment.m in Sources */,
 				FD39FAD719DFE74000CC2CFE /* AppDelegate.m in Sources */,
+				FDA5E4C619E17C1A005F33DC /* UserProfile.swift in Sources */,
 				FD4C2F0519E0E10200A332A1 /* OCTPullRequest.m in Sources */,
 				FD4C2EF419E0E10200A332A1 /* OCTEntity.m in Sources */,
 				FD4C2F0619E0E10200A332A1 /* OCTPullRequestComment.m in Sources */,
@@ -841,7 +855,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -883,7 +898,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -916,10 +932,7 @@
 				);
 				INFOPLIST_FILE = Product/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -944,10 +957,7 @@
 				);
 				INFOPLIST_FILE = Product/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CODE_SIGN_FLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -961,6 +971,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -980,6 +991,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

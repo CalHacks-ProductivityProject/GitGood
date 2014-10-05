@@ -56,11 +56,17 @@
       signInAsUser:user password:self.githubPassword.text oneTimePassword:nil scopes:OCTClientAuthorizationScopesUser]
      subscribeNext:^(OCTClient *authenticatedClient) {
          // Authentication was successful. Do something with the created client.
+         [self createAccount:self.githubUsername.text];
          [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLogIn"];
          self.somethingHappenedInModalVC(self.githubUsername.text);
          [self dismissViewControllerAnimated:YES completion:nil];
+         
+         [self saveString:user.rawLogin forKey:@"login"];
+         [self saveString:authenticatedClient.token forKey:@"token"];
+
+
      } error:^(NSError *error) {
-         // Authentication failed.
+         // Authentication failed.s
          dispatch_async(dispatch_get_main_queue(), ^{
             [self shakeAnimation:self.githubPassword];
          });
@@ -124,6 +130,35 @@
                          }
                      }];
 
+}
+
+- (void)saveString:(NSString *)inputString forKey:(NSString	*)account {
+    NSAssert(account != nil, @"Invalid account");
+    NSAssert(inputString != nil, @"Invalid string");
+    
+    NSMutableDictionary *query = [NSMutableDictionary dictionary];
+    
+    [query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
+    [query setObject:account forKey:(__bridge id)kSecAttrAccount];
+    [query setObject:(__bridge id)kSecAttrAccessibleWhenUnlocked forKey:(__bridge id)kSecAttrAccessible];
+    
+    OSStatus error = SecItemCopyMatching((__bridge CFDictionaryRef)query, NULL);
+    if (error == errSecSuccess) {
+        // do update
+        NSDictionary *attributesToUpdate = [NSDictionary dictionaryWithObject:[inputString dataUsingEncoding:NSUTF8StringEncoding]
+                                                                       forKey:(__bridge id)kSecValueData];
+        
+        error = SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)attributesToUpdate);
+        NSAssert1(error == errSecSuccess, @"SecItemUpdate failed: %d", error);
+    } else if (error == errSecItemNotFound) {
+        // do add
+        [query setObject:[inputString dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
+        
+        error = SecItemAdd((__bridge CFDictionaryRef)query, NULL);
+        NSAssert1(error == errSecSuccess, @"SecItemAdd failed: %d", error);
+    } else {
+        NSAssert1(NO, @"SecItemCopyMatching failed: %d", error);
+    }
 }
 
 @end

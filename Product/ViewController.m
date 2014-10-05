@@ -19,9 +19,8 @@
 @property (nonatomic, copy) NSString *githubUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *fillerImage;
 @property (weak, nonatomic) IBOutlet UILabel *fillerLabel;
-
+@property (nonatomic) NSMutableArray *userChallenges;
 // !!!  DELETE LATER  !!!
-@property (nonatomic) NSMutableArray *testChallenges;
 @property (nonatomic) NSMutableArray *testMembers;
 
 @end
@@ -35,17 +34,33 @@
         [self displayLoginScreen];
     }
     
-    //PFQuery *query = [PFQuery queryWithClassName:@"Game"];
-    //[query whereKeyExists:@"PendingPlayers"];
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    NSLog(@"Username: %@", username);
     
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    [query setLimit:1000];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for (PFObject *object in objects) {
+                NSString *className = [[[object objectForKey:@"ApprovedPlayers"] class] description];
+                NSLog(@"Class Name: %@", className);
+                if ([[object objectForKey:@"ApprovedPlayers"] containsObject:username]) {
+                    if (![self.userChallenges containsObject:[object objectId]]) {
+                        NSLog(@"In contains");
+                        [self.userChallenges addObject:[object objectId]];
+                    }
+                }
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (self.userChallenges) {
+                    NSLog(@"In main");
+                    [self.challengesTable reloadData];
+                    [self showTable];
+                }
+            });
+        }
+    }];
     
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor whiteColor],
@@ -55,17 +70,23 @@
     [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
     
-    self.testChallenges = [[NSMutableArray alloc] init];
+    [self reAuthGithub];
+    
+
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
+    
+    self.userChallenges = [[NSMutableArray alloc] init];
     
     self.challengesTable.delegate = self;
     self.challengesTable.dataSource = self;
     
-    if ([self.testChallenges count] > 0) {
-        [self.fillerImage setHidden:YES];
-        [self.fillerImage setImage:nil];
-        [self.fillerLabel setHidden:YES];
-    }
+    [self showTable];
     
     //UserProfile *profile = [UserProfile newInstance];
     
@@ -78,23 +99,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-- (IBAction)addRow:(id)sender
-{
-    [self.testChallenges addObject:@"Hello"];
-    [self.challengesTable reloadData];
-    [self.fillerImage setHidden:YES];
-    [self.fillerImage setImage:nil];
-    [self.fillerLabel setHidden:YES];
-    [self.challengesTable setHidden:NO];
-}
- */
-
 #pragma mark - TableView Delegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.testChallenges count];
+    NSLog(@"Count = %lu", [self.userChallenges count]);
+    return [self.userChallenges count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -107,7 +117,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [self.testChallenges objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.userChallenges objectAtIndex:indexPath.row];
     cell.detailTextLabel.text = @"Number of Users: 4";
     
     NSLog(@"Here");
@@ -131,13 +141,30 @@
     
     logIn.somethingHappenedInModalVC = ^(NSString *response) {
         self.githubUsername = response;
-        
-        //[self addRow:nil];
-        //[self addRow:nil];
     };
     
     [self.challengesTable reloadData];
     
 }
+
+- (void)reAuthGithub
+{
+    
+    
+    
+    //OCTUser *user = [OCTUser userWithRawLogin:[self getStringForKey:@"login"]; server:OCTServer.dotComServer];
+    //OCTClient *client = [OCTClient authenticatedClientWithUser:user token:[self getStringForKey:@"token"]];
+}
+
+- (void)showTable
+{
+    if ([self.userChallenges count] > 0) {
+        [self.fillerImage setHidden:YES];
+        [self.fillerImage setImage:nil];
+        [self.fillerLabel setHidden:YES];
+        [self.challengesTable setHidden:NO];
+    }
+}
+
 
 @end

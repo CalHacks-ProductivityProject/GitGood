@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C95B08B96EF8AAD78C10347"
+               BlueprintIdentifier = "87F0FDF1CFDE354F7FB5FCBA"
                BuildableName = "libPods-Product-ISO8601DateFormatter.a"
                BlueprintName = "Pods-Product-ISO8601DateFormatter"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2C95B08B96EF8AAD78C10347"
-            BuildableName = "libPods-Product-ISO8601DateFormatter.a"
-            BlueprintName = "Pods-Product-ISO8601DateFormatter"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

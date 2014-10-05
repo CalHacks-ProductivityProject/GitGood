@@ -12,16 +12,16 @@ import Foundation
     //A profile needs a username and a picture, we need to find the url for the picture based on the given username
     var userName: String = "Default User"
     var userPictureURLString: String = "https://lh5.googleusercontent.com/-tw5LsU4Fg28/Umo6BBcoCnI/AAAAAAAAmjE/1iqULsem06E/s1140-no/heisencat.png"
-    var repositoriesAndCounts = Dictionary<String, Int"()
+    var repositoriesAndCounts = Dictionary<String, Int>()
     
     //Create a new instance of the function
-    @objc class func newInstance() -" UserProfile {
+    @objc class func newInstance() -> UserProfile {
         return UserProfile()
     }
     
     
     //Retrieve the url string for the user's github, this grabs their picture for us.
-    @objc func retrieveURLString(userName: String) -" Void {
+    @objc func retrieveURLString(userName: String) -> Void {
         //Set up the network request, asynchronously
         let urlPath: String = "https://api.github.com/users/" + userName
         var url: NSURL = NSURL(string: urlPath)
@@ -29,7 +29,7 @@ import Foundation
         let queue:NSOperationQueue = NSOperationQueue()
         
         //Make the asynchronous request
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -" Void in
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
             var err: NSError
             
@@ -52,12 +52,12 @@ import Foundation
     
 
     //Fill the dictionary by passing a repo name and the associated count amounts
-    @objc func fillRepoDict(repoName: String, count: Int) -" Void{
+    @objc func fillRepoDict(repoName: String, count: Int) -> Void{
         self.repositoriesAndCounts[repoName] = count
     }
     
     //Find all the counts associated with the apis
-    @objc func findCounts(repoName: String) -" Void{
+    @objc func findCounts(repoName: String) -> Void{
         
         // Retrieve Data
         var JSONData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions(), error: &error)
@@ -85,14 +85,14 @@ import Foundation
     }
     
     //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made.
-    @objc func findRepos(urlAsString: String) -" Void{
+    @objc func findRepos(urlAsString: String) -> Void{
         //Set up the network request, asynchronously
         var url: NSURL = NSURL(string: urlAsString)
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue: NSOperationQueue = NSOperationQueue()
         
         //Make the asynchronous request
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -" Void in
+        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
             var err: NSError
             
