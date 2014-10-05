@@ -43,46 +43,48 @@ import Foundation
             }
             
             if let reposURLString = jsonResult.valueForKey("repos_url") as? String{
-                println("Made it to reposeURLString")
-                println(reposURLString)
-                self.findRepos(reposURLString)
+                self.findUserRepositories(reposURLString)
             }
         })
-    }
-    
-
-    //Fill the dictionary by passing a repo name and the associated count amounts
-    @objc func fillRepoDict(repoName: String, count: Int) -> Void{
-        self.repositoriesAndCounts[repoName] = count
-    }
-    
-    //Find all the counts associated with the apis
-    @objc func findCounts(repoName: String) -> Void{
         
     }
     
-    //This method goes to the Repo URL and finds all of the users repositories. With a repo name, we can easily find the number of additions and deletions they have recently made.
-    @objc func findRepos(urlAsString: String) -> Void{
-        //Set up the network request, asynchronously
-        var url: NSURL = NSURL(string: urlAsString)
+    @objc func findUserRepositories(urlString: String){
+        println("STRING")
+        println(urlString)
+        
+        var url: NSURL = NSURL(string: urlString)
         var request: NSURLRequest = NSURLRequest(URL: url)
-        let queue:NSOperationQueue = NSOperationQueue()
+        let queue: NSOperationQueue = NSOperationQueue()
         
-        //Make the asynchronous request
-        NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
-            var err: NSError
-            
-            //Store the JSON data from the Github api
-            var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-            
-            //We can search for the avatar url in the json dictionary and update the user photo
-            if let pictureURLString = jsonResult.valueForKey("name") as? String{
-                println(pictureURLString)
-                println("MADE IT HERE")
+        //Store the JSON data from the Github api
+        var jsonResult: NSData  = NSData(contentsOfURL: url)
+        
+        var error:NSError?
+        
+        // Retrieve Data
+        var JSONData = NSData.dataWithContentsOfURL(url, options: NSDataReadingOptions(), error: &error)
+        // Create another error optional
+        var jsonerror:NSError?
+        // We don't know the type of object we'll receive back so use AnyObject
+        let swiftObject:AnyObject = NSJSONSerialization.JSONObjectWithData(JSONData, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror)!
+        // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+        if let nsDictionaryObject = swiftObject as? NSDictionary {
+            if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                println(swiftDictionary)
             }
-            
-         })
+        }
+        else if let nsArrayObject = swiftObject as? NSArray {
+            if let swiftArray = nsArrayObject as Array? {
+                var array: AnyObject = swiftArray[0]
+                var name : AnyObject = array.valueForKeyPath("name")
+                
+                println(name)
+            }
+        }
+        
     }
-
+    
+    
 }

@@ -51,7 +51,7 @@
     
     UserProfile *profile = [UserProfile newInstance];
     
-    //[profile retrieveURLString:@"PeterKaminski09"];
+    [profile retrieveURLString:@"smeriwether"];
 
 }
 
