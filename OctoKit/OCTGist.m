@@ -80,6 +80,8 @@
 
 @implementation OCTGistEdit
 
+@synthesize description;
+
 #pragma mark Properties
 
 - (NSDictionary *)fileChanges {

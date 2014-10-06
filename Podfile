@@ -3,14 +3,14 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-target "Product" do
+target "GitGood" do
 	pod 'AFNetworking', '1.3.3'
 	pod 'Mantle', '1.5.0'
 	pod 'ISO8601DateFormatter', '0.7.0'
 	pod 'ReactiveCocoa', '2.3.1'
 end
 
-target "ProductTests" do
+target "GitGoodTests" do
 
 end
 

@@ -1,0 +1,1150 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34DDCAC319E1B09A00EDA7B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DDCA4519E1B09A00EDA7B0 /* InfoPlist.strings */; };
+		34DDCAC419E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4819E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m */; };
+		34DDCAC519E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4A19E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m */; };
+		34DDCAC619E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4C19E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m */; };
+		34DDCAC719E1B09A00EDA7B0 /* OCTAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA4E19E1B09A00EDA7B0 /* OCTAccessToken.m */; };
+		34DDCAC819E1B09A00EDA7B0 /* OCTAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5019E1B09A00EDA7B0 /* OCTAuthorization.m */; };
+		34DDCAC919E1B09A00EDA7B0 /* OCTBlobTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5219E1B09A00EDA7B0 /* OCTBlobTreeEntry.m */; };
+		34DDCACA19E1B09A00EDA7B0 /* OCTBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5419E1B09A00EDA7B0 /* OCTBranch.m */; };
+		34DDCACB19E1B09A00EDA7B0 /* OCTClient+Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5619E1B09A00EDA7B0 /* OCTClient+Activity.m */; };
+		34DDCACC19E1B09A00EDA7B0 /* OCTClient+Events.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5819E1B09A00EDA7B0 /* OCTClient+Events.m */; };
+		34DDCACD19E1B09A00EDA7B0 /* OCTClient+Gists.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5A19E1B09A00EDA7B0 /* OCTClient+Gists.m */; };
+		34DDCACE19E1B09A00EDA7B0 /* OCTClient+Git.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5C19E1B09A00EDA7B0 /* OCTClient+Git.m */; };
+		34DDCACF19E1B09A00EDA7B0 /* OCTClient+Keys.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA5E19E1B09A00EDA7B0 /* OCTClient+Keys.m */; };
+		34DDCAD019E1B09A00EDA7B0 /* OCTClient+Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6019E1B09A00EDA7B0 /* OCTClient+Notifications.m */; };
+		34DDCAD119E1B09A00EDA7B0 /* OCTClient+Organizations.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6219E1B09A00EDA7B0 /* OCTClient+Organizations.m */; };
+		34DDCAD219E1B09A00EDA7B0 /* OCTClient+Repositories.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6519E1B09A00EDA7B0 /* OCTClient+Repositories.m */; };
+		34DDCAD319E1B09A00EDA7B0 /* OCTClient+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6719E1B09A00EDA7B0 /* OCTClient+User.m */; };
+		34DDCAD419E1B09A00EDA7B0 /* OCTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6919E1B09A00EDA7B0 /* OCTClient.m */; };
+		34DDCAD519E1B09A00EDA7B0 /* OCTCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6C19E1B09A00EDA7B0 /* OCTCommit.m */; };
+		34DDCAD619E1B09A00EDA7B0 /* OCTCommitComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA6E19E1B09A00EDA7B0 /* OCTCommitComment.m */; };
+		34DDCAD719E1B09A00EDA7B0 /* OCTCommitCommentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7019E1B09A00EDA7B0 /* OCTCommitCommentEvent.m */; };
+		34DDCAD819E1B09A00EDA7B0 /* OCTCommitTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7219E1B09A00EDA7B0 /* OCTCommitTreeEntry.m */; };
+		34DDCAD919E1B09A00EDA7B0 /* OCTContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7419E1B09A00EDA7B0 /* OCTContent.m */; };
+		34DDCADA19E1B09A00EDA7B0 /* OCTContentTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7619E1B09A00EDA7B0 /* OCTContentTreeEntry.m */; };
+		34DDCADB19E1B09A00EDA7B0 /* OCTDirectoryContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7819E1B09A00EDA7B0 /* OCTDirectoryContent.m */; };
+		34DDCADC19E1B09A00EDA7B0 /* OCTEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7A19E1B09A00EDA7B0 /* OCTEntity.m */; };
+		34DDCADD19E1B09A00EDA7B0 /* OCTEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7C19E1B09A00EDA7B0 /* OCTEvent.m */; };
+		34DDCADE19E1B09A00EDA7B0 /* OCTFileContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA7E19E1B09A00EDA7B0 /* OCTFileContent.m */; };
+		34DDCADF19E1B09A00EDA7B0 /* OCTGist.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8019E1B09A00EDA7B0 /* OCTGist.m */; };
+		34DDCAE019E1B09A00EDA7B0 /* OCTGistFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8219E1B09A00EDA7B0 /* OCTGistFile.m */; };
+		34DDCAE119E1B09A00EDA7B0 /* OCTGitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8419E1B09A00EDA7B0 /* OCTGitCommit.m */; };
+		34DDCAE219E1B09A00EDA7B0 /* OCTGitCommitFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8619E1B09A00EDA7B0 /* OCTGitCommitFile.m */; };
+		34DDCAE319E1B09A00EDA7B0 /* OCTIssue.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8819E1B09A00EDA7B0 /* OCTIssue.m */; };
+		34DDCAE419E1B09A00EDA7B0 /* OCTIssueComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8A19E1B09A00EDA7B0 /* OCTIssueComment.m */; };
+		34DDCAE519E1B09A00EDA7B0 /* OCTIssueCommentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8C19E1B09A00EDA7B0 /* OCTIssueCommentEvent.m */; };
+		34DDCAE619E1B09A00EDA7B0 /* OCTIssueEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA8E19E1B09A00EDA7B0 /* OCTIssueEvent.m */; };
+		34DDCAE719E1B09A00EDA7B0 /* OCTNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9019E1B09A00EDA7B0 /* OCTNotification.m */; };
+		34DDCAE819E1B09A00EDA7B0 /* OCTObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9319E1B09A00EDA7B0 /* OCTObject.m */; };
+		34DDCAE919E1B09A00EDA7B0 /* OctoKit-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34DDCA9419E1B09A00EDA7B0 /* OctoKit-Info.plist */; };
+		34DDCAEA19E1B09A00EDA7B0 /* OCTOrganization.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9819E1B09A00EDA7B0 /* OCTOrganization.m */; };
+		34DDCAEB19E1B09A00EDA7B0 /* OCTPlan.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9A19E1B09A00EDA7B0 /* OCTPlan.m */; };
+		34DDCAEC19E1B09A00EDA7B0 /* OCTPublicKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9C19E1B09A00EDA7B0 /* OCTPublicKey.m */; };
+		34DDCAED19E1B09A00EDA7B0 /* OCTPullRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCA9E19E1B09A00EDA7B0 /* OCTPullRequest.m */; };
+		34DDCAEE19E1B09A00EDA7B0 /* OCTPullRequestComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAA019E1B09A00EDA7B0 /* OCTPullRequestComment.m */; };
+		34DDCAEF19E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAA219E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m */; };
+		34DDCAF019E1B09A00EDA7B0 /* OCTPullRequestEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAA419E1B09A00EDA7B0 /* OCTPullRequestEvent.m */; };
+		34DDCAF119E1B09A00EDA7B0 /* OCTPushEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAA619E1B09A00EDA7B0 /* OCTPushEvent.m */; };
+		34DDCAF219E1B09A00EDA7B0 /* OCTRef.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAA819E1B09A00EDA7B0 /* OCTRef.m */; };
+		34DDCAF319E1B09A00EDA7B0 /* OCTRefEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAAA19E1B09A00EDA7B0 /* OCTRefEvent.m */; };
+		34DDCAF419E1B09A00EDA7B0 /* OCTRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAAC19E1B09A00EDA7B0 /* OCTRepository.m */; };
+		34DDCAF519E1B09A00EDA7B0 /* OCTResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAAE19E1B09A00EDA7B0 /* OCTResponse.m */; };
+		34DDCAF619E1B09A00EDA7B0 /* OCTServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAB219E1B09A00EDA7B0 /* OCTServer.m */; };
+		34DDCAF719E1B09A00EDA7B0 /* OCTServerMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAB419E1B09A00EDA7B0 /* OCTServerMetadata.m */; };
+		34DDCAF819E1B09A00EDA7B0 /* OCTSubmoduleContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAB619E1B09A00EDA7B0 /* OCTSubmoduleContent.m */; };
+		34DDCAF919E1B09A00EDA7B0 /* OCTSymlinkContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAB819E1B09A00EDA7B0 /* OCTSymlinkContent.m */; };
+		34DDCAFA19E1B09A00EDA7B0 /* OCTTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCABA19E1B09A00EDA7B0 /* OCTTeam.m */; };
+		34DDCAFB19E1B09A00EDA7B0 /* OCTTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCABC19E1B09A00EDA7B0 /* OCTTree.m */; };
+		34DDCAFC19E1B09A00EDA7B0 /* OCTTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCABE19E1B09A00EDA7B0 /* OCTTreeEntry.m */; };
+		34DDCAFD19E1B09A00EDA7B0 /* OCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAC019E1B09A00EDA7B0 /* OCTUser.m */; };
+		34DDCAFE19E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAC219E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m */; };
+		FD03506219E108CD009279EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F219E07D9500EDA7B0 /* Accounts.framework */; };
+		FD03506319E108DF009279EC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */; };
+		FD03506419E108E5009279EC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */; };
+		FD03506519E108EF009279EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */; };
+		FD03506619E108FB009279EC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E619E07D7800EDA7B0 /* MobileCoreServices.framework */; };
+		FD03506719E10900009279EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E819E07D7F00EDA7B0 /* QuartzCore.framework */; };
+		FD03506819E1090E009279EC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E419E07D7200EDA7B0 /* libz.dylib */; };
+		FD03506919E10917009279EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EA19E07D8400EDA7B0 /* Security.framework */; };
+		FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */; };
+		FD03506C19E1094C009279EC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F019E07D9100EDA7B0 /* Social.framework */; };
+		FD31C91819E312260013A245 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90919E312260013A245 /* ChatViewController.m */; };
+		FD31C91919E312260013A245 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90B19E312260013A245 /* JoinViewController.m */; };
+		FD31C91A19E312260013A245 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90D19E312260013A245 /* LeaderboardViewController.m */; };
+		FD31C91B19E312260013A245 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90F19E312260013A245 /* LogInViewController.m */; };
+		FD31C91C19E312260013A245 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91119E312260013A245 /* MainViewController.m */; };
+		FD31C91D19E312260013A245 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91319E312260013A245 /* PaymentViewController.m */; };
+		FD31C91E19E312260013A245 /* StartChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91519E312260013A245 /* StartChallengeViewController.m */; };
+		FD31C91F19E312260013A245 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91719E312260013A245 /* TabBarViewController.m */; };
+		FD31C92319E312360013A245 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92119E312360013A245 /* User.m */; };
+		FD31C92419E312360013A245 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92219E312360013A245 /* UserProfile.swift */; };
+		FD31C92A19E3126D0013A245 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92619E3126D0013A245 /* AppDelegate.m */; };
+		FD31C92B19E3126D0013A245 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD31C92719E3126D0013A245 /* Images.xcassets */; };
+		FD31C92D19E3126D0013A245 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92919E3126D0013A245 /* main.m */; };
+		FD31C93A19E312B60013A245 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31C93219E312B60013A245 /* libPayPalMobile.a */; };
+		FD31C94019E313310013A245 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31C93E19E313310013A245 /* Bolts.framework */; };
+		FD31C94119E313310013A245 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD31C93F19E313310013A245 /* Parse.framework */; };
+		FD31C94519E3150B0013A245 /* GitGoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92E19E312940013A245 /* GitGoodTests.m */; };
+		FD31C94B19E33BEA0013A245 /* MoxtraConversationResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FD31C94A19E33BEA0013A245 /* MoxtraConversationResources.bundle */; };
+		FD39FB0119E065DD00CC2CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0019E065DD00CC2CFE /* CoreGraphics.framework */; };
+		FD39FB0719E0664100CC2CFE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0219E0664100CC2CFE /* Accelerate.framework */; };
+		FD39FB0819E0664100CC2CFE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0319E0664100CC2CFE /* AVFoundation.framework */; };
+		FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0419E0664100CC2CFE /* CoreFoundation.framework */; };
+		FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0519E0664100CC2CFE /* CoreImage.framework */; };
+		FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0619E0664100CC2CFE /* CoreMedia.framework */; };
+		FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD85BF7319E1BC8400048FBA /* MessageUI.framework */; };
+		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
+		FDDD532319E344B300413D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31C90119E311850013A245 /* Main.storyboard */; };
+		FDDD532419E344B600413D52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD31C8FF19E311850013A245 /* LaunchScreen.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD39FAE819DFE74000CC2CFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD39FAC619DFE74000CC2CFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD39FACD19DFE74000CC2CFE;
+			remoteInfo = Product;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3221010A271D17557E38BCB1 /* Pods-GitGood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitGood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitGood/Pods-GitGood.debug.xcconfig"; sourceTree = "<group>"; };
+		34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		34DDC7E419E07D7200EDA7B0 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		34DDC7E619E07D7800EDA7B0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		34DDC7E819E07D7F00EDA7B0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		34DDC7EA19E07D8400EDA7B0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		34DDC7F019E07D9100EDA7B0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		34DDC7F219E07D9500EDA7B0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		34DDCA4619E1B09A00EDA7B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		34DDCA4719E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+OCTFormattingAdditions.h"; sourceTree = "<group>"; };
+		34DDCA4819E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+OCTFormattingAdditions.m"; sourceTree = "<group>"; };
+		34DDCA4919E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+OCTQueryAdditions.h"; sourceTree = "<group>"; };
+		34DDCA4A19E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+OCTQueryAdditions.m"; sourceTree = "<group>"; };
+		34DDCA4B19E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+OCTPredefinedTransformerAdditions.h"; sourceTree = "<group>"; };
+		34DDCA4C19E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+OCTPredefinedTransformerAdditions.m"; sourceTree = "<group>"; };
+		34DDCA4D19E1B09A00EDA7B0 /* OCTAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTAccessToken.h; sourceTree = "<group>"; };
+		34DDCA4E19E1B09A00EDA7B0 /* OCTAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTAccessToken.m; sourceTree = "<group>"; };
+		34DDCA4F19E1B09A00EDA7B0 /* OCTAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTAuthorization.h; sourceTree = "<group>"; };
+		34DDCA5019E1B09A00EDA7B0 /* OCTAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTAuthorization.m; sourceTree = "<group>"; };
+		34DDCA5119E1B09A00EDA7B0 /* OCTBlobTreeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTBlobTreeEntry.h; sourceTree = "<group>"; };
+		34DDCA5219E1B09A00EDA7B0 /* OCTBlobTreeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTBlobTreeEntry.m; sourceTree = "<group>"; };
+		34DDCA5319E1B09A00EDA7B0 /* OCTBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTBranch.h; sourceTree = "<group>"; };
+		34DDCA5419E1B09A00EDA7B0 /* OCTBranch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTBranch.m; sourceTree = "<group>"; };
+		34DDCA5519E1B09A00EDA7B0 /* OCTClient+Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Activity.h"; sourceTree = "<group>"; };
+		34DDCA5619E1B09A00EDA7B0 /* OCTClient+Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Activity.m"; sourceTree = "<group>"; };
+		34DDCA5719E1B09A00EDA7B0 /* OCTClient+Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Events.h"; sourceTree = "<group>"; };
+		34DDCA5819E1B09A00EDA7B0 /* OCTClient+Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Events.m"; sourceTree = "<group>"; };
+		34DDCA5919E1B09A00EDA7B0 /* OCTClient+Gists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Gists.h"; sourceTree = "<group>"; };
+		34DDCA5A19E1B09A00EDA7B0 /* OCTClient+Gists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Gists.m"; sourceTree = "<group>"; };
+		34DDCA5B19E1B09A00EDA7B0 /* OCTClient+Git.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Git.h"; sourceTree = "<group>"; };
+		34DDCA5C19E1B09A00EDA7B0 /* OCTClient+Git.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Git.m"; sourceTree = "<group>"; };
+		34DDCA5D19E1B09A00EDA7B0 /* OCTClient+Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Keys.h"; sourceTree = "<group>"; };
+		34DDCA5E19E1B09A00EDA7B0 /* OCTClient+Keys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Keys.m"; sourceTree = "<group>"; };
+		34DDCA5F19E1B09A00EDA7B0 /* OCTClient+Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Notifications.h"; sourceTree = "<group>"; };
+		34DDCA6019E1B09A00EDA7B0 /* OCTClient+Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Notifications.m"; sourceTree = "<group>"; };
+		34DDCA6119E1B09A00EDA7B0 /* OCTClient+Organizations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Organizations.h"; sourceTree = "<group>"; };
+		34DDCA6219E1B09A00EDA7B0 /* OCTClient+Organizations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Organizations.m"; sourceTree = "<group>"; };
+		34DDCA6319E1B09A00EDA7B0 /* OCTClient+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Private.h"; sourceTree = "<group>"; };
+		34DDCA6419E1B09A00EDA7B0 /* OCTClient+Repositories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+Repositories.h"; sourceTree = "<group>"; };
+		34DDCA6519E1B09A00EDA7B0 /* OCTClient+Repositories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+Repositories.m"; sourceTree = "<group>"; };
+		34DDCA6619E1B09A00EDA7B0 /* OCTClient+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+User.h"; sourceTree = "<group>"; };
+		34DDCA6719E1B09A00EDA7B0 /* OCTClient+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+User.m"; sourceTree = "<group>"; };
+		34DDCA6819E1B09A00EDA7B0 /* OCTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTClient.h; sourceTree = "<group>"; };
+		34DDCA6919E1B09A00EDA7B0 /* OCTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTClient.m; sourceTree = "<group>"; };
+		34DDCA6A19E1B09A00EDA7B0 /* OCTComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTComment.h; sourceTree = "<group>"; };
+		34DDCA6B19E1B09A00EDA7B0 /* OCTCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTCommit.h; sourceTree = "<group>"; };
+		34DDCA6C19E1B09A00EDA7B0 /* OCTCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTCommit.m; sourceTree = "<group>"; };
+		34DDCA6D19E1B09A00EDA7B0 /* OCTCommitComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTCommitComment.h; sourceTree = "<group>"; };
+		34DDCA6E19E1B09A00EDA7B0 /* OCTCommitComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTCommitComment.m; sourceTree = "<group>"; };
+		34DDCA6F19E1B09A00EDA7B0 /* OCTCommitCommentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTCommitCommentEvent.h; sourceTree = "<group>"; };
+		34DDCA7019E1B09A00EDA7B0 /* OCTCommitCommentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTCommitCommentEvent.m; sourceTree = "<group>"; };
+		34DDCA7119E1B09A00EDA7B0 /* OCTCommitTreeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTCommitTreeEntry.h; sourceTree = "<group>"; };
+		34DDCA7219E1B09A00EDA7B0 /* OCTCommitTreeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTCommitTreeEntry.m; sourceTree = "<group>"; };
+		34DDCA7319E1B09A00EDA7B0 /* OCTContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTContent.h; sourceTree = "<group>"; };
+		34DDCA7419E1B09A00EDA7B0 /* OCTContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTContent.m; sourceTree = "<group>"; };
+		34DDCA7519E1B09A00EDA7B0 /* OCTContentTreeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTContentTreeEntry.h; sourceTree = "<group>"; };
+		34DDCA7619E1B09A00EDA7B0 /* OCTContentTreeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTContentTreeEntry.m; sourceTree = "<group>"; };
+		34DDCA7719E1B09A00EDA7B0 /* OCTDirectoryContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTDirectoryContent.h; sourceTree = "<group>"; };
+		34DDCA7819E1B09A00EDA7B0 /* OCTDirectoryContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTDirectoryContent.m; sourceTree = "<group>"; };
+		34DDCA7919E1B09A00EDA7B0 /* OCTEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTEntity.h; sourceTree = "<group>"; };
+		34DDCA7A19E1B09A00EDA7B0 /* OCTEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTEntity.m; sourceTree = "<group>"; };
+		34DDCA7B19E1B09A00EDA7B0 /* OCTEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTEvent.h; sourceTree = "<group>"; };
+		34DDCA7C19E1B09A00EDA7B0 /* OCTEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTEvent.m; sourceTree = "<group>"; };
+		34DDCA7D19E1B09A00EDA7B0 /* OCTFileContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTFileContent.h; sourceTree = "<group>"; };
+		34DDCA7E19E1B09A00EDA7B0 /* OCTFileContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTFileContent.m; sourceTree = "<group>"; };
+		34DDCA7F19E1B09A00EDA7B0 /* OCTGist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTGist.h; sourceTree = "<group>"; };
+		34DDCA8019E1B09A00EDA7B0 /* OCTGist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTGist.m; sourceTree = "<group>"; };
+		34DDCA8119E1B09A00EDA7B0 /* OCTGistFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTGistFile.h; sourceTree = "<group>"; };
+		34DDCA8219E1B09A00EDA7B0 /* OCTGistFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTGistFile.m; sourceTree = "<group>"; };
+		34DDCA8319E1B09A00EDA7B0 /* OCTGitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTGitCommit.h; sourceTree = "<group>"; };
+		34DDCA8419E1B09A00EDA7B0 /* OCTGitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTGitCommit.m; sourceTree = "<group>"; };
+		34DDCA8519E1B09A00EDA7B0 /* OCTGitCommitFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTGitCommitFile.h; sourceTree = "<group>"; };
+		34DDCA8619E1B09A00EDA7B0 /* OCTGitCommitFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTGitCommitFile.m; sourceTree = "<group>"; };
+		34DDCA8719E1B09A00EDA7B0 /* OCTIssue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTIssue.h; sourceTree = "<group>"; };
+		34DDCA8819E1B09A00EDA7B0 /* OCTIssue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTIssue.m; sourceTree = "<group>"; };
+		34DDCA8919E1B09A00EDA7B0 /* OCTIssueComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTIssueComment.h; sourceTree = "<group>"; };
+		34DDCA8A19E1B09A00EDA7B0 /* OCTIssueComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTIssueComment.m; sourceTree = "<group>"; };
+		34DDCA8B19E1B09A00EDA7B0 /* OCTIssueCommentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTIssueCommentEvent.h; sourceTree = "<group>"; };
+		34DDCA8C19E1B09A00EDA7B0 /* OCTIssueCommentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTIssueCommentEvent.m; sourceTree = "<group>"; };
+		34DDCA8D19E1B09A00EDA7B0 /* OCTIssueEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTIssueEvent.h; sourceTree = "<group>"; };
+		34DDCA8E19E1B09A00EDA7B0 /* OCTIssueEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTIssueEvent.m; sourceTree = "<group>"; };
+		34DDCA8F19E1B09A00EDA7B0 /* OCTNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTNotification.h; sourceTree = "<group>"; };
+		34DDCA9019E1B09A00EDA7B0 /* OCTNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTNotification.m; sourceTree = "<group>"; };
+		34DDCA9119E1B09A00EDA7B0 /* OCTObject+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTObject+Private.h"; sourceTree = "<group>"; };
+		34DDCA9219E1B09A00EDA7B0 /* OCTObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTObject.h; sourceTree = "<group>"; };
+		34DDCA9319E1B09A00EDA7B0 /* OCTObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTObject.m; sourceTree = "<group>"; };
+		34DDCA9419E1B09A00EDA7B0 /* OctoKit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OctoKit-Info.plist"; sourceTree = "<group>"; };
+		34DDCA9519E1B09A00EDA7B0 /* OctoKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OctoKit-Prefix.pch"; sourceTree = "<group>"; };
+		34DDCA9619E1B09A00EDA7B0 /* OctoKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OctoKit.h; sourceTree = "<group>"; };
+		34DDCA9719E1B09A00EDA7B0 /* OCTOrganization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTOrganization.h; sourceTree = "<group>"; };
+		34DDCA9819E1B09A00EDA7B0 /* OCTOrganization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTOrganization.m; sourceTree = "<group>"; };
+		34DDCA9919E1B09A00EDA7B0 /* OCTPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPlan.h; sourceTree = "<group>"; };
+		34DDCA9A19E1B09A00EDA7B0 /* OCTPlan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPlan.m; sourceTree = "<group>"; };
+		34DDCA9B19E1B09A00EDA7B0 /* OCTPublicKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPublicKey.h; sourceTree = "<group>"; };
+		34DDCA9C19E1B09A00EDA7B0 /* OCTPublicKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPublicKey.m; sourceTree = "<group>"; };
+		34DDCA9D19E1B09A00EDA7B0 /* OCTPullRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPullRequest.h; sourceTree = "<group>"; };
+		34DDCA9E19E1B09A00EDA7B0 /* OCTPullRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPullRequest.m; sourceTree = "<group>"; };
+		34DDCA9F19E1B09A00EDA7B0 /* OCTPullRequestComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPullRequestComment.h; sourceTree = "<group>"; };
+		34DDCAA019E1B09A00EDA7B0 /* OCTPullRequestComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPullRequestComment.m; sourceTree = "<group>"; };
+		34DDCAA119E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPullRequestCommentEvent.h; sourceTree = "<group>"; };
+		34DDCAA219E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPullRequestCommentEvent.m; sourceTree = "<group>"; };
+		34DDCAA319E1B09A00EDA7B0 /* OCTPullRequestEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPullRequestEvent.h; sourceTree = "<group>"; };
+		34DDCAA419E1B09A00EDA7B0 /* OCTPullRequestEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPullRequestEvent.m; sourceTree = "<group>"; };
+		34DDCAA519E1B09A00EDA7B0 /* OCTPushEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPushEvent.h; sourceTree = "<group>"; };
+		34DDCAA619E1B09A00EDA7B0 /* OCTPushEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPushEvent.m; sourceTree = "<group>"; };
+		34DDCAA719E1B09A00EDA7B0 /* OCTRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTRef.h; sourceTree = "<group>"; };
+		34DDCAA819E1B09A00EDA7B0 /* OCTRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTRef.m; sourceTree = "<group>"; };
+		34DDCAA919E1B09A00EDA7B0 /* OCTRefEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTRefEvent.h; sourceTree = "<group>"; };
+		34DDCAAA19E1B09A00EDA7B0 /* OCTRefEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTRefEvent.m; sourceTree = "<group>"; };
+		34DDCAAB19E1B09A00EDA7B0 /* OCTRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTRepository.h; sourceTree = "<group>"; };
+		34DDCAAC19E1B09A00EDA7B0 /* OCTRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTRepository.m; sourceTree = "<group>"; };
+		34DDCAAD19E1B09A00EDA7B0 /* OCTResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTResponse.h; sourceTree = "<group>"; };
+		34DDCAAE19E1B09A00EDA7B0 /* OCTResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTResponse.m; sourceTree = "<group>"; };
+		34DDCAAF19E1B09A00EDA7B0 /* OCTReviewComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTReviewComment.h; sourceTree = "<group>"; };
+		34DDCAB019E1B09A00EDA7B0 /* OCTServer+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTServer+Private.h"; sourceTree = "<group>"; };
+		34DDCAB119E1B09A00EDA7B0 /* OCTServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTServer.h; sourceTree = "<group>"; };
+		34DDCAB219E1B09A00EDA7B0 /* OCTServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTServer.m; sourceTree = "<group>"; };
+		34DDCAB319E1B09A00EDA7B0 /* OCTServerMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTServerMetadata.h; sourceTree = "<group>"; };
+		34DDCAB419E1B09A00EDA7B0 /* OCTServerMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTServerMetadata.m; sourceTree = "<group>"; };
+		34DDCAB519E1B09A00EDA7B0 /* OCTSubmoduleContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTSubmoduleContent.h; sourceTree = "<group>"; };
+		34DDCAB619E1B09A00EDA7B0 /* OCTSubmoduleContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTSubmoduleContent.m; sourceTree = "<group>"; };
+		34DDCAB719E1B09A00EDA7B0 /* OCTSymlinkContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTSymlinkContent.h; sourceTree = "<group>"; };
+		34DDCAB819E1B09A00EDA7B0 /* OCTSymlinkContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTSymlinkContent.m; sourceTree = "<group>"; };
+		34DDCAB919E1B09A00EDA7B0 /* OCTTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTTeam.h; sourceTree = "<group>"; };
+		34DDCABA19E1B09A00EDA7B0 /* OCTTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTTeam.m; sourceTree = "<group>"; };
+		34DDCABB19E1B09A00EDA7B0 /* OCTTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTTree.h; sourceTree = "<group>"; };
+		34DDCABC19E1B09A00EDA7B0 /* OCTTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTTree.m; sourceTree = "<group>"; };
+		34DDCABD19E1B09A00EDA7B0 /* OCTTreeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTTreeEntry.h; sourceTree = "<group>"; };
+		34DDCABE19E1B09A00EDA7B0 /* OCTTreeEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTTreeEntry.m; sourceTree = "<group>"; };
+		34DDCABF19E1B09A00EDA7B0 /* OCTUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTUser.h; sourceTree = "<group>"; };
+		34DDCAC019E1B09A00EDA7B0 /* OCTUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTUser.m; sourceTree = "<group>"; };
+		34DDCAC119E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RACSignal+OCTClientAdditions.h"; sourceTree = "<group>"; };
+		34DDCAC219E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+OCTClientAdditions.m"; sourceTree = "<group>"; };
+		A632ECB5297AC4CFB862B94F /* libPods-GitGood.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GitGood.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA14908FF7EFA4400976D231 /* Pods-GitGood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitGood.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitGood/Pods-GitGood.release.xcconfig"; sourceTree = "<group>"; };
+		FD31C90019E311850013A245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = GitGood/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		FD31C90219E311850013A245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GitGood/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		FD31C90819E312260013A245 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = GitGood/ViewControllers/ChatViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C90919E312260013A245 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = GitGood/ViewControllers/ChatViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C90A19E312260013A245 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinViewController.h; path = GitGood/ViewControllers/JoinViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C90B19E312260013A245 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinViewController.m; path = GitGood/ViewControllers/JoinViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C90C19E312260013A245 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeaderboardViewController.h; path = GitGood/ViewControllers/LeaderboardViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C90D19E312260013A245 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeaderboardViewController.m; path = GitGood/ViewControllers/LeaderboardViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C90E19E312260013A245 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogInViewController.h; path = GitGood/ViewControllers/LogInViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C90F19E312260013A245 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogInViewController.m; path = GitGood/ViewControllers/LogInViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C91019E312260013A245 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = GitGood/ViewControllers/MainViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C91119E312260013A245 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = GitGood/ViewControllers/MainViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C91219E312260013A245 /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentViewController.h; path = GitGood/ViewControllers/PaymentViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C91319E312260013A245 /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaymentViewController.m; path = GitGood/ViewControllers/PaymentViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C91419E312260013A245 /* StartChallengeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartChallengeViewController.h; path = GitGood/ViewControllers/StartChallengeViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C91519E312260013A245 /* StartChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartChallengeViewController.m; path = GitGood/ViewControllers/StartChallengeViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C91619E312260013A245 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = GitGood/ViewControllers/TabBarViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C91719E312260013A245 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = GitGood/ViewControllers/TabBarViewController.m; sourceTree = SOURCE_ROOT; };
+		FD31C92019E312360013A245 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = GitGood/Models/User.h; sourceTree = SOURCE_ROOT; };
+		FD31C92119E312360013A245 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = GitGood/Models/User.m; sourceTree = SOURCE_ROOT; };
+		FD31C92219E312360013A245 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = GitGood/Models/UserProfile.swift; sourceTree = SOURCE_ROOT; };
+		FD31C92519E3126D0013A245 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GitGood/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		FD31C92619E3126D0013A245 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GitGood/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		FD31C92719E3126D0013A245 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GitGood/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		FD31C92819E3126D0013A245 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GitGood/Info.plist; sourceTree = SOURCE_ROOT; };
+		FD31C92919E3126D0013A245 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GitGood/main.m; sourceTree = SOURCE_ROOT; };
+		FD31C92E19E312940013A245 /* GitGoodTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitGoodTests.m; path = GitGoodTests/GitGoodTests.m; sourceTree = SOURCE_ROOT; };
+		FD31C93019E312A00013A245 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GitGoodTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		FD31C93219E312B60013A245 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPayPalMobile.a; path = PayPalMobile/libPayPalMobile.a; sourceTree = SOURCE_ROOT; };
+		FD31C93319E312B60013A245 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalConfiguration.h; path = PayPalMobile/PayPalConfiguration.h; sourceTree = SOURCE_ROOT; };
+		FD31C93419E312B60013A245 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalFuturePaymentViewController.h; path = PayPalMobile/PayPalFuturePaymentViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C93519E312B60013A245 /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalMobile.h; path = PayPalMobile/PayPalMobile.h; sourceTree = SOURCE_ROOT; };
+		FD31C93619E312B60013A245 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalOAuthScopes.h; path = PayPalMobile/PayPalOAuthScopes.h; sourceTree = SOURCE_ROOT; };
+		FD31C93719E312B60013A245 /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalPayment.h; path = PayPalMobile/PayPalPayment.h; sourceTree = SOURCE_ROOT; };
+		FD31C93819E312B60013A245 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalPaymentViewController.h; path = PayPalMobile/PayPalPaymentViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C93919E312B60013A245 /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayPalProfileSharingViewController.h; path = PayPalMobile/PayPalProfileSharingViewController.h; sourceTree = SOURCE_ROOT; };
+		FD31C93B19E312C50013A245 /* Moxtra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Moxtra.h; path = Moxtra/Moxtra.h; sourceTree = "<group>"; };
+		FD31C93C19E312C50013A245 /* MXClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MXClient.h; path = Moxtra/MXClient.h; sourceTree = "<group>"; };
+		FD31C93E19E313310013A245 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Parse/Bolts.framework; sourceTree = "<group>"; };
+		FD31C93F19E313310013A245 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Parse/Parse.framework; sourceTree = "<group>"; };
+		FD31C94719E3366A0013A245 /* GitGood-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GitGood-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD31C94A19E33BEA0013A245 /* MoxtraConversationResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoxtraConversationResources.bundle; path = Moxtra/MoxtraConversationResources.bundle; sourceTree = "<group>"; };
+		FD39FB0019E065DD00CC2CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD39FB0219E0664100CC2CFE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FD39FB0319E0664100CC2CFE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FD39FB0419E0664100CC2CFE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FD39FB0519E0664100CC2CFE /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		FD39FB0619E0664100CC2CFE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FD85BF7319E1BC8400048FBA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		FDA5E4B919E167FF005F33DC /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
+		FDDD531D19E33DC700413D52 /* GitGoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GitGoodTests.xctest; path = "/Users/smeriwether/Development/iOS/GitGood/build/Debug-iphoneos/GitGoodTests.xctest"; sourceTree = "<absolute>"; };
+		FDDD532119E3443400413D52 /* GitGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD39FACB19DFE74000CC2CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD31C94019E313310013A245 /* Bolts.framework in Frameworks */,
+				FD31C94119E313310013A245 /* Parse.framework in Frameworks */,
+				FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */,
+				FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */,
+				FD03506619E108FB009279EC /* MobileCoreServices.framework in Frameworks */,
+				FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */,
+				FD03506519E108EF009279EC /* CoreLocation.framework in Frameworks */,
+				FD39FB0819E0664100CC2CFE /* AVFoundation.framework in Frameworks */,
+				FD03506319E108DF009279EC /* AudioToolbox.framework in Frameworks */,
+				FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */,
+				FD03506919E10917009279EC /* Security.framework in Frameworks */,
+				FD03506C19E1094C009279EC /* Social.framework in Frameworks */,
+				FD03506819E1090E009279EC /* libz.dylib in Frameworks */,
+				FD03506719E10900009279EC /* QuartzCore.framework in Frameworks */,
+				FD39FB0119E065DD00CC2CFE /* CoreGraphics.framework in Frameworks */,
+				FD03506419E108E5009279EC /* CFNetwork.framework in Frameworks */,
+				FD03506219E108CD009279EC /* Accounts.framework in Frameworks */,
+				FD39FB0719E0664100CC2CFE /* Accelerate.framework in Frameworks */,
+				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
+				FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */,
+				FD31C93A19E312B60013A245 /* libPayPalMobile.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD39FAE419DFE74000CC2CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34DDCA4419E1B09A00EDA7B0 /* OctoKit */ = {
+			isa = PBXGroup;
+			children = (
+				34DDCA4519E1B09A00EDA7B0 /* InfoPlist.strings */,
+				34DDCA4719E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.h */,
+				34DDCA4819E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m */,
+				34DDCA4919E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.h */,
+				34DDCA4A19E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m */,
+				34DDCA4B19E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.h */,
+				34DDCA4C19E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m */,
+				34DDCA4D19E1B09A00EDA7B0 /* OCTAccessToken.h */,
+				34DDCA4E19E1B09A00EDA7B0 /* OCTAccessToken.m */,
+				34DDCA4F19E1B09A00EDA7B0 /* OCTAuthorization.h */,
+				34DDCA5019E1B09A00EDA7B0 /* OCTAuthorization.m */,
+				34DDCA5119E1B09A00EDA7B0 /* OCTBlobTreeEntry.h */,
+				34DDCA5219E1B09A00EDA7B0 /* OCTBlobTreeEntry.m */,
+				34DDCA5319E1B09A00EDA7B0 /* OCTBranch.h */,
+				34DDCA5419E1B09A00EDA7B0 /* OCTBranch.m */,
+				34DDCA5519E1B09A00EDA7B0 /* OCTClient+Activity.h */,
+				34DDCA5619E1B09A00EDA7B0 /* OCTClient+Activity.m */,
+				34DDCA5719E1B09A00EDA7B0 /* OCTClient+Events.h */,
+				34DDCA5819E1B09A00EDA7B0 /* OCTClient+Events.m */,
+				34DDCA5919E1B09A00EDA7B0 /* OCTClient+Gists.h */,
+				34DDCA5A19E1B09A00EDA7B0 /* OCTClient+Gists.m */,
+				34DDCA5B19E1B09A00EDA7B0 /* OCTClient+Git.h */,
+				34DDCA5C19E1B09A00EDA7B0 /* OCTClient+Git.m */,
+				34DDCA5D19E1B09A00EDA7B0 /* OCTClient+Keys.h */,
+				34DDCA5E19E1B09A00EDA7B0 /* OCTClient+Keys.m */,
+				34DDCA5F19E1B09A00EDA7B0 /* OCTClient+Notifications.h */,
+				34DDCA6019E1B09A00EDA7B0 /* OCTClient+Notifications.m */,
+				34DDCA6119E1B09A00EDA7B0 /* OCTClient+Organizations.h */,
+				34DDCA6219E1B09A00EDA7B0 /* OCTClient+Organizations.m */,
+				34DDCA6319E1B09A00EDA7B0 /* OCTClient+Private.h */,
+				34DDCA6419E1B09A00EDA7B0 /* OCTClient+Repositories.h */,
+				34DDCA6519E1B09A00EDA7B0 /* OCTClient+Repositories.m */,
+				34DDCA6619E1B09A00EDA7B0 /* OCTClient+User.h */,
+				34DDCA6719E1B09A00EDA7B0 /* OCTClient+User.m */,
+				34DDCA6819E1B09A00EDA7B0 /* OCTClient.h */,
+				34DDCA6919E1B09A00EDA7B0 /* OCTClient.m */,
+				34DDCA6A19E1B09A00EDA7B0 /* OCTComment.h */,
+				34DDCA6B19E1B09A00EDA7B0 /* OCTCommit.h */,
+				34DDCA6C19E1B09A00EDA7B0 /* OCTCommit.m */,
+				34DDCA6D19E1B09A00EDA7B0 /* OCTCommitComment.h */,
+				34DDCA6E19E1B09A00EDA7B0 /* OCTCommitComment.m */,
+				34DDCA6F19E1B09A00EDA7B0 /* OCTCommitCommentEvent.h */,
+				34DDCA7019E1B09A00EDA7B0 /* OCTCommitCommentEvent.m */,
+				34DDCA7119E1B09A00EDA7B0 /* OCTCommitTreeEntry.h */,
+				34DDCA7219E1B09A00EDA7B0 /* OCTCommitTreeEntry.m */,
+				34DDCA7319E1B09A00EDA7B0 /* OCTContent.h */,
+				34DDCA7419E1B09A00EDA7B0 /* OCTContent.m */,
+				34DDCA7519E1B09A00EDA7B0 /* OCTContentTreeEntry.h */,
+				34DDCA7619E1B09A00EDA7B0 /* OCTContentTreeEntry.m */,
+				34DDCA7719E1B09A00EDA7B0 /* OCTDirectoryContent.h */,
+				34DDCA7819E1B09A00EDA7B0 /* OCTDirectoryContent.m */,
+				34DDCA7919E1B09A00EDA7B0 /* OCTEntity.h */,
+				34DDCA7A19E1B09A00EDA7B0 /* OCTEntity.m */,
+				34DDCA7B19E1B09A00EDA7B0 /* OCTEvent.h */,
+				34DDCA7C19E1B09A00EDA7B0 /* OCTEvent.m */,
+				34DDCA7D19E1B09A00EDA7B0 /* OCTFileContent.h */,
+				34DDCA7E19E1B09A00EDA7B0 /* OCTFileContent.m */,
+				34DDCA7F19E1B09A00EDA7B0 /* OCTGist.h */,
+				34DDCA8019E1B09A00EDA7B0 /* OCTGist.m */,
+				34DDCA8119E1B09A00EDA7B0 /* OCTGistFile.h */,
+				34DDCA8219E1B09A00EDA7B0 /* OCTGistFile.m */,
+				34DDCA8319E1B09A00EDA7B0 /* OCTGitCommit.h */,
+				34DDCA8419E1B09A00EDA7B0 /* OCTGitCommit.m */,
+				34DDCA8519E1B09A00EDA7B0 /* OCTGitCommitFile.h */,
+				34DDCA8619E1B09A00EDA7B0 /* OCTGitCommitFile.m */,
+				34DDCA8719E1B09A00EDA7B0 /* OCTIssue.h */,
+				34DDCA8819E1B09A00EDA7B0 /* OCTIssue.m */,
+				34DDCA8919E1B09A00EDA7B0 /* OCTIssueComment.h */,
+				34DDCA8A19E1B09A00EDA7B0 /* OCTIssueComment.m */,
+				34DDCA8B19E1B09A00EDA7B0 /* OCTIssueCommentEvent.h */,
+				34DDCA8C19E1B09A00EDA7B0 /* OCTIssueCommentEvent.m */,
+				34DDCA8D19E1B09A00EDA7B0 /* OCTIssueEvent.h */,
+				34DDCA8E19E1B09A00EDA7B0 /* OCTIssueEvent.m */,
+				34DDCA8F19E1B09A00EDA7B0 /* OCTNotification.h */,
+				34DDCA9019E1B09A00EDA7B0 /* OCTNotification.m */,
+				34DDCA9119E1B09A00EDA7B0 /* OCTObject+Private.h */,
+				34DDCA9219E1B09A00EDA7B0 /* OCTObject.h */,
+				34DDCA9319E1B09A00EDA7B0 /* OCTObject.m */,
+				34DDCA9419E1B09A00EDA7B0 /* OctoKit-Info.plist */,
+				34DDCA9519E1B09A00EDA7B0 /* OctoKit-Prefix.pch */,
+				34DDCA9619E1B09A00EDA7B0 /* OctoKit.h */,
+				34DDCA9719E1B09A00EDA7B0 /* OCTOrganization.h */,
+				34DDCA9819E1B09A00EDA7B0 /* OCTOrganization.m */,
+				34DDCA9919E1B09A00EDA7B0 /* OCTPlan.h */,
+				34DDCA9A19E1B09A00EDA7B0 /* OCTPlan.m */,
+				34DDCA9B19E1B09A00EDA7B0 /* OCTPublicKey.h */,
+				34DDCA9C19E1B09A00EDA7B0 /* OCTPublicKey.m */,
+				34DDCA9D19E1B09A00EDA7B0 /* OCTPullRequest.h */,
+				34DDCA9E19E1B09A00EDA7B0 /* OCTPullRequest.m */,
+				34DDCA9F19E1B09A00EDA7B0 /* OCTPullRequestComment.h */,
+				34DDCAA019E1B09A00EDA7B0 /* OCTPullRequestComment.m */,
+				34DDCAA119E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.h */,
+				34DDCAA219E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m */,
+				34DDCAA319E1B09A00EDA7B0 /* OCTPullRequestEvent.h */,
+				34DDCAA419E1B09A00EDA7B0 /* OCTPullRequestEvent.m */,
+				34DDCAA519E1B09A00EDA7B0 /* OCTPushEvent.h */,
+				34DDCAA619E1B09A00EDA7B0 /* OCTPushEvent.m */,
+				34DDCAA719E1B09A00EDA7B0 /* OCTRef.h */,
+				34DDCAA819E1B09A00EDA7B0 /* OCTRef.m */,
+				34DDCAA919E1B09A00EDA7B0 /* OCTRefEvent.h */,
+				34DDCAAA19E1B09A00EDA7B0 /* OCTRefEvent.m */,
+				34DDCAAB19E1B09A00EDA7B0 /* OCTRepository.h */,
+				34DDCAAC19E1B09A00EDA7B0 /* OCTRepository.m */,
+				34DDCAAD19E1B09A00EDA7B0 /* OCTResponse.h */,
+				34DDCAAE19E1B09A00EDA7B0 /* OCTResponse.m */,
+				34DDCAAF19E1B09A00EDA7B0 /* OCTReviewComment.h */,
+				34DDCAB019E1B09A00EDA7B0 /* OCTServer+Private.h */,
+				34DDCAB119E1B09A00EDA7B0 /* OCTServer.h */,
+				34DDCAB219E1B09A00EDA7B0 /* OCTServer.m */,
+				34DDCAB319E1B09A00EDA7B0 /* OCTServerMetadata.h */,
+				34DDCAB419E1B09A00EDA7B0 /* OCTServerMetadata.m */,
+				34DDCAB519E1B09A00EDA7B0 /* OCTSubmoduleContent.h */,
+				34DDCAB619E1B09A00EDA7B0 /* OCTSubmoduleContent.m */,
+				34DDCAB719E1B09A00EDA7B0 /* OCTSymlinkContent.h */,
+				34DDCAB819E1B09A00EDA7B0 /* OCTSymlinkContent.m */,
+				34DDCAB919E1B09A00EDA7B0 /* OCTTeam.h */,
+				34DDCABA19E1B09A00EDA7B0 /* OCTTeam.m */,
+				34DDCABB19E1B09A00EDA7B0 /* OCTTree.h */,
+				34DDCABC19E1B09A00EDA7B0 /* OCTTree.m */,
+				34DDCABD19E1B09A00EDA7B0 /* OCTTreeEntry.h */,
+				34DDCABE19E1B09A00EDA7B0 /* OCTTreeEntry.m */,
+				34DDCABF19E1B09A00EDA7B0 /* OCTUser.h */,
+				34DDCAC019E1B09A00EDA7B0 /* OCTUser.m */,
+				34DDCAC119E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.h */,
+				34DDCAC219E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m */,
+			);
+			path = OctoKit;
+			sourceTree = "<group>";
+		};
+		56624183DED6FDFB17CAEC71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3221010A271D17557E38BCB1 /* Pods-GitGood.debug.xcconfig */,
+				AA14908FF7EFA4400976D231 /* Pods-GitGood.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EF234D5B625C3F0B2B537CD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C93E19E313310013A245 /* Bolts.framework */,
+				FD31C93F19E313310013A245 /* Parse.framework */,
+				FD85BF7319E1BC8400048FBA /* MessageUI.framework */,
+				FDA5E4B919E167FF005F33DC /* dylib1.o */,
+				34DDC7F219E07D9500EDA7B0 /* Accounts.framework */,
+				34DDC7F019E07D9100EDA7B0 /* Social.framework */,
+				34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */,
+				34DDC7EA19E07D8400EDA7B0 /* Security.framework */,
+				34DDC7E819E07D7F00EDA7B0 /* QuartzCore.framework */,
+				34DDC7E619E07D7800EDA7B0 /* MobileCoreServices.framework */,
+				34DDC7E419E07D7200EDA7B0 /* libz.dylib */,
+				34DDC7E219E07D6B00EDA7B0 /* CoreLocation.framework */,
+				34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */,
+				34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */,
+				FD39FB0219E0664100CC2CFE /* Accelerate.framework */,
+				FD39FB0319E0664100CC2CFE /* AVFoundation.framework */,
+				FD39FB0419E0664100CC2CFE /* CoreFoundation.framework */,
+				FD39FB0519E0664100CC2CFE /* CoreImage.framework */,
+				FD39FB0619E0664100CC2CFE /* CoreMedia.framework */,
+				FD39FB0019E065DD00CC2CFE /* CoreGraphics.framework */,
+				A632ECB5297AC4CFB862B94F /* libPods-GitGood.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD31C94619E3151E0013A245 /* SDKs */ = {
+			isa = PBXGroup;
+			children = (
+				FDD2D1D219E308B1004B9BF7 /* Moxtra */,
+				FD85BF6919E1B90A00048FBA /* PayPalMobile */,
+				34DDCA4419E1B09A00EDA7B0 /* OctoKit */,
+			);
+			name = SDKs;
+			sourceTree = "<group>";
+		};
+		FD39FAC519DFE74000CC2CFE = {
+			isa = PBXGroup;
+			children = (
+				FD31C94719E3366A0013A245 /* GitGood-Bridging-Header.h */,
+				FD39FAD019DFE74000CC2CFE /* GitGood */,
+				FD39FAEA19DFE74000CC2CFE /* GitGoodTests */,
+				FD31C94619E3151E0013A245 /* SDKs */,
+				56624183DED6FDFB17CAEC71 /* Pods */,
+				EF234D5B625C3F0B2B537CD0 /* Frameworks */,
+				FDDD532119E3443400413D52 /* GitGood.app */,
+			);
+			sourceTree = "<group>";
+		};
+		FD39FAD019DFE74000CC2CFE /* GitGood */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C90119E311850013A245 /* Main.storyboard */,
+				FD31C8FF19E311850013A245 /* LaunchScreen.xib */,
+				FDD2D1D419E3091F004B9BF7 /* Models */,
+				FDD2D1D119E3087C004B9BF7 /* ViewControllers */,
+				FD39FAD119DFE74000CC2CFE /* Supporting Files */,
+			);
+			name = GitGood;
+			path = Product;
+			sourceTree = "<group>";
+		};
+		FD39FAD119DFE74000CC2CFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C92519E3126D0013A245 /* AppDelegate.h */,
+				FD31C92619E3126D0013A245 /* AppDelegate.m */,
+				FD31C92719E3126D0013A245 /* Images.xcassets */,
+				FD31C92819E3126D0013A245 /* Info.plist */,
+				FD31C92919E3126D0013A245 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD39FAEA19DFE74000CC2CFE /* GitGoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C92E19E312940013A245 /* GitGoodTests.m */,
+				FD39FAEB19DFE74000CC2CFE /* Supporting Files */,
+			);
+			name = GitGoodTests;
+			path = ProductTests;
+			sourceTree = "<group>";
+		};
+		FD39FAEB19DFE74000CC2CFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C93019E312A00013A245 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD85BF6919E1B90A00048FBA /* PayPalMobile */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C93219E312B60013A245 /* libPayPalMobile.a */,
+				FD31C93319E312B60013A245 /* PayPalConfiguration.h */,
+				FD31C93419E312B60013A245 /* PayPalFuturePaymentViewController.h */,
+				FD31C93519E312B60013A245 /* PayPalMobile.h */,
+				FD31C93619E312B60013A245 /* PayPalOAuthScopes.h */,
+				FD31C93719E312B60013A245 /* PayPalPayment.h */,
+				FD31C93819E312B60013A245 /* PayPalPaymentViewController.h */,
+				FD31C93919E312B60013A245 /* PayPalProfileSharingViewController.h */,
+			);
+			name = PayPalMobile;
+			path = Product/PayPalMobile;
+			sourceTree = "<group>";
+		};
+		FDD2D1D119E3087C004B9BF7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C90819E312260013A245 /* ChatViewController.h */,
+				FD31C90919E312260013A245 /* ChatViewController.m */,
+				FD31C90A19E312260013A245 /* JoinViewController.h */,
+				FD31C90B19E312260013A245 /* JoinViewController.m */,
+				FD31C90C19E312260013A245 /* LeaderboardViewController.h */,
+				FD31C90D19E312260013A245 /* LeaderboardViewController.m */,
+				FD31C90E19E312260013A245 /* LogInViewController.h */,
+				FD31C90F19E312260013A245 /* LogInViewController.m */,
+				FD31C91019E312260013A245 /* MainViewController.h */,
+				FD31C91119E312260013A245 /* MainViewController.m */,
+				FD31C91219E312260013A245 /* PaymentViewController.h */,
+				FD31C91319E312260013A245 /* PaymentViewController.m */,
+				FD31C91419E312260013A245 /* StartChallengeViewController.h */,
+				FD31C91519E312260013A245 /* StartChallengeViewController.m */,
+				FD31C91619E312260013A245 /* TabBarViewController.h */,
+				FD31C91719E312260013A245 /* TabBarViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FDD2D1D219E308B1004B9BF7 /* Moxtra */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C94A19E33BEA0013A245 /* MoxtraConversationResources.bundle */,
+				FD31C93B19E312C50013A245 /* Moxtra.h */,
+				FD31C93C19E312C50013A245 /* MXClient.h */,
+			);
+			name = Moxtra;
+			sourceTree = "<group>";
+		};
+		FDD2D1D419E3091F004B9BF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD31C92019E312360013A245 /* User.h */,
+				FD31C92119E312360013A245 /* User.m */,
+				FD31C92219E312360013A245 /* UserProfile.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD39FACD19DFE74000CC2CFE /* GitGood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD39FAF119DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "GitGood" */;
+			buildPhases = (
+				9652A07814091EF70D12C811 /* Check Pods Manifest.lock */,
+				FD39FACA19DFE74000CC2CFE /* Sources */,
+				FD39FACB19DFE74000CC2CFE /* Frameworks */,
+				FD39FACC19DFE74000CC2CFE /* Resources */,
+				F27621B48F04BB7592E842FF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GitGood;
+			productName = Product;
+			productReference = FDDD532119E3443400413D52 /* GitGood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD39FAE619DFE74000CC2CFE /* GitGoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD39FAF419DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "GitGoodTests" */;
+			buildPhases = (
+				FD39FAE319DFE74000CC2CFE /* Sources */,
+				FD39FAE419DFE74000CC2CFE /* Frameworks */,
+				FD39FAE519DFE74000CC2CFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD39FAE919DFE74000CC2CFE /* PBXTargetDependency */,
+			);
+			name = GitGoodTests;
+			productName = ProductTests;
+			productReference = FDDD531D19E33DC700413D52 /* GitGoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD39FAC619DFE74000CC2CFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = CalHacksProductivity;
+				TargetAttributes = {
+					FD39FACD19DFE74000CC2CFE = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 8G4H6268W7;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
+					};
+					FD39FAE619DFE74000CC2CFE = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = FD39FACD19DFE74000CC2CFE;
+					};
+				};
+			};
+			buildConfigurationList = FD39FAC919DFE74000CC2CFE /* Build configuration list for PBXProject "GitGood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD39FAC519DFE74000CC2CFE;
+			productRefGroup = FD39FAC519DFE74000CC2CFE;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD39FACD19DFE74000CC2CFE /* GitGood */,
+				FD39FAE619DFE74000CC2CFE /* GitGoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD39FACC19DFE74000CC2CFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD31C94B19E33BEA0013A245 /* MoxtraConversationResources.bundle in Resources */,
+				FDDD532319E344B300413D52 /* Main.storyboard in Resources */,
+				34DDCAC319E1B09A00EDA7B0 /* InfoPlist.strings in Resources */,
+				34DDCAE919E1B09A00EDA7B0 /* OctoKit-Info.plist in Resources */,
+				FDDD532419E344B600413D52 /* LaunchScreen.xib in Resources */,
+				FD31C92B19E3126D0013A245 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD39FAE519DFE74000CC2CFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9652A07814091EF70D12C811 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F27621B48F04BB7592E842FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitGood/Pods-GitGood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD39FACA19DFE74000CC2CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34DDCAF919E1B09A00EDA7B0 /* OCTSymlinkContent.m in Sources */,
+				34DDCACE19E1B09A00EDA7B0 /* OCTClient+Git.m in Sources */,
+				34DDCAF719E1B09A00EDA7B0 /* OCTServerMetadata.m in Sources */,
+				FD31C92D19E3126D0013A245 /* main.m in Sources */,
+				34DDCAD319E1B09A00EDA7B0 /* OCTClient+User.m in Sources */,
+				34DDCAE719E1B09A00EDA7B0 /* OCTNotification.m in Sources */,
+				34DDCAF519E1B09A00EDA7B0 /* OCTResponse.m in Sources */,
+				34DDCADF19E1B09A00EDA7B0 /* OCTGist.m in Sources */,
+				34DDCAE019E1B09A00EDA7B0 /* OCTGistFile.m in Sources */,
+				34DDCAF219E1B09A00EDA7B0 /* OCTRef.m in Sources */,
+				34DDCAE219E1B09A00EDA7B0 /* OCTGitCommitFile.m in Sources */,
+				34DDCAD119E1B09A00EDA7B0 /* OCTClient+Organizations.m in Sources */,
+				34DDCAC919E1B09A00EDA7B0 /* OCTBlobTreeEntry.m in Sources */,
+				34DDCAF019E1B09A00EDA7B0 /* OCTPullRequestEvent.m in Sources */,
+				34DDCAFA19E1B09A00EDA7B0 /* OCTTeam.m in Sources */,
+				34DDCAF619E1B09A00EDA7B0 /* OCTServer.m in Sources */,
+				34DDCAD919E1B09A00EDA7B0 /* OCTContent.m in Sources */,
+				34DDCAF819E1B09A00EDA7B0 /* OCTSubmoduleContent.m in Sources */,
+				34DDCAD519E1B09A00EDA7B0 /* OCTCommit.m in Sources */,
+				34DDCAE319E1B09A00EDA7B0 /* OCTIssue.m in Sources */,
+				34DDCADA19E1B09A00EDA7B0 /* OCTContentTreeEntry.m in Sources */,
+				34DDCAD719E1B09A00EDA7B0 /* OCTCommitCommentEvent.m in Sources */,
+				34DDCACB19E1B09A00EDA7B0 /* OCTClient+Activity.m in Sources */,
+				34DDCAF119E1B09A00EDA7B0 /* OCTPushEvent.m in Sources */,
+				34DDCAD819E1B09A00EDA7B0 /* OCTCommitTreeEntry.m in Sources */,
+				34DDCAE419E1B09A00EDA7B0 /* OCTIssueComment.m in Sources */,
+				34DDCAC719E1B09A00EDA7B0 /* OCTAccessToken.m in Sources */,
+				FD31C91819E312260013A245 /* ChatViewController.m in Sources */,
+				34DDCADE19E1B09A00EDA7B0 /* OCTFileContent.m in Sources */,
+				34DDCAC519E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m in Sources */,
+				34DDCAFD19E1B09A00EDA7B0 /* OCTUser.m in Sources */,
+				FD31C91F19E312260013A245 /* TabBarViewController.m in Sources */,
+				34DDCAD219E1B09A00EDA7B0 /* OCTClient+Repositories.m in Sources */,
+				34DDCACA19E1B09A00EDA7B0 /* OCTBranch.m in Sources */,
+				34DDCAF319E1B09A00EDA7B0 /* OCTRefEvent.m in Sources */,
+				FD31C92A19E3126D0013A245 /* AppDelegate.m in Sources */,
+				34DDCAD619E1B09A00EDA7B0 /* OCTCommitComment.m in Sources */,
+				34DDCAE819E1B09A00EDA7B0 /* OCTObject.m in Sources */,
+				34DDCADD19E1B09A00EDA7B0 /* OCTEvent.m in Sources */,
+				34DDCAEB19E1B09A00EDA7B0 /* OCTPlan.m in Sources */,
+				34DDCAC819E1B09A00EDA7B0 /* OCTAuthorization.m in Sources */,
+				34DDCAF419E1B09A00EDA7B0 /* OCTRepository.m in Sources */,
+				34DDCADC19E1B09A00EDA7B0 /* OCTEntity.m in Sources */,
+				34DDCAEE19E1B09A00EDA7B0 /* OCTPullRequestComment.m in Sources */,
+				FD31C91E19E312260013A245 /* StartChallengeViewController.m in Sources */,
+				34DDCADB19E1B09A00EDA7B0 /* OCTDirectoryContent.m in Sources */,
+				34DDCAEF19E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m in Sources */,
+				34DDCAFE19E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m in Sources */,
+				34DDCAFC19E1B09A00EDA7B0 /* OCTTreeEntry.m in Sources */,
+				34DDCAE119E1B09A00EDA7B0 /* OCTGitCommit.m in Sources */,
+				34DDCAC619E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m in Sources */,
+				34DDCAD419E1B09A00EDA7B0 /* OCTClient.m in Sources */,
+				FD31C92319E312360013A245 /* User.m in Sources */,
+				34DDCACF19E1B09A00EDA7B0 /* OCTClient+Keys.m in Sources */,
+				FD31C91A19E312260013A245 /* LeaderboardViewController.m in Sources */,
+				34DDCAEA19E1B09A00EDA7B0 /* OCTOrganization.m in Sources */,
+				34DDCAED19E1B09A00EDA7B0 /* OCTPullRequest.m in Sources */,
+				34DDCAD019E1B09A00EDA7B0 /* OCTClient+Notifications.m in Sources */,
+				34DDCACC19E1B09A00EDA7B0 /* OCTClient+Events.m in Sources */,
+				FD31C91C19E312260013A245 /* MainViewController.m in Sources */,
+				FD31C91D19E312260013A245 /* PaymentViewController.m in Sources */,
+				34DDCAE519E1B09A00EDA7B0 /* OCTIssueCommentEvent.m in Sources */,
+				34DDCACD19E1B09A00EDA7B0 /* OCTClient+Gists.m in Sources */,
+				FD31C92419E312360013A245 /* UserProfile.swift in Sources */,
+				34DDCAEC19E1B09A00EDA7B0 /* OCTPublicKey.m in Sources */,
+				34DDCAE619E1B09A00EDA7B0 /* OCTIssueEvent.m in Sources */,
+				FD31C91B19E312260013A245 /* LogInViewController.m in Sources */,
+				34DDCAC419E1B09A00EDA7B0 /* NSDateFormatter+OCTFormattingAdditions.m in Sources */,
+				FD31C91919E312260013A245 /* JoinViewController.m in Sources */,
+				34DDCAFB19E1B09A00EDA7B0 /* OCTTree.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD39FAE319DFE74000CC2CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD31C94519E3150B0013A245 /* GitGoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD39FAE919DFE74000CC2CFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD39FACD19DFE74000CC2CFE /* GitGood */;
+			targetProxy = FD39FAE819DFE74000CC2CFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		34DDCA4519E1B09A00EDA7B0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34DDCA4619E1B09A00EDA7B0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FD31C8FF19E311850013A245 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD31C90019E311850013A245 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FD31C90119E311850013A245 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD31C90219E311850013A245 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD39FAEF19DFE74000CC2CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FD39FAF019DFE74000CC2CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: com.calhacks.productivity.Product";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD39FAF219DFE74000CC2CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3221010A271D17557E38BCB1 /* Pods-GitGood.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parse",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/GitGood/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+					"-lPods-GitGood-AFNetworking",
+					"-lPods-GitGood-ReactiveCocoa",
+					"-lPods-GitGood-ISO8601DateFormatter",
+					"-lPods-GitGood-Mantle",
+				);
+				PRODUCT_NAME = GitGood;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitGood-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		FD39FAF319DFE74000CC2CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA14908FF7EFA4400976D231 /* Pods-GitGood.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parse",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/GitGood/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PayPalMobile",
+				);
+				OTHER_CODE_SIGN_FLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-lc++",
+					"-lPods-GitGood-AFNetworking",
+					"-lPods-GitGood-ReactiveCocoa",
+					"-lPods-GitGood-ISO8601DateFormatter",
+					"-lPods-GitGood-Mantle",
+				);
+				PRODUCT_NAME = GitGood;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "GitGood-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+		FD39FAF519DFE74000CC2CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GitGoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = GitGoodTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitGood.app/GitGood";
+			};
+			name = Debug;
+		};
+		FD39FAF619DFE74000CC2CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stephen Meriwether (93LZVHUHUC)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GitGoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = GitGoodTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitGood.app/GitGood";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD39FAC919DFE74000CC2CFE /* Build configuration list for PBXProject "GitGood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD39FAEF19DFE74000CC2CFE /* Debug */,
+				FD39FAF019DFE74000CC2CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD39FAF119DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "GitGood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD39FAF219DFE74000CC2CFE /* Debug */,
+				FD39FAF319DFE74000CC2CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD39FAF419DFE74000CC2CFE /* Build configuration list for PBXNativeTarget "GitGoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD39FAF519DFE74000CC2CFE /* Debug */,
+				FD39FAF619DFE74000CC2CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD39FAC619DFE74000CC2CFE /* Project object */;
+}

@@ -4,27 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Product-AFNetworking.xcscheme</key>
+		<key>Pods-GitGood-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Product-ISO8601DateFormatter.xcscheme</key>
+		<key>Pods-GitGood-ISO8601DateFormatter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Product-Mantle.xcscheme</key>
+		<key>Pods-GitGood-Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Product-ReactiveCocoa.xcscheme</key>
+		<key>Pods-GitGood-ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Product.xcscheme</key>
+		<key>Pods-GitGood.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,52 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21ED6647D5ADB44CD76D78F9</key>
+		<key>07C37B7A3D74755B44E50850</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B1E429A4F77C1633705BEB7</key>
+		<key>5554D1EFAF0C46BB12C516FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2CEFAC6D16B20831ED5092B2</key>
+		<key>9E3973A4903C09D69C590DC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3474F97738659F48C6654A17</key>
+		<key>A0C839E73F0943AF05FD03F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6F44ADEC645C7164C3A48D21</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6F672E64D910AC2925F3A048</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>77CE09379B1A90698CB14EEF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A9E055486A7CFD7FD227A0F9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C7A10269EF87153D5EC50A4D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EECB4901482A0D30EAF52EC0</key>
+		<key>B18F1937DE866960647ACCDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
