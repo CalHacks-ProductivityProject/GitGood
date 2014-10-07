@@ -28,16 +28,10 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.tabBarController.navigationItem.title = @"Leaderboards";
     
-    NSLog(@"GameID in Leaderboard:%@", _gameID);
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.tabBarController.navigationItem.title = @"Leaderboards";
     
     self.leaderboardTable.delegate = self;
     self.leaderboardTable.dataSource = self;
@@ -53,10 +47,6 @@
             [self.leaderboardTable reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
         });
     }];
-    
-    NSLog(@"We got here");
-    for (int i=0; i<[_players count]; ++i)
-        NSLog(@"%@", [_players objectAtIndex:i]);
 }
 
 #pragma mark - TableView Delegate Methods
@@ -76,7 +66,6 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:rightDetailIdentifier];
     }
     
-    //cell.textLabel.text = [self.testChallenges objectAtIndex:indexPath.row];
     cell.textLabel.text = [self.players objectAtIndex:indexPath.row];
     
     UIImage *cellImage = [UIImage imageNamed:@"7351237"];

@@ -549,10 +549,6 @@
                                     <action selector="sendChallenge:" destination="MF5-CE-p2h" eventType="touchUpInside" id="Ad3-pY-KOm"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-m9-HFg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="431"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount Per Person:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8J-F9-zVs">
                                 <rect key="frame" x="0.0" y="560" width="215" height="49"/>
                                 <color key="backgroundColor" red="0.85803970025510201" green="0.85803970025510201" blue="0.85803970025510201" alpha="1" colorSpace="calibratedRGB"/>
@@ -560,6 +556,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-m9-HFg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -579,7 +579,7 @@
                     <connections>
                         <outlet property="enterMoney" destination="aDc-nG-Qrc" id="m0c-qy-fAJ"/>
                         <outlet property="numberOfWeeks" destination="Hxi-wZ-xeX" id="Ihg-xM-sch"/>
-                        <outlet property="searchDisplayController" destination="bxk-EF-1Pu" id="GLo-De-DwK"/>
+                        <outlet property="searchDisplayController" destination="W1c-Ha-Rao" id="t7l-nL-cmU"/>
                         <outlet property="startMatchButton" destination="JKu-oV-qQ8" id="tk3-lt-RiX"/>
                         <outlet property="tableView" destination="hl7-m9-HFg" id="VpN-nB-O6y"/>
                     </connections>
@@ -607,6 +607,14 @@
                         <outlet property="searchContentsController" destination="MF5-CE-p2h" id="zJ4-Ug-bQo"/>
                         <outlet property="searchResultsDataSource" destination="MF5-CE-p2h" id="QVc-6R-vT7"/>
                         <outlet property="searchResultsDelegate" destination="MF5-CE-p2h" id="cJ2-LU-OFT"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="W1c-Ha-Rao">
+                    <connections>
+                        <outlet property="delegate" destination="MF5-CE-p2h" id="zto-1X-7CI"/>
+                        <outlet property="searchContentsController" destination="MF5-CE-p2h" id="2J6-kh-O8p"/>
+                        <outlet property="searchResultsDataSource" destination="MF5-CE-p2h" id="JDx-0d-951"/>
+                        <outlet property="searchResultsDelegate" destination="MF5-CE-p2h" id="F2c-vd-yye"/>
                     </connections>
                 </searchDisplayController>
             </objects>

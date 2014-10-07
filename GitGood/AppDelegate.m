@@ -18,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     // Override point for customization after application launch.
     [Parse setApplicationId:@"DsQn6tLItkokgv6AnpLyHNp1o5bcwqIAwrK7p31T"
                   clientKey:@"Gvwzk2vb1RlbbmwW1sQOPnGv8CRnnVYnOLSSb5DL"];
@@ -35,7 +36,6 @@
     }
     
     [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentSandbox : @"AQFxjRDdN37Spp_GmHQhuRPcOnVQd9qGgUvEfP34jCZ0ecara08iZFuiyF2L"}];
-    // ...
     
     
     return YES;
