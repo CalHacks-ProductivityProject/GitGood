@@ -12,37 +12,109 @@
 
 @interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
-@property (nonatomic, strong) UISearchController *searchController;
-@property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
-@property (nonatomic, strong) NSMutableArray *challangeAdditions; // Filtered search results
+// For use in Storyboards
 @property (unsafe_unretained, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSMutableArray *userAccounts;
 @property (unsafe_unretained, nonatomic) IBOutlet UITextField *numberOfWeeks;
-@property (nonatomic) UIAlertView *alert;
-
-
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *startMatchButton;
+@property (strong, nonatomic) IBOutlet UITextField *enterMoney;
 
 // Session management.
 @property (nonatomic) dispatch_queue_t dumpQueue;
 @property (nonatomic) dispatch_queue_t searchQueue;
 
+// Data Models / Utilities
+@property (nonatomic) NSMutableArray *userAccounts;
+@property (nonatomic, strong) NSMutableArray *searchResults; // Filtered search results
+@property (nonatomic, strong) NSMutableArray *challangeAdditions; // Filtered search results
+@property (nonatomic, readonly) int moveDistance;
+@property (nonatomic, readonly) float defaultPosition;
+@property (nonatomic, readonly) float movedPosition;
+
+// UI
+@property (nonatomic, strong) UISearchController *searchController;
+@property (nonatomic, strong) UITableViewController *searchResultsController;
+@property (strong, nonatomic) NSNumberFormatter *formatter;
+
+// Alerts
+@property (nonatomic) UIAlertView *alert;
+
 @end
 
 @implementation StartChallengeViewController
 
-const int movedistance = 160;
+#pragma mark - Initialization
 
 - (void)viewDidLoad {
     [self userNameDump];
     
-    self.searchResults = [[NSMutableArray alloc] init];
-    self.userAccounts = [[NSMutableArray alloc] init];
-    self.challangeAdditions = [[NSMutableArray alloc] init];
+    [self setupNavBar];
+    [self setupSearchController];
+    [self setupModel];
+    [self setupUI];
     
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    [self setMoveDistance:160];
     
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    
+    _numberOfWeeks.delegate = self;
+    _enterMoney.delegate = self;
+    
+    _searchResultsController.tableView.dataSource = self;
+    _searchResultsController.tableView.delegate = self;
+    
+    _searchController.searchResultsUpdater = self;
+
+    self.definesPresentationContext = YES;
+    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)setMoveDistance:(int)moveDistance
+{
+    _moveDistance = moveDistance;
+}
+
+- (void)setDefaultPosition:(float)defaultPosition
+{
+    _defaultPosition = defaultPosition;
+}
+
+- (void)setMovedPosition:(float)movedPosition
+{
+    _movedPosition = movedPosition;
+}
+
+- (void)setupUI
+{
+    _tableView.allowsSelection = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    _formatter = [NSNumberFormatter new];
+    [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    [_formatter setLenient:YES];
+    [_formatter setGeneratesDecimalNumbers:YES];
+    
+    CGRect frame = self.view.frame;
+    [self setDefaultPosition:frame.origin.y];
+    [self setMovedPosition:frame.origin.y - self.moveDistance];
+}
+
+- (void)setupModel
+{
+    _searchResults = [[NSMutableArray alloc] init];
+    _userAccounts = [[NSMutableArray alloc] init];
+    _challangeAdditions = [[NSMutableArray alloc] init];
+    _searchResults = [NSMutableArray arrayWithCapacity:[self.userAccounts count]];
+}
+
+- (void)setupNavBar
+{
+    // The navigation bar through out the application has needed a white (color) title.
+    // This screen will use the default background so the black (color) is needed.
     NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                                [UIColor blackColor],
                                                NSForegroundColorAttributeName,
@@ -51,50 +123,25 @@ const int movedistance = 160;
     [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-    
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    
-    self.numberOfWeeks.delegate = self;
-    self.enterMoney.delegate = self;
-    
-    _formatter = [NSNumberFormatter new];
-    [_formatter setNumberStyle: NSNumberFormatterCurrencyStyle];
-    [_formatter setLenient:YES];
-    [_formatter setGeneratesDecimalNumbers:YES];
-    
-    CGRect frame = self.view.frame;
-    _movedPosition = frame.origin.y - movedistance;
-    _defaultPosition = frame.origin.y;
-    
-    [self.view addGestureRecognizer:tap];
-    
-    // Create a mutable array to contain products for the search results table.
-    self.searchResults = [NSMutableArray arrayWithCapacity:[self.userAccounts count]];
-    
-    UITableViewController *searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
-    searchResultsController.tableView.dataSource = self;
-    searchResultsController.tableView.delegate = self;
-    
-    self.searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultsController];
-    
-    self.searchController.searchResultsUpdater = self;
-    
-    self.searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
-    
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    self.tableView.allowsSelection = YES;
-    
-    self.definesPresentationContext = YES;
-    
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupSearchController
+{
+    _searchResultsController = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsController];
+    _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
+    
+    _tableView.tableHeaderView = self.searchController.searchBar;
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - Action Methods
 
 - (IBAction)timeEditing:(id)sender {
     self.numberOfWeeks.delegate = nil;
@@ -120,101 +167,6 @@ const int movedistance = 160;
     else {
         [self.tableView setEditing: NO animated: YES];
         [sender setTitle:@"Edit"];
-    }
-}
-
-- (void) dismissKeyboard
-{
-    [self.enterMoney resignFirstResponder];
-    [self.numberOfWeeks resignFirstResponder];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
-}
-
-- (void)keyboardWillHide:(NSNotification *)aNotification
-{
-    // the keyboard is hiding reset the table's height
-    NSTimeInterval animationDuration =
-    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y = _defaultPosition;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    self.view.frame = frame;
-    [UIView commitAnimations];
-}
-
-- (void)keyboardWillShow:(NSNotification *)aNotification
-{
-    // the keyboard is showing so resize the table's height
-    NSTimeInterval animationDuration =
-    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    CGRect frame = self.view.frame;
-    frame.origin.y = _movedPosition;
-    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
-    [UIView setAnimationDuration:animationDuration];
-    self.view.frame = frame;
-    [UIView commitAnimations];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    
-    NSString *replaced = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    NSDecimalNumber *amount = (NSDecimalNumber*) [_formatter numberFromString:replaced];
-    if (amount == nil) {
-        // Something screwed up the parsing. Probably an alpha character.
-        return NO;
-    }
-    // If the field is empty (the initial case) the number should be shifted to
-    // start in the right most decimal place.
-    short powerOf10 = 0;
-    if ([textField.text isEqualToString:@""]) {
-        powerOf10 = -_formatter.maximumFractionDigits;
-    }
-    // If the edit point is to the right of the decimal point we need to do
-    // some shifting.
-    else if (range.location + _formatter.maximumFractionDigits >= textField.text.length) {
-        // If there's a range of text selected, it'll delete part of the number
-        // so shift it back to the right.
-        if (range.length) {
-            powerOf10 = -range.length;
-        }
-        // Otherwise they're adding this many characters so shift left.
-        else {
-            powerOf10 = [string length];
-        }
-    }
-    amount = [amount decimalNumberByMultiplyingByPowerOf10:powerOf10];
-    
-    // Replace the value and then cancel this change.
-    textField.text = [_formatter stringFromNumber:amount];
-    return NO;
-}
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.challangeAdditions removeObjectAtIndex:indexPath.row];
-        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        //add code here for when you hit delete
     }
 }
 
@@ -263,6 +215,95 @@ const int movedistance = 160;
     [game saveInBackground];
     
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Keyboard Methods
+
+- (void) dismissKeyboard
+{
+    [self.enterMoney resignFirstResponder];
+    [self.numberOfWeeks resignFirstResponder];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    // the keyboard is hiding reset the table's height
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y = _defaultPosition;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    // the keyboard is showing so resize the table's height
+    NSTimeInterval animationDuration =
+    [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = self.view.frame;
+    frame.origin.y = _movedPosition;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    self.view.frame = frame;
+    [UIView commitAnimations];
+}
+
+
+#pragma mark - TextField Delegate Methods
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    
+    NSString *replaced = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSDecimalNumber *amount = (NSDecimalNumber*) [_formatter numberFromString:replaced];
+    if (amount == nil) {
+        // Something screwed up the parsing. Probably an alpha character.
+        return NO;
+    }
+    // If the field is empty (the initial case) the number should be shifted to
+    // start in the right most decimal place.
+    short powerOf10 = 0;
+    if ([textField.text isEqualToString:@""]) {
+        powerOf10 = -_formatter.maximumFractionDigits;
+    }
+    // If the edit point is to the right of the decimal point we need to do
+    // some shifting.
+    else if (range.location + _formatter.maximumFractionDigits >= textField.text.length) {
+        // If there's a range of text selected, it'll delete part of the number
+        // so shift it back to the right.
+        if (range.length) {
+            powerOf10 = -range.length;
+        }
+        // Otherwise they're adding this many characters so shift left.
+        else {
+            powerOf10 = [string length];
+        }
+    }
+    amount = [amount decimalNumberByMultiplyingByPowerOf10:powerOf10];
+    
+    // Replace the value and then cancel this change.
+    textField.text = [_formatter stringFromNumber:amount];
+    return NO;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
+    return YES;
 }
 
 
@@ -328,6 +369,15 @@ const int movedistance = 160;
 {
     return NO;
 }
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.challangeAdditions removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //add code here for when you hit delete
+    }
+}
+
 
 #pragma mark - UISearchResultsUpdating
 

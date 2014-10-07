@@ -77,7 +77,6 @@
 		FD03506919E10917009279EC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EA19E07D8400EDA7B0 /* Security.framework */; };
 		FD03506B19E10922009279EC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7EE19E07D8E00EDA7B0 /* SystemConfiguration.framework */; };
 		FD03506C19E1094C009279EC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F019E07D9100EDA7B0 /* Social.framework */; };
-		FD31C91819E312260013A245 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90919E312260013A245 /* ChatViewController.m */; };
 		FD31C91919E312260013A245 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90B19E312260013A245 /* JoinViewController.m */; };
 		FD31C91A19E312260013A245 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90D19E312260013A245 /* LeaderboardViewController.m */; };
 		FD31C91B19E312260013A245 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C90F19E312260013A245 /* LogInViewController.m */; };
@@ -103,6 +102,7 @@
 		FD39FB0B19E0664100CC2CFE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39FB0619E0664100CC2CFE /* CoreMedia.framework */; };
 		FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD85BF7319E1BC8400048FBA /* MessageUI.framework */; };
 		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
+		FDB2489319E35BE500D667D0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2489219E35BE500D667D0 /* SettingsViewController.m */; };
 		FDDD532319E344B300413D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31C90119E311850013A245 /* Main.storyboard */; };
 		FDDD532419E344B600413D52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD31C8FF19E311850013A245 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -258,8 +258,6 @@
 		AA14908FF7EFA4400976D231 /* Pods-GitGood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitGood.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitGood/Pods-GitGood.release.xcconfig"; sourceTree = "<group>"; };
 		FD31C90019E311850013A245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = GitGood/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		FD31C90219E311850013A245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = GitGood/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		FD31C90819E312260013A245 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = GitGood/ViewControllers/ChatViewController.h; sourceTree = SOURCE_ROOT; };
-		FD31C90919E312260013A245 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = GitGood/ViewControllers/ChatViewController.m; sourceTree = SOURCE_ROOT; };
 		FD31C90A19E312260013A245 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinViewController.h; path = GitGood/ViewControllers/JoinViewController.h; sourceTree = SOURCE_ROOT; };
 		FD31C90B19E312260013A245 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinViewController.m; path = GitGood/ViewControllers/JoinViewController.m; sourceTree = SOURCE_ROOT; };
 		FD31C90C19E312260013A245 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeaderboardViewController.h; path = GitGood/ViewControllers/LeaderboardViewController.h; sourceTree = SOURCE_ROOT; };
@@ -306,7 +304,9 @@
 		FD39FB0619E0664100CC2CFE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		FD85BF7319E1BC8400048FBA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FDA5E4B919E167FF005F33DC /* dylib1.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = dylib1.o; path = usr/lib/dylib1.o; sourceTree = SDKROOT; };
-		FDDD531D19E33DC700413D52 /* GitGoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GitGoodTests.xctest; path = "/Users/smeriwether/Development/iOS/GitGood/build/Debug-iphoneos/GitGoodTests.xctest"; sourceTree = "<absolute>"; };
+		FDB2488D19E359F000D667D0 /* GitGoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitGoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDB2489119E35BE500D667D0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = GitGood/ViewControllers/SettingsViewController.h; sourceTree = SOURCE_ROOT; };
+		FDB2489219E35BE500D667D0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = GitGood/ViewControllers/SettingsViewController.m; sourceTree = SOURCE_ROOT; };
 		FDDD532119E3443400413D52 /* GitGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -538,6 +538,7 @@
 				56624183DED6FDFB17CAEC71 /* Pods */,
 				EF234D5B625C3F0B2B537CD0 /* Frameworks */,
 				FDDD532119E3443400413D52 /* GitGood.app */,
+				FDB2488D19E359F000D667D0 /* GitGoodTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -603,8 +604,8 @@
 		FDD2D1D119E3087C004B9BF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD31C90819E312260013A245 /* ChatViewController.h */,
-				FD31C90919E312260013A245 /* ChatViewController.m */,
+				FDB2489119E35BE500D667D0 /* SettingsViewController.h */,
+				FDB2489219E35BE500D667D0 /* SettingsViewController.m */,
 				FD31C90A19E312260013A245 /* JoinViewController.h */,
 				FD31C90B19E312260013A245 /* JoinViewController.m */,
 				FD31C90C19E312260013A245 /* LeaderboardViewController.h */,
@@ -680,7 +681,7 @@
 			);
 			name = GitGoodTests;
 			productName = ProductTests;
-			productReference = FDDD531D19E33DC700413D52 /* GitGoodTests.xctest */;
+			productReference = FDB2488D19E359F000D667D0 /* GitGoodTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -787,6 +788,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB2489319E35BE500D667D0 /* SettingsViewController.m in Sources */,
 				34DDCAF919E1B09A00EDA7B0 /* OCTSymlinkContent.m in Sources */,
 				34DDCACE19E1B09A00EDA7B0 /* OCTClient+Git.m in Sources */,
 				34DDCAF719E1B09A00EDA7B0 /* OCTServerMetadata.m in Sources */,
@@ -814,7 +816,6 @@
 				34DDCAD819E1B09A00EDA7B0 /* OCTCommitTreeEntry.m in Sources */,
 				34DDCAE419E1B09A00EDA7B0 /* OCTIssueComment.m in Sources */,
 				34DDCAC719E1B09A00EDA7B0 /* OCTAccessToken.m in Sources */,
-				FD31C91819E312260013A245 /* ChatViewController.m in Sources */,
 				34DDCADE19E1B09A00EDA7B0 /* OCTFileContent.m in Sources */,
 				34DDCAC519E1B09A00EDA7B0 /* NSURL+OCTQueryAdditions.m in Sources */,
 				34DDCAFD19E1B09A00EDA7B0 /* OCTUser.m in Sources */,

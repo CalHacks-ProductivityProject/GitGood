@@ -10,7 +10,8 @@
 
 @interface User : NSObject
 
+// Github Information
 @property (nonatomic, copy) NSString *githubUsername;
-
+@property (nonatomic, copy) NSString *githubPassword;
 
 @end
