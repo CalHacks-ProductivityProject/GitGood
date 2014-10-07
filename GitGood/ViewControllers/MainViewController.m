@@ -82,6 +82,8 @@
 
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
     
+    [self.segmentedButton setTintColor:[UIColor colorWithRed:49/255.0 green:136/255.0 blue:201/255.0 alpha:1.0]];
+    
     self.userChallenges = [[NSMutableArray alloc] init];
     
     self.challengesTable.delegate = self;
@@ -117,7 +119,7 @@
     }
     
     cell.textLabel.text = [self.userChallenges objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @"Number of Users: 4";
+    cell.detailTextLabel.text = @"Number of Active Users: 4";
     
     return cell;
 }
