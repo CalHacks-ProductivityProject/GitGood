@@ -2,8 +2,66 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-GitGood-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Pods-GitGood-ISO8601DateFormatter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Pods-GitGood-Mantle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Pods-GitGood-ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
+		<key>Pods-GitGood.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-Product-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-Product-ISO8601DateFormatter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-Product-Mantle.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-Product-ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-Product.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>07C37B7A3D74755B44E50850</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2CEFAC6D16B20831ED5092B2</key>
 		<dict>
 			<key>primary</key>
@@ -14,7 +72,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5554D1EFAF0C46BB12C516FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6F672E64D910AC2925F3A048</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E3973A4903C09D69C590DC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0C839E73F0943AF05FD03F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B18F1937DE866960647ACCDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
