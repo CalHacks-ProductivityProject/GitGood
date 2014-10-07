@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5554D1EFAF0C46BB12C516FD"
-               BuildableName = "libPods-GitGood-Mantle.a"
-               BlueprintName = "Pods-GitGood-Mantle"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "07C37B7A3D74755B44E50850"
+               BuildableName = "libPods-GitGood-AFNetworking.a"
+               BlueprintName = "Pods-GitGood-AFNetworking"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,10 +42,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5554D1EFAF0C46BB12C516FD"
-            BuildableName = "libPods-GitGood-Mantle.a"
-            BlueprintName = "Pods-GitGood-Mantle"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "07C37B7A3D74755B44E50850"
+            BuildableName = "libPods-GitGood-AFNetworking.a"
+            BlueprintName = "Pods-GitGood-AFNetworking"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5554D1EFAF0C46BB12C516FD"
-            BuildableName = "libPods-GitGood-Mantle.a"
-            BlueprintName = "Pods-GitGood-Mantle"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "07C37B7A3D74755B44E50850"
+            BuildableName = "libPods-GitGood-AFNetworking.a"
+            BlueprintName = "Pods-GitGood-AFNetworking"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

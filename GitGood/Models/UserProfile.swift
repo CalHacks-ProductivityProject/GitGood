@@ -8,11 +8,15 @@
 
 import Foundation
 
+//This class creates a UserProfile based on the user's Github information
 @objc class UserProfile{
     //A profile needs a username and a picture, we need to find the url for the picture based on the given username
     var userName: String = "Default User"
+    //Default OctoCat picture until we find the user's picture
     var userPictureURLString: String = "https://lh5.googleusercontent.com/-tw5LsU4Fg28/Umo6BBcoCnI/AAAAAAAAmjE/1iqULsem06E/s1140-no/heisencat.png"
+    //Dictionary that stores the user's repos and their addtions and deletions
     var repositoriesAndCounts = Dictionary<String, Int>()
+    
     
     //Create a new instance of the function
     @objc class func newInstance() -> UserProfile {
@@ -22,8 +26,10 @@ import Foundation
     
     //Retrieve the url string for the user's github, this grabs their picture for us.
     @objc func retrieveURLString(userName: String) -> Void {
+        //Set the user's name
         self.userName = userName
         //Set up the network request, asynchronously
+        //UrlPath is the GitHub RestAPI URL + the user's name
         let urlPath: String = "https://api.github.com/users/" + userName
         var url: NSURL = NSURL(string: urlPath)
         var request: NSURLRequest = NSURLRequest(URL: url)
@@ -44,13 +50,14 @@ import Foundation
             
             //We can also find the user's repositories
             if let reposURLString = jsonResult.valueForKey("repos_url") as? String{
+                //Pass the repos_url from the user's github information to find their repos
                 self.findUserRepositories(reposURLString)
             }
         })
         
     }
     
-    //findUserRepositories takes a URL and returns estabishes the repositories and counts Dictionary
+    //findUserRepositories takes a URL and establishes the repositories and counts Dictionary
     @objc func findUserRepositories(urlString: String){
         
         //Standard Networking on Swift
@@ -76,7 +83,8 @@ import Foundation
                 println(swiftDictionary)
             }
         }
-            //create an array and store all the repositories that the user has
+        
+        //create an array and store all the repositories that the user has
         else if let nsArrayObject = swiftObject as? NSArray {
             //For each element in the array, find the name path, and store it
             for element in nsArrayObject{
@@ -90,9 +98,10 @@ import Foundation
     }
     
     
-    @objc func findRepo(repoName: AnyObject) -> Void{
+    @objc func findRepo(repoName: AnyObject) -> Void {
         println(repoName)
         //Standard Networking on Swift
+        //url is the github rest plus the username plus the repoName + the stats/code_frequency
         var url: NSURL = NSURL(string: "https://api.github.com/repos/" + self.userName +  "/" + String(repoName as NSString) + "/stats/code_frequency")
         var request: NSURLRequest = NSURLRequest(URL: url)
         let queue: NSOperationQueue = NSOperationQueue()

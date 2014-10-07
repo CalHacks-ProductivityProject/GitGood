@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9E3973A4903C09D69C590DC1"
-               BuildableName = "libPods-GitGood.a"
-               BlueprintName = "Pods-GitGood"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "A0C839E73F0943AF05FD03F0"
+               BuildableName = "libPods-GitGood-ReactiveCocoa.a"
+               BlueprintName = "Pods-GitGood-ReactiveCocoa"
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,10 +42,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9E3973A4903C09D69C590DC1"
-            BuildableName = "libPods-GitGood.a"
-            BlueprintName = "Pods-GitGood"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "A0C839E73F0943AF05FD03F0"
+            BuildableName = "libPods-GitGood-ReactiveCocoa.a"
+            BlueprintName = "Pods-GitGood-ReactiveCocoa"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,10 +60,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9E3973A4903C09D69C590DC1"
-            BuildableName = "libPods-GitGood.a"
-            BlueprintName = "Pods-GitGood"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "A0C839E73F0943AF05FD03F0"
+            BuildableName = "libPods-GitGood-ReactiveCocoa.a"
+            BlueprintName = "Pods-GitGood-ReactiveCocoa"
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
