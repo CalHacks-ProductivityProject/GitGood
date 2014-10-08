@@ -7,6 +7,34 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FD39FACD19DFE74000CC2CFE"
+               BuildableName = "Product.app"
+               BlueprintName = "Product"
+               ReferencedContainer = "container:Product.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FD39FAE619DFE74000CC2CFE"
+               BuildableName = "ProductTests.xctest"
+               BlueprintName = "ProductTests"
+               ReferencedContainer = "container:Product.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
@@ -15,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD39FACD19DFE74000CC2CFE"
-               BuildableName = "Product.app"
-               BlueprintName = "Product"
-               ReferencedContainer = "container:Product.xcodeproj">
+               BuildableName = "GitGood.app"
+               BlueprintName = "GitGood"
+               ReferencedContainer = "container:GitGood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +57,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FD39FAE619DFE74000CC2CFE"
-               BuildableName = "ProductTests.xctest"
-               BlueprintName = "ProductTests"
-               ReferencedContainer = "container:Product.xcodeproj">
+               BuildableName = "GitGoodTests.xctest"
+               BlueprintName = "GitGoodTests"
+               ReferencedContainer = "container:GitGood.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,6 +78,16 @@
                BuildableName = "ProductTests.xctest"
                BlueprintName = "ProductTests"
                ReferencedContainer = "container:Product.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FD39FAE619DFE74000CC2CFE"
+               BuildableName = "GitGoodTests.xctest"
+               BlueprintName = "GitGoodTests"
+               ReferencedContainer = "container:GitGood.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
