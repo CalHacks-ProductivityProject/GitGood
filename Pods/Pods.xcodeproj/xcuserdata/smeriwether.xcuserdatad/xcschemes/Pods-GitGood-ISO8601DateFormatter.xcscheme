@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B18F1937DE866960647ACCDA"
+               BlueprintIdentifier = "01BE797CE3DD86643DF28CF2"
                BuildableName = "libPods-GitGood-ISO8601DateFormatter.a"
                BlueprintName = "Pods-GitGood-ISO8601DateFormatter"
                ReferencedContainer = "container:Pods.xcodeproj">

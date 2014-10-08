@@ -67,6 +67,7 @@
 		34DDCAFC19E1B09A00EDA7B0 /* OCTTreeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCABE19E1B09A00EDA7B0 /* OCTTreeEntry.m */; };
 		34DDCAFD19E1B09A00EDA7B0 /* OCTUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAC019E1B09A00EDA7B0 /* OCTUser.m */; };
 		34DDCAFE19E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDCAC219E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m */; };
+		47941132684FD3E2DFBF2496 /* libPods-GitGood.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A632ECB5297AC4CFB862B94F /* libPods-GitGood.a */; };
 		FD03506219E108CD009279EC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7F219E07D9500EDA7B0 /* Accounts.framework */; };
 		FD03506319E108DF009279EC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7DE19E07D5500EDA7B0 /* AudioToolbox.framework */; };
 		FD03506419E108E5009279EC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DDC7E019E07D5A00EDA7B0 /* CFNetwork.framework */; };
@@ -105,6 +106,7 @@
 		FDB2489319E35BE500D667D0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2489219E35BE500D667D0 /* SettingsViewController.m */; };
 		FDDD532319E344B300413D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31C90119E311850013A245 /* Main.storyboard */; };
 		FDDD532419E344B600413D52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD31C8FF19E311850013A245 /* LaunchScreen.xib */; };
+		FDF76E2919E45FA5000C55AC /* BackGroundSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -308,6 +310,8 @@
 		FDB2489119E35BE500D667D0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = GitGood/ViewControllers/SettingsViewController.h; sourceTree = SOURCE_ROOT; };
 		FDB2489219E35BE500D667D0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = GitGood/ViewControllers/SettingsViewController.m; sourceTree = SOURCE_ROOT; };
 		FDDD532119E3443400413D52 /* GitGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF76E2719E45FA5000C55AC /* BackGroundSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackGroundSyncViewController.h; path = GitGood/ViewControllers/BackGroundSyncViewController.h; sourceTree = SOURCE_ROOT; };
+		FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackGroundSyncViewController.m; path = GitGood/ViewControllers/BackGroundSyncViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +340,7 @@
 				FD39FB0919E0664100CC2CFE /* CoreFoundation.framework in Frameworks */,
 				FD39FB0A19E0664100CC2CFE /* CoreImage.framework in Frameworks */,
 				FD31C93A19E312B60013A245 /* libPayPalMobile.a in Frameworks */,
+				47941132684FD3E2DFBF2496 /* libPods-GitGood.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +609,8 @@
 		FDD2D1D119E3087C004B9BF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDF76E2719E45FA5000C55AC /* BackGroundSyncViewController.h */,
+				FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */,
 				FDB2489119E35BE500D667D0 /* SettingsViewController.h */,
 				FDB2489219E35BE500D667D0 /* SettingsViewController.m */,
 				FD31C90A19E312260013A245 /* JoinViewController.h */,
@@ -837,6 +844,7 @@
 				34DDCAEF19E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m in Sources */,
 				34DDCAFE19E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m in Sources */,
 				34DDCAFC19E1B09A00EDA7B0 /* OCTTreeEntry.m in Sources */,
+				FDF76E2919E45FA5000C55AC /* BackGroundSyncViewController.m in Sources */,
 				34DDCAE119E1B09A00EDA7B0 /* OCTGitCommit.m in Sources */,
 				34DDCAC619E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m in Sources */,
 				34DDCAD419E1B09A00EDA7B0 /* OCTClient.m in Sources */,
