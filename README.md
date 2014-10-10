@@ -16,7 +16,7 @@ Creating a challenge:
 After signing in, create a challenge! Within the application, create a new challenge and enter the GitHub usernames of the friends/strangers you would like to challenge. 
 Each challenge has:
 Users! - Challenge friends or strangers, it is up to you.
-# of weeks - How long do you want the challenge to last?
+Number of weeks - How long do you want the challenge to last?
 Bet Amount in $USD - How much do you want to bet? Enter any value in USD and we can keep it safe until the challenge is over. Using the PayPal API, your payments are secure and effortless! 
 
 Winner winner chicken dinner:
