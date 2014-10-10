@@ -13,7 +13,7 @@ Signing in:
 Upon first launch, you will be prompted to enter a valid GitHub username and password. With authentication, GitGood can access your developer analytics using the GitHub API. 
 
 Creating a challenge:
-After signing in, create a challenge! Within the application, create a new challenge and enter the GitHub usernames of the friends/strangers you would like to challenge. 
+After signing in, create a challenge! Within the application, create a new challenge and enter the GitHub usernames of the friends/strangers you would like to challenge. \n
 Each challenge has:
 Users! - Challenge friends or strangers, it is up to you.
 Number of weeks - How long do you want the challenge to last?
