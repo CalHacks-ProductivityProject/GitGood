@@ -17,11 +17,11 @@ After signing in, create a challenge! Within the application, create a new chall
 
 Each challenge has:
 
-Users! - Challenge friends or strangers, it is up to you.
+--Users! - Challenge friends or strangers, it is up to you.
 
-Number of weeks - How long do you want the challenge to last?
+--Number of weeks - How long do you want the challenge to last?
 
-Bet Amount in $USD - How much do you want to bet? Enter any value in USD and we can keep it safe until the challenge is over. Using the PayPal API, your payments are secure and effortless! 
+--Bet Amount in $USD - How much do you want to bet? Enter any value in USD and we can keep it safe until the challenge is over. Using the PayPal API, your payments are secure and effortless! 
 
 
 So who is the winner?
