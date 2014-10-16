@@ -85,7 +85,7 @@
 		FD31C91D19E312260013A245 /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91319E312260013A245 /* PaymentViewController.m */; };
 		FD31C91E19E312260013A245 /* StartChallengeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91519E312260013A245 /* StartChallengeViewController.m */; };
 		FD31C91F19E312260013A245 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C91719E312260013A245 /* TabBarViewController.m */; };
-		FD31C92319E312360013A245 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92119E312360013A245 /* User.m */; };
+		FD31C92319E312360013A245 /* LocalGitGoodUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92119E312360013A245 /* LocalGitGoodUser.m */; };
 		FD31C92419E312360013A245 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92219E312360013A245 /* UserProfile.swift */; };
 		FD31C92A19E3126D0013A245 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD31C92619E3126D0013A245 /* AppDelegate.m */; };
 		FD31C92B19E3126D0013A245 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD31C92719E3126D0013A245 /* Images.xcassets */; };
@@ -104,9 +104,9 @@
 		FD85BF7419E1BC8400048FBA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD85BF7319E1BC8400048FBA /* MessageUI.framework */; };
 		FDA5E4BA19E167FF005F33DC /* dylib1.o in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA5E4B919E167FF005F33DC /* dylib1.o */; };
 		FDB2489319E35BE500D667D0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2489219E35BE500D667D0 /* SettingsViewController.m */; };
+		FDC5520519F06A1F001F0EBE /* GenericGitGoodUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC5520419F06A1F001F0EBE /* GenericGitGoodUser.m */; };
 		FDDD532319E344B300413D52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31C90119E311850013A245 /* Main.storyboard */; };
 		FDDD532419E344B600413D52 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD31C8FF19E311850013A245 /* LaunchScreen.xib */; };
-		FDF76E2919E45FA5000C55AC /* BackGroundSyncViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,8 +274,8 @@
 		FD31C91519E312260013A245 /* StartChallengeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartChallengeViewController.m; path = GitGood/ViewControllers/StartChallengeViewController.m; sourceTree = SOURCE_ROOT; };
 		FD31C91619E312260013A245 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarViewController.h; path = GitGood/ViewControllers/TabBarViewController.h; sourceTree = SOURCE_ROOT; };
 		FD31C91719E312260013A245 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarViewController.m; path = GitGood/ViewControllers/TabBarViewController.m; sourceTree = SOURCE_ROOT; };
-		FD31C92019E312360013A245 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = GitGood/Models/User.h; sourceTree = SOURCE_ROOT; };
-		FD31C92119E312360013A245 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = GitGood/Models/User.m; sourceTree = SOURCE_ROOT; };
+		FD31C92019E312360013A245 /* LocalGitGoodUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalGitGoodUser.h; path = GitGood/Models/LocalGitGoodUser.h; sourceTree = SOURCE_ROOT; };
+		FD31C92119E312360013A245 /* LocalGitGoodUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalGitGoodUser.m; path = GitGood/Models/LocalGitGoodUser.m; sourceTree = SOURCE_ROOT; };
 		FD31C92219E312360013A245 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = GitGood/Models/UserProfile.swift; sourceTree = SOURCE_ROOT; };
 		FD31C92519E3126D0013A245 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GitGood/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		FD31C92619E3126D0013A245 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = GitGood/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -309,9 +309,9 @@
 		FDB2488D19E359F000D667D0 /* GitGoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitGoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB2489119E35BE500D667D0 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = GitGood/ViewControllers/SettingsViewController.h; sourceTree = SOURCE_ROOT; };
 		FDB2489219E35BE500D667D0 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = GitGood/ViewControllers/SettingsViewController.m; sourceTree = SOURCE_ROOT; };
+		FDC5520319F06A1F001F0EBE /* GenericGitGoodUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GenericGitGoodUser.h; path = GitGood/Models/GenericGitGoodUser.h; sourceTree = SOURCE_ROOT; };
+		FDC5520419F06A1F001F0EBE /* GenericGitGoodUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GenericGitGoodUser.m; path = GitGood/Models/GenericGitGoodUser.m; sourceTree = SOURCE_ROOT; };
 		FDDD532119E3443400413D52 /* GitGood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitGood.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDF76E2719E45FA5000C55AC /* BackGroundSyncViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BackGroundSyncViewController.h; path = GitGood/ViewControllers/BackGroundSyncViewController.h; sourceTree = SOURCE_ROOT; };
-		FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BackGroundSyncViewController.m; path = GitGood/ViewControllers/BackGroundSyncViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,8 +609,6 @@
 		FDD2D1D119E3087C004B9BF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FDF76E2719E45FA5000C55AC /* BackGroundSyncViewController.h */,
-				FDF76E2819E45FA5000C55AC /* BackGroundSyncViewController.m */,
 				FDB2489119E35BE500D667D0 /* SettingsViewController.h */,
 				FDB2489219E35BE500D667D0 /* SettingsViewController.m */,
 				FD31C90A19E312260013A245 /* JoinViewController.h */,
@@ -644,8 +642,10 @@
 		FDD2D1D419E3091F004B9BF7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FD31C92019E312360013A245 /* User.h */,
-				FD31C92119E312360013A245 /* User.m */,
+				FD31C92019E312360013A245 /* LocalGitGoodUser.h */,
+				FD31C92119E312360013A245 /* LocalGitGoodUser.m */,
+				FDC5520319F06A1F001F0EBE /* GenericGitGoodUser.h */,
+				FDC5520419F06A1F001F0EBE /* GenericGitGoodUser.m */,
 				FD31C92219E312360013A245 /* UserProfile.swift */,
 			);
 			name = Models;
@@ -844,11 +844,11 @@
 				34DDCAEF19E1B09A00EDA7B0 /* OCTPullRequestCommentEvent.m in Sources */,
 				34DDCAFE19E1B09A00EDA7B0 /* RACSignal+OCTClientAdditions.m in Sources */,
 				34DDCAFC19E1B09A00EDA7B0 /* OCTTreeEntry.m in Sources */,
-				FDF76E2919E45FA5000C55AC /* BackGroundSyncViewController.m in Sources */,
 				34DDCAE119E1B09A00EDA7B0 /* OCTGitCommit.m in Sources */,
 				34DDCAC619E1B09A00EDA7B0 /* NSValueTransformer+OCTPredefinedTransformerAdditions.m in Sources */,
+				FDC5520519F06A1F001F0EBE /* GenericGitGoodUser.m in Sources */,
 				34DDCAD419E1B09A00EDA7B0 /* OCTClient.m in Sources */,
-				FD31C92319E312360013A245 /* User.m in Sources */,
+				FD31C92319E312360013A245 /* LocalGitGoodUser.m in Sources */,
 				34DDCACF19E1B09A00EDA7B0 /* OCTClient+Keys.m in Sources */,
 				FD31C91A19E312260013A245 /* LeaderboardViewController.m in Sources */,
 				34DDCAEA19E1B09A00EDA7B0 /* OCTOrganization.m in Sources */,

@@ -7,12 +7,14 @@
 //
 
 #import "SettingsViewController.h"
-#import "BackGroundSyncViewController.h"
+#import "LocalGitGoodUser.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <UIActionSheetDelegate>
 
 // For use in Storyboard
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *accountDetail;
+@property (weak, nonatomic) IBOutlet UILabel *passwordDetail;
 
 @end
 
@@ -25,9 +27,14 @@
     [super viewDidLoad];
     
     [self setupNavBar];
-    
-    
+    [self setupUI];
 
+}
+
+- (void)setupUI
+{
+    self.accountDetail.text = [[LocalGitGoodUser sharedInstance] username];
+    
 }
 
 - (void)setupNavBar
@@ -55,12 +62,25 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)logOutActionSheet {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Log Out", nil];
+    
+    [[UICollectionView appearanceWhenContainedIn:[UIAlertController class], nil] setTintColor:[UIColor redColor]];
+    
+    [actionSheet showInView:self.view];
+}
+
 
 #pragma mark - Table View Delegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"HERE");
+    NSLog(@"HERE With Row: %ld and Section: %ld", (long)indexPath.row, (long)indexPath.section);
+    
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self logOutActionSheet];
+    }
 }
 
 
@@ -71,8 +91,10 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    NSLog(@"HEre");
+    NSLog(@"Here");
 }
+
+
 
 
 @end

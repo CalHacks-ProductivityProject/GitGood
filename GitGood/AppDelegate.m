@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PayPalMobile.h"
+#import "LocalGitGoodUser.h"
 #import <Parse/Parse.h>
 
 @interface AppDelegate ()
@@ -22,7 +23,6 @@
     // Override point for customization after application launch.
     [Parse setApplicationId:@"DsQn6tLItkokgv6AnpLyHNp1o5bcwqIAwrK7p31T"
                   clientKey:@"Gvwzk2vb1RlbbmwW1sQOPnGv8CRnnVYnOLSSb5DL"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Register for Push Notitications, if running iOS 8
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
@@ -38,6 +38,11 @@
     [PayPalMobile initializeWithClientIdsForEnvironments:@{PayPalEnvironmentSandbox : @"AQFxjRDdN37Spp_GmHQhuRPcOnVQd9qGgUvEfP34jCZ0ecara08iZFuiyF2L"}];
     
     
+    [[LocalGitGoodUser sharedInstance] setGithubUsername:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"]];
+    [[LocalGitGoodUser sharedInstance] setGithubPassword:[[NSUserDefaults standardUserDefaults] stringForKey:@"password"]];
+    
+    NSLog(@"In DidFinishLaunching");
+    
     return YES;
 }
 
@@ -49,6 +54,9 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] username] forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] password] forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -61,6 +69,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {

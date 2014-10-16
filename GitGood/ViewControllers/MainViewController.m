@@ -11,42 +11,37 @@
 #import "TabBarViewController.h"
 #import "StartChallengeViewController.h"
 #import <Parse/Parse.h>
-#import "User.h"
+#import "LocalGitGoodUser.h"
 #import <GitGood-Swift.h>
 #import "JoinViewController.h"
 #import "LeaderboardViewController.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
+// For use in Storyboards
 @property (weak, nonatomic) IBOutlet UITableView *challengesTable;
-@property (nonatomic, copy) NSString *githubUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *fillerImage;
 @property (weak, nonatomic) IBOutlet UILabel *fillerLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedButton;
 @property (nonatomic) NSMutableArray *userChallenges;
-// !!!  DELETE LATER  !!!
-@property (nonatomic) NSMutableArray *testMembers;
-
 
 @end
 
 @implementation MainViewController
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLogIn"]) {
+    [super viewDidAppear:animated];
+    if([[LocalGitGoodUser sharedInstance] username] == nil) {
         [self displayLoginScreen];
     }
-    
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query setLimit:1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-                if ([[object objectForKey:@"ApprovedPlayers"] containsObject:username]) {
+                if ([[object objectForKey:@"ApprovedPlayers"] containsObject:[[LocalGitGoodUser sharedInstance] username]]) {
                     if (![self.userChallenges containsObject:[object objectId]]) {
                         [self.userChallenges addObject:[object objectId]];
                     }
@@ -71,6 +66,8 @@
     [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
     
     [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidLoad {
@@ -137,10 +134,6 @@
     logIn.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:logIn animated:YES completion:Nil];
     
-    logIn.somethingHappenedInModalVC = ^(NSString *response) {
-        self.githubUsername = response;
-    };
-    
     [self.challengesTable reloadData];
     
 }
@@ -166,8 +159,6 @@
 
 - (IBAction)indexChage:(UISegmentedControl*)sender
 {
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    
     switch (sender.selectedSegmentIndex)
     {
         case 0:
@@ -184,7 +175,7 @@
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (!error) {
                     for (PFObject *object in objects) {
-                        if ([[object objectForKey:@"ApprovedPlayers"] containsObject:username]) {
+                        if ([[object objectForKey:@"ApprovedPlayers"] containsObject:[[LocalGitGoodUser sharedInstance] username]]) {
                             if (![self.userChallenges containsObject:[object objectId]]) {
                                 [self.userChallenges addObject:[object objectId]];
                             }
@@ -215,7 +206,7 @@
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (!error) {
                     for (PFObject *object in objects) {
-                        if ([[object objectForKey:@"PendingPlayers"] containsObject:username]) {
+                        if ([[object objectForKey:@"PendingPlayers"] containsObject:[[LocalGitGoodUser sharedInstance] username]]) {
                             if (![self.userChallenges containsObject:[object objectId]]) {
                                 [self.userChallenges addObject:[object objectId]];
                             }

@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 @interface LogInViewController : UIViewController
-
-@property (nonatomic, copy) void (^somethingHappenedInModalVC)(NSString *response);
 
 @end

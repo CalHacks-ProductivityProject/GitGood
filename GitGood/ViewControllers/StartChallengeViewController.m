@@ -7,7 +7,8 @@
 //
 
 #import "StartChallengeViewController.h"
-#import "User.h"
+#import "GenericGitGoodUser.h"
+#import "LocalGitGoodUser.h"
 #import <Parse/Parse.h>
 
 @interface StartChallengeViewController () <UITextFieldDelegate, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
@@ -177,10 +178,6 @@
         return;
     }
     
-    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
-    
-    NSLog(@"%@", username);
-    
     //NSLog(@"Amount entered = %@\n", self.enterMoney.text);
     NSNumberFormatter *moneyFormat = [[NSNumberFormatter alloc] init];
     NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc] init];
@@ -195,9 +192,10 @@
     
     
     for (int i = 0; i < [self.challangeAdditions count]; i++) {
-        User *user = [self.challangeAdditions objectAtIndex:i];
+        GenericGitGoodUser *user = [self.challangeAdditions objectAtIndex:i];
+        
         if (user) {
-            [game addObject:user.githubUsername forKey:@"PendingPlayers"];
+            [game addObject:[user username] forKey:@"PendingPlayers"];
         }
     }
     
@@ -207,10 +205,10 @@
     [push sendPushInBackground];
     
     // add the current user to the game
-    [game addObject:username forKey:@"ApprovedPlayers"];
+    [game addObject:[[LocalGitGoodUser sharedInstance] username] forKey:@"ApprovedPlayers"];
     
     game[@"Time"] = duration;
-    game[@"Admin"] = username;
+    game[@"Admin"] = [[LocalGitGoodUser sharedInstance] username];
     game[@"moneyPerPlayer"] = holder;
     [game saveInBackground];
     
@@ -321,7 +319,6 @@
     }
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"UserCell";
     
@@ -333,7 +330,7 @@
     
     /*  If the requesting table view is the search controller's table view, configure the cell using the search results array, otherwise use the product array.
      */
-    User *user;
+    GenericGitGoodUser *user;
     
     if (tableView == ((UITableViewController *)self.searchController.searchResultsController).tableView) {
         user = [self.searchResults objectAtIndex:indexPath.row];
@@ -341,7 +338,7 @@
         user = [self.challangeAdditions objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = user.githubUsername;
+    cell.textLabel.text = [user username];
     return cell;
 }
 
@@ -398,8 +395,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
-                User *user = [[User alloc] init];
-                user.githubUsername = [object objectForKey:@"username"];
+                GenericGitGoodUser *user = [[GenericGitGoodUser alloc] init];
+                [user setUsername:[object objectForKey:@"username"]];
                 [self.userAccounts addObject:user];
             }
         }
@@ -425,10 +422,10 @@
     
     /*  Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
      */
-    for (User *user in self.userAccounts) {
+    for (GenericGitGoodUser *user in self.userAccounts) {
         NSUInteger searchOptions = NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch;
-        NSRange userNameRange = NSMakeRange(0, user.githubUsername.length);
-        NSRange foundRange = [user.githubUsername rangeOfString:userName options:searchOptions range:userNameRange];
+        NSRange userNameRange = NSMakeRange(0, [user username].length);
+        NSRange foundRange = [[user username] rangeOfString:userName options:searchOptions range:userNameRange];
         if (foundRange.length > 0) {
             [self.searchResults addObject:user];
         }
