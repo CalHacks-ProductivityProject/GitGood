@@ -16,9 +16,11 @@
 // sets the github username & password
 - (void)setGithubPassword:(NSString *)githubPassword;
 - (void)setGithubUsername:(NSString *)githubUsername;
+- (void)setParseID:(NSString *)parseID;
 
 // get the github username & password
 - (NSString *)username;
 - (NSString *)password;
+- (NSString *)parseObjectID;
 
 @end

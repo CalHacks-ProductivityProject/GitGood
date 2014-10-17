@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-GitGood-ABPadLockScreen.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-GitGood-AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>01BE797CE3DD86643DF28CF2</key>
+		<key>2E8D3BA3C1D00D0042912A9D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1AF9219601B312CD67BB8844</key>
+		<key>6E3EA7C2B26A33C9C5FAF6DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5E7C5B26B7F7C1A6D5FA6DB8</key>
+		<key>76F86398342739BE48BD493C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89EB6EF9F1AB0B717E548700</key>
+		<key>813291F66DBA2C49C44F0568</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CCA210021A53908D18054DB0</key>
+		<key>88C505A226DDAE5C550F8FFE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>898859377B775247D84636BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

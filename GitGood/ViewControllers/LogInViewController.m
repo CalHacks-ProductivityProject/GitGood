@@ -9,6 +9,7 @@
 #import "LogInViewController.h"
 #import "OctoKit.h"
 #import "LocalGitGoodUser.h"
+#import "MainViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -102,6 +103,10 @@
         PFObject *userInfo = [PFObject objectWithClassName:@"userInfo"];
         userInfo[@"username"] = [[LocalGitGoodUser sharedInstance] username];
         [userInfo saveInBackground];
+        
+        [[LocalGitGoodUser sharedInstance] setParseID:[userInfo objectId]];
+        [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] parseObjectID] forKey:@"parseID"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else {
         NSLog(@"%@ already exists\n", [[LocalGitGoodUser sharedInstance] username]);

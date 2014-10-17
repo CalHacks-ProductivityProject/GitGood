@@ -10,6 +10,9 @@
 
 @interface LocalGitGoodUser()
 
+// Parse Information
+@property (nonatomic, copy) NSString *parseID;
+
 // Github Information
 @property (nonatomic, copy) NSString *githubUsername;
 @property (nonatomic, copy) NSString *githubPassword;
@@ -40,14 +43,24 @@
     _githubUsername = githubUsername;
 }
 
+- (void)setParseID:(NSString *)parseID
+{
+    _parseID = parseID;
+}
+
 - (NSString *)username
 {
-    return self.githubUsername;
+    return _githubUsername;
 }
 
 - (NSString *)password
 {
-    return self.githubPassword;
+    return _githubPassword;
+}
+
+- (NSString *)parseObjectID
+{
+    return _parseID;
 }
 
 @end

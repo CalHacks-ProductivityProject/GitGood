@@ -32,6 +32,18 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIColor whiteColor],
+                                               NSForegroundColorAttributeName,
+                                               nil];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
+    
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    
     if([[LocalGitGoodUser sharedInstance] username] == nil) {
         [self displayLoginScreen];
     }
@@ -57,17 +69,6 @@
             });
         }
     }];
-    
-    NSDictionary *navbarTitleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                               [UIColor whiteColor],
-                                               NSForegroundColorAttributeName,
-                                               nil];
-    
-    [self.navigationController.navigationBar setTitleTextAttributes:navbarTitleTextAttributes];
-    
-    [[UINavigationBar appearance] setTitleTextAttributes:navbarTitleTextAttributes];
-    
-    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidLoad {

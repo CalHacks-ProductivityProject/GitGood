@@ -40,6 +40,7 @@
     
     [[LocalGitGoodUser sharedInstance] setGithubUsername:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"]];
     [[LocalGitGoodUser sharedInstance] setGithubPassword:[[NSUserDefaults standardUserDefaults] stringForKey:@"password"]];
+    [[LocalGitGoodUser sharedInstance] setParseID:[[NSUserDefaults standardUserDefaults] stringForKey:@"parseID"]];
     
     NSLog(@"In DidFinishLaunching");
     
@@ -56,6 +57,7 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] username] forKey:@"username"];
     [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] password] forKey:@"password"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[LocalGitGoodUser sharedInstance] parseObjectID] forKey:@"parseID"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
