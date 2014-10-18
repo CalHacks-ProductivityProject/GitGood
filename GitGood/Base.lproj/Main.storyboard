@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nmI-8W-IwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nmI-8W-IwV">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Log In View Controller-->
@@ -16,12 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="oXB-3V-WyK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github" translatesAutoresizingMaskIntoConstraints="NO" id="oXB-3V-WyK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="674"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29r-eR-oxN">
+                            <button opaque="NO" alpha="0.84999999999999987" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29r-eR-oxN">
                                 <rect key="frame" x="0.0" y="604" width="375" height="63"/>
                                 <color key="backgroundColor" red="0.15344769021739135" green="0.15344769021739135" blue="0.15344769021739135" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="5jv-eR-zyO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,20 +35,21 @@
                                     <action selector="leaveForGithubAccountCreation:" destination="fcv-JB-yBJ" eventType="touchUpInside" id="M3R-XW-j2H"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lP6-cP-0LM">
-                                <rect key="frame" x="0.0" y="293" width="375" height="40"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o75-VE-zcV">
-                                <rect key="frame" x="0.0" y="337" width="375" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o75-VE-zcV">
+                                <rect key="frame" x="0.0" y="288" width="375" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tMm-pP-rlI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHz-W6-sDi">
-                                <rect key="frame" x="168" y="385" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHz-W6-sDi">
+                                <rect key="frame" x="169" y="336" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="DwS-gL-rcT"/>
+                                    <constraint firstAttribute="height" constant="30" id="uwJ-18-W8M"/>
+                                </constraints>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,11 +58,46 @@
                                     <action selector="authGithubAccount:" destination="fcv-JB-yBJ" eventType="touchUpInside" id="5y9-AD-GXg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GitHub_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5Fq-2o-PjR">
-                                <rect key="frame" x="87" y="53" width="200" height="80"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GitHub_logo" translatesAutoresizingMaskIntoConstraints="NO" id="5Fq-2o-PjR">
+                                <rect key="frame" x="88" y="53" width="200" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2fT-32-qK6"/>
+                                    <constraint firstAttribute="width" constant="200" id="HOw-7H-Hcu"/>
+                                </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lP6-cP-0LM">
+                                <rect key="frame" x="0.0" y="240" width="375" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pIs-RD-hJl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="oXB-3V-WyK" secondAttribute="trailing" constant="-16" id="0RR-Zo-CC0"/>
+                            <constraint firstItem="lP6-cP-0LM" firstAttribute="top" secondItem="5Fq-2o-PjR" secondAttribute="bottom" constant="107" id="1by-UR-7a5"/>
+                            <constraint firstItem="o75-VE-zcV" firstAttribute="top" secondItem="lP6-cP-0LM" secondAttribute="bottom" constant="8" id="6vp-zo-Dss"/>
+                            <constraint firstItem="xHz-W6-sDi" firstAttribute="top" secondItem="o75-VE-zcV" secondAttribute="bottom" constant="8" id="7aO-vq-DSW"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="oXB-3V-WyK" secondAttribute="bottom" constant="-7" id="Btf-T9-5cg"/>
+                            <constraint firstItem="lP6-cP-0LM" firstAttribute="leading" secondItem="PJJ-AF-bJL" secondAttribute="leadingMargin" constant="-16" id="Ecf-BA-4td"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lP6-cP-0LM" secondAttribute="trailing" constant="-16" id="Ozq-UG-jpf"/>
+                            <constraint firstItem="Q0d-4j-L66" firstAttribute="top" secondItem="29r-eR-oxN" secondAttribute="bottom" id="RYd-9x-qHO"/>
+                            <constraint firstItem="o75-VE-zcV" firstAttribute="leading" secondItem="PJJ-AF-bJL" secondAttribute="leadingMargin" constant="-16" id="XBY-0D-MG8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="29r-eR-oxN" secondAttribute="trailing" constant="-16" id="ca1-8v-39i"/>
+                            <constraint firstItem="29r-eR-oxN" firstAttribute="bottom" secondItem="oXB-3V-WyK" secondAttribute="bottom" constant="-7" id="d1T-40-I5I"/>
+                            <constraint firstAttribute="centerX" secondItem="5Fq-2o-PjR" secondAttribute="centerX" id="da3-Ef-TNF"/>
+                            <constraint firstItem="29r-eR-oxN" firstAttribute="leading" secondItem="PJJ-AF-bJL" secondAttribute="leadingMargin" constant="-16" id="gkI-vU-pSM"/>
+                            <constraint firstAttribute="centerX" secondItem="o75-VE-zcV" secondAttribute="centerX" id="mM7-uO-d1o"/>
+                            <constraint firstItem="5Fq-2o-PjR" firstAttribute="top" secondItem="VoS-Vd-LFU" secondAttribute="bottom" constant="33" id="o9i-5v-e59"/>
+                            <constraint firstAttribute="centerX" secondItem="29r-eR-oxN" secondAttribute="centerX" id="rxG-hU-JFK"/>
+                            <constraint firstItem="oXB-3V-WyK" firstAttribute="top" secondItem="PJJ-AF-bJL" secondAttribute="topMargin" id="ryR-lv-D6h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o75-VE-zcV" secondAttribute="trailing" constant="-16" id="taB-AZ-dKZ"/>
+                            <constraint firstItem="oXB-3V-WyK" firstAttribute="leading" secondItem="PJJ-AF-bJL" secondAttribute="leadingMargin" constant="-16" id="uMY-2y-nJm"/>
+                            <constraint firstItem="xHz-W6-sDi" firstAttribute="centerX" secondItem="oXB-3V-WyK" secondAttribute="centerX" constant="-0.5" id="zca-XG-gTf"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
